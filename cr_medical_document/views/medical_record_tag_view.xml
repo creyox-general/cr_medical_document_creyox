@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="medical_record_tag_view_tree" model="ir.ui.view">
+        <field name="name">medical.record.tag.view.tree</field>
+        <field name="model">medical.record.tag</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="name"/>
+                <field name="color" widget="color_picker"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medical_record_tag" model="ir.actions.act_window">
+        <field name="name">View Record Tag</field>
+        <field name="res_model">medical.record.tag</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <menuitem name="View Record Tag"
+              id="medical_record_tag_menu_root"
+              parent="medical_menu_config"
+              action="action_medical_record_tag"
+              sequence="20"/>
+
+</odoo>

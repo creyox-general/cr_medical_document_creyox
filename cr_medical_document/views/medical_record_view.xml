@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="medical_record_view_tree" model="ir.ui.view">
+        <field name="name">medical.record.view.tree</field>
+        <field name="model">medical.record</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="date_time"/>
+                <field name="visit_type"/>
+                <field name="sequence" widget="handle"/>
+                <field name="therapist_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="medical_record_view_form" model="ir.ui.view">
+        <field name="name">medical.record.form</field>
+        <field name="model">medical.record</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_pdf" type="object" class="oe_stat_button" icon="fa-file-text-o"
+                                string="Generate PDF">
+                            <field name="pdf_count" widget="statinfo" string="Generate PDF"/>
+                        </button>
+                        <button name="action_schedule_followup" type="object" class="oe_stat_button"
+                                icon="fa-user-circle-o"
+                                string="Schedule Follow-up">
+                            <field name="schedule_followup_count" widget="statinfo" string="Schedule Follow-up"/>
+                        </button>
+                        <button name="action_clinical_history" type="object" class="oe_stat_button"
+                                icon="fa-stethoscope"
+                                string="Clinical History">
+                            <field name="clinical_history_count" widget="statinfo" string="Clinical History"/>
+                        </button>
+                    </div>
+                    <field name="partner_image" class="oe_avatar" widget="image"/>
+                    <div>
+                        <h1>
+                            <field name="name" placeholder="Name..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_id"/>
+                            <field name="patient_phone" widget="phone"/>
+                            <field name="kupat_holim"/>
+                            <field name="privat_insurence"/>
+                            <field name="patient_dob"/>
+                            <field name="gender"/>
+                            <field name="last_visit"/>
+                            <field name="history_of_visit"/>
+                        </group>
+                        <group>
+                            <field name="therapist_id" widget="many2one_avatar_user"/>
+                            <field name="visit_type"/>
+                            <field name="date_time"/>
+                        </group>
+                        <field name="note" placeholder="Type down your notes here..."/>
+                    </group>
+                    <notebook>
+                        <page name="page_view_details" string="View Details">
+                            <field name="medical_disease_ids" widget="one2many_list">
+                                <list>
+                                    <field name="procedure_name" optional="hide"/>
+                                    <field name="nomed_code" optional="hide"/>
+                                    <field name="code"/>
+                                    <field name="short_name"/>
+                                    <field name="long_name"/>
+                                </list>
+                            </field>
+                            <group>
+                                <field name="visit_detail"/>
+                                <field name="recommendations"/>
+                            </group>
+                        </page>
+                        <page name="page_vitals" string="Vitals">
+                            <field name="medical_vital_ids" widget="one2many_list">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="item"/>
+                                    <field name="value"/>
+                                    <field name="unit"/>
+                                    <field name="valid_range"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page name="page_prescription" string="Prescription">
+                            <field name="medical_prescription_ids" widget="one2many_list">
+                                <list editable="bottom">
+                                    <field name="medication_name"/>
+                                    <field name="medicine_does"/>
+                                    <field name="medicine_does_unit"/>
+                                    <field name="route"/>
+                                    <field name="frequency"/>
+                                    <field name="frequency_unit"/>
+                                    <field name="duration"/>
+                                    <field name="duration_unit"/>
+                                    <field name="comment"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page name="page_product_service" string="Products &amp; Services">
+                            <field name="medical_product_service_ids" widget="one2many_list">
+                                <list editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="product_qty"/>
+                                    <field name="product_price"/>
+                                    <field name="total"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <!--Chatter-->
+                <chatter>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </chatter>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_medical_record" model="ir.actions.act_window">
+        <field name="name">View Record</field>
+        <field name="res_model">medical.record</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem name="Medical Documentation"
+              id="medical_menu_root"
+              action="action_medical_record"
+              web_icon="cr_medical_document,static/description/logo.png"
+              sequence="20"/>
+
+    <menuitem name="View Record"
+              id="medical_menu_view_record"
+              parent="medical_menu_root"
+              action="action_medical_record"
+              sequence="21"/>
+
+    <menuitem name="Configuration"
+              id="medical_menu_config"
+              parent="medical_menu_root"
+              action="action_medical_record"
+              sequence="24"/>
+
+</odoo>

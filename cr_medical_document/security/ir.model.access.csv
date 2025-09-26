@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+cr_medical_document.access_medical_record,access_medical_record,cr_medical_document.model_medical_record,base.group_user,1,1,1,1
+cr_medical_document.access_medical_record_tag,access_medical_record_tag,cr_medical_document.model_medical_record_tag,base.group_user,1,1,1,1
+cr_medical_document.access_medical_disease,access_medical_disease,cr_medical_document.model_medical_disease,base.group_user,1,1,1,1
+cr_medical_document.access_medical_vitals,access_medical_vitals,cr_medical_document.model_medical_vitals,base.group_user,1,1,1,1
+cr_medical_document.access_medical_prescription,access_medical_prescription,cr_medical_document.model_medical_prescription,base.group_user,1,1,1,1
+cr_medical_document.access_medical_product_service,access_medical_product_service,cr_medical_document.model_medical_product_service,base.group_user,1,1,1,1
