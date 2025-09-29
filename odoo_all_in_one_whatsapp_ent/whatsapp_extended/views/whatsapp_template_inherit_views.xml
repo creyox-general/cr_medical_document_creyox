@@ -1,0 +1,80 @@
+<odoo>
+    <data>
+        <record id="wa_template_form_inherit_chatbot" model="ir.ui.view">
+            <field name="name">whatsapp.template.view.form.inherit</field>
+            <field name="model">whatsapp.template</field>
+            <field name="inherit_id" ref="whatsapp.whatsapp_template_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='template_type']" position="after">
+                    <field name="template_category"/>
+                </xpath>
+                <xpath expr="//field[@name='footer_text']" position="after">
+                    <field name="otp_length" invisible="template_type != 'authentication'" readonly="status != 'draft'"/>
+                    <field name="otp_expiration_time" invisible="template_type != 'authentication'" readonly="status != 'draft'"/>
+                </xpath>
+                <xpath expr="//page[@name='Variables']" position="after">
+                    <page
+                            id="interactive"
+                            name="Interactive"
+                            invisible="template_category != 'interactive'"
+                    >
+                        <field name="wa_interactive_ids" readonly="status != 'draft'">
+                            <list>
+                                <field name="interactive_type"/>
+                                <field name="interactive_list_ids"/>
+                                <field name="interactive_button_ids"/>
+                                <field name="catalog_id"/>
+                                <field name="interactive_product_list_ids"/>
+                                <field name="product_retailer_id"/>
+                            </list>
+                        </field>
+                    </page>
+                </xpath>
+                <xpath expr="//button[@name='button_submit_template']" position="after">
+                    <button
+                            name="button_set_status_to_added"
+                            string="Set Status To Added"
+                            type="object"
+                            invisible="status == 'approved'"
+                            groups="whatsapp.group_whatsapp_admin"
+                    />
+                </xpath>
+                <xpath expr="//field[@name='button_ids']" position="attributes">
+                    <attribute
+                            name="readonly"
+                    >template_category == 'interactive'
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='variable_ids']" position="attributes">
+                    <attribute
+                            name="readonly"
+                    >template_category == 'interactive'
+                    </attribute>
+                </xpath>
+                <xpath
+                        expr="//button[@name='button_submit_template']"
+                        position="attributes"
+                >
+                    <attribute
+                            name="invisible"
+                    >template_category == 'interactive' or status == 'approved'
+                    </attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="wa_template_list_inherit_chatbot" model="ir.ui.view">
+            <field name="name">whatsapp.template.view.tree.inherit</field>
+            <field name="model">whatsapp.template</field>
+            <field name="inherit_id" ref="whatsapp.whatsapp_template_view_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="field[@name='status']" position="after">
+                    <button name="send_pre_message_by_whatsapp" type="object" string="Send"
+                            class="oe_highlight"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

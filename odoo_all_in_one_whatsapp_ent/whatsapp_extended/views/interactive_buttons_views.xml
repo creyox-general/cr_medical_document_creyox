@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+         <record id="interactive_button_view_form" model="ir.ui.view">
+            <field name="name">interactive.button.name</field>
+            <field name="model">interactive.button</field>
+            <field name="arch" type="xml">
+                <form string="Button">
+                    <sheet>
+                        <group>
+                            <field name="title" />
+                            <field name="wa_interactive_id" invisible="1" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

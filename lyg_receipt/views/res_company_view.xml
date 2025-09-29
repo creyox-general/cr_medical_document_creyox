@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_company_form_inherit_lyg" model="ir.ui.view">
+        <field name="name">res.company.form.inherit.receipt</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <!-- attrs added using withholding_tax_process as withholding module is on depends of this one, and also attrs is for multi-company, using this field will be invisible in other companies -->
+               <field name="receipt_restrict_mode_hash" invisible="withholding_tax_process != True"/>
+                <field name="send_an_email_receipts" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

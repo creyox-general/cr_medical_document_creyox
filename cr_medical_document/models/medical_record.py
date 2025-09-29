@@ -2,6 +2,7 @@
 # Part of Creyox Technologies
 
 from odoo import fields, models, api, _
+from datetime import datetime, timedelta
 
 
 class MedicalRecord(models.Model):
@@ -17,9 +18,19 @@ class MedicalRecord(models.Model):
         [("clalit", "Clalit"), ("maccabi", "Maccabi"), ("meuhedet", "Meuhedet"), ("leumit", "Leumit")],
         string="Kupat Holim")
     privat_insurence = fields.Char(string="Private Insurance")
-    patient_dob = fields.Date(string="Birth Date", tracking=True)
+    patient_dob = fields.Date(
+        related="partner_id.birth_date",
+        string="Birth Date",
+        tracking=True,
+        store=True,
+        readonly=False
+    )
+    patient_dob_display = fields.Char(
+        string="Birth Date",
+        compute="_compute_patient_dob_display"
+    )
     gender = fields.Selection(
-        [("male", "Male"), ("female", "Female")],
+        related="partner_id.sex",
         string="Gender", tracking=True)
     last_visit = fields.Boolean(string="Last Visit")
     history_of_visit = fields.Selection(
@@ -38,12 +49,33 @@ class MedicalRecord(models.Model):
     recommendations = fields.Html(string="Recommendations")
     medical_disease_ids = fields.Many2many('medical.disease', 'medical_document_id', string="Medical Disease")
     medical_vital_ids = fields.One2many('medical.vitals', 'medical_document_id', string="Medical Vitals")
-    medical_prescription_ids = fields.One2many('medical.prescription', 'medical_document_id', string="Medical Prescription")
-    medical_product_service_ids = fields.One2many('medical.product.service', 'medical_document_id', string="Medical Product Service")
+    medical_prescription_ids = fields.One2many('medical.prescription', 'medical_document_id',
+                                               string="Medical Prescription")
+    medical_product_service_ids = fields.One2many('medical.product.service', 'medical_document_id',
+                                                  string="Medical Product Service")
     product_id = fields.Many2one('product.template', string="Product Name")
     product_quantity = fields.Float(string="Quantity")
     product_price = fields.Float(string="Price")
     total = fields.Float(string="Total")
+
+    @api.depends('patient_dob')
+    def _compute_patient_dob_display(self):
+        for rec in self:
+            if not rec.patient_dob:
+                rec.patient_dob_display = False
+                continue
+            date_val = rec.patient_dob
+            # Handle both date object and ISO string 'YYYY-MM-DD'
+            if isinstance(date_val, str):
+                try:
+                    # try Odoo helper (exists in many versions)
+                    date_obj = fields.Date.from_string(date_val)
+                except Exception:
+                    # fallback parse
+                    date_obj = datetime.datetime.strptime(date_val, '%Y-%m-%d').date()
+            else:
+                date_obj = date_val
+            rec.patient_dob_display = date_obj.strftime('%d/%m/%y')
 
     def action_pdf(self):
         pass

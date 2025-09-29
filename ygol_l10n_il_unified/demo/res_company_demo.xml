@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+        <function model="res.company" name="write">
+        <value eval="[ref('l10n_il.demo_company_il')]" />
+        <value
+            eval="{'software_registration_number': '66666666',
+        'software_name': 'Odoo', 'software_edition': '18.0EE',
+        'software_manufacture_number': '1859',
+        'software_type': '2',
+        'accounting_software_type': '2',
+        'accounting_balance_requires': '2',
+        'information_on_branches': '0',
+        'path_save_file_location': 'F:\OPENFRMT\ 00000009.07\ 07171025',
+        'vat': 'ATU999999', 'l10n_il_withh_tax_id_number': 'IL000999',}"
+        />
+        </function>
+        <!-- Removed fields 'sort_code': '0005', 'test_balance_code': '0006', 'test_balance_code_description': '0007',
+        'sort_description': '0009'-->
+</odoo>

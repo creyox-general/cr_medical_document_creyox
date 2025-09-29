@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="whatsapp_interactive_template_view_form" model="ir.ui.view">
+            <field name="name">whatsapp.interactive.template.view.form</field>
+            <field name="model">wa.interactive.template</field>
+            <field name="arch" type="xml">
+                <form string="Interactive">
+                    <sheet>
+                        <group>
+                             <field name="interactive_type" />
+                        </group>
+                        <group invisible="interactive_type != 'list'">
+                            <field name="interactive_list_ids">
+                                <list string="List Items">
+                                    <field name="main_title" />
+                                    <field name="title_ids" />
+                                </list>
+                            </field>
+                        </group>
+
+                        <group invisible="interactive_type != 'button'">
+                            <field name="interactive_button_ids">
+                                <list string="Button Items" editable="bottom">
+                                    <field name="title" />
+                                </list>
+                            </field>
+                        </group>
+
+                        <group invisible="interactive_type != 'product_list'">
+                            <field name="catalog_id" />
+                            <field name="interactive_product_list_ids">
+                                <list string="Product list Items">
+                                    <field name="main_title" />
+                                    <field name="product_list_ids" />
+                                </list>
+                            </field>
+                        </group>
+
+                        <group invisible="interactive_type != 'product'">
+                            <field name="catalog_id" />
+                            <field name="product_retailer_id" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

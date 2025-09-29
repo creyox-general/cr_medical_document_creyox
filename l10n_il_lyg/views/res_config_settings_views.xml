@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--  Inherit Event Res Config Settings Form View  -->
+    <record model="ir.ui.view"
+            id="res_config_settings_l10n_il_vat_limit_view">
+        <field name="name">res.config.settings.form.bizzup.movein.report
+        </field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='default_taxes_setting_container']"
+                   position="inside">
+                <setting id="bizzup_vat_limit" string="Vat Limit Amount" company_dependent="1" help="Once the invoice crosses the Limit System will check the VAT ID of the Customer/Vendor.">
+                    <div class="content-group">
+                        <div class="row">
+                            <label string="VAT Limit" for="vat_limit" class="col-lg-3 o_light_label"/>
+                            <div class="col-lg-auto content-group">
+                                <field name="vat_limit" class="text-center oe_inline" style="margin-left: -35px;"/> Enter VAT Limit Amount.
+                            </div>
+                        </div>
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

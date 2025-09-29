@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="interactive_list_view_form" model="ir.ui.view">
+            <field name="name">interactive.list.name</field>
+            <field name="model">interactive.list</field>
+            <field name="arch" type="xml">
+                <form string="List">
+                    <sheet>
+                        <group>
+                            <field name="title" />
+                            <field name="description" />
+                            <field name="interactive_list_title_id" invisible="1" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="interactive_list_title_view_form" model="ir.ui.view">
+            <field name="name">interactive.list.title.name</field>
+            <field name="model">interactive.list.title</field>
+            <field name="arch" type="xml">
+                <form string="List Title">
+                    <sheet>
+                        <group>
+                            <field name="main_title" />
+                            <field name="wa_interactive_id" invisible="1" />
+                            <field name="title_ids">
+                                <list editable="bottom">
+                                    <field name="title" />
+                                    <field name="description" />
+                                </list>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

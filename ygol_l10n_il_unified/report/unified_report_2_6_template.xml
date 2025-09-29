@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="unified_report_2_6">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div t-if="env.user.lang == 'he_IL'" class="page">
+
+                    <h2 style="text-align: center">
+                        <span>
+                            <u>דו"ח מאוחד 2.6</u>
+                        </span>
+                    </h2>
+
+                    <div style="text-align: right;" id="unified_information">
+
+                        <div name="company_vat">
+                            <div>
+                                <strong>ל:</strong>
+                            </div>
+                            <div>
+                                <strong>פרטי זיהוי של החברה:</strong>
+                                <span t-esc="env.company.vat"/>
+                            </div>
+                            <div>
+                                <strong>שם החברה:</strong>
+                                <span t-esc="env.company.name"/>
+                            </div>
+                        </div>
+
+                        <br/>
+
+                        <div class="col-auto col-3 mw-100 mb-2">
+
+                            <p style="while-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+
+                                <t>
+                                    <strong>מתאריך:</strong>
+                                    <span t-esc="data['date_start']"/>
+                                </t>
+
+                                <t>
+                                    <strong style="margin-right: 150px;">היוםעד:</strong>
+                                    <span t-esc="data['date_end']"/>
+                                </t>
+
+
+                            </p>
+                        </div>
+
+                        <div class="col-auto col-3 mw-100 mb-2">
+                            <span>
+                                <strong> רשימת רשומות ב:</strong>
+                            </span>
+                        </div>
+                    </div>
+
+                    <br/>
+
+                    <table class="table table-bordered mb64" name="invoice_line_table">
+                        <thead>
+                            <tr>
+                                <th style="padding: 8px; text-align: center; border-bottom: 1px solid;">סוג מסמך</th>
+                                <th style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    שם מסמך (סוג)
+                                </th>
+                                <th style="padding: 8px; text-align: center; border-bottom: 1px solid;">סה"כ # מסמכים</th>
+                                <th style="padding: 8px; text-align: center; border-bottom: 1px solid;">שווי כולל בשקלים</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr t-if="data['100_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="100"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>להזמין</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['100_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['100_counter'][1]"/>
+                                </td>
+                            </tr>
+
+                            <tr t-if="data['200_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>200</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>תעודת משלוח</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['200_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['200_counter'][1]"/>
+                                </td>
+                            </tr>
+
+                            <tr t-if="data['205_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>205</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>תעודת משלוח לסוכן</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['205_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['205_counter'][1]"/>
+                                </td>
+                            </tr>
+
+                            <tr t-if="data['210_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>210</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>אישור החזרה</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['210_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['210_counter'][1]"/>
+                                </td>
+                            </tr>
+
+                            <tr t-if="data['300_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>300</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>חשבונית/פרופורמה</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['300_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['300_counter'][1]"/>
+                                </td>
+                            </tr>
+
+                            <tr t-if="data['305_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>305</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>חשבונית מס</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['305_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['305_counter'][1]"/>
+                                </td>
+                            </tr>
+
+                            <tr t-if="data['310_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>310</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>חשבונית סיכום</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['310_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['310_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['320_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>320</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>חשבונית מס / קבלה</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['320_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['320_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['330_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>330</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>הערת אשראי</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['330_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['330_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['340_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>340</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>חשבונית הזמנה</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['340_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['340_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['345_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>345</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>חשבונית סוכן</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['345_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['345_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['400_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>400</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>קַבָּלָה</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['400_counter'][1]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['400_counter'][0]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['405_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>405</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>קבלה על תרומה</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['405_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['405_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['410_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>410</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>תשלום מזומן קטן</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['410_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['410_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['420_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>420</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>פיקדון בנקאי</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['420_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['420_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['500_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>500</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>הזמנה</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['500_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['500_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['600_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>600</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>רכישה תעודת משלוח</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['600_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['600_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['610_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>610</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>החזרת רכישה</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['610_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['610_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['700_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>700</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>חשבונית קנייה</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['700_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['700_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['710_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>710</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>תעודת זיכוי לרכישה</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['710_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['710_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['800_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>800</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>מאזן פתיחה</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['800_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['800_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['810_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>810</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>קבלת סחורה</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['810_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['810_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['820_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>820</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>נושא סחורות</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['820_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['820_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['830_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>830</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>העברת סחורות בין מחסנים</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['830_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['830_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['840_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>840</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>עדכון בעקבות ספירה</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['840_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['840_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['900_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>900</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>הצהרת הפקה – הנפקה להפקה</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['900_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['900_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['910_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>910</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>הצהרת ייצור - קבלה מהפקה</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['910_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['910_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; text-align: center;">
+                                    <span>
+                                        <strong>סה"כ</strong>
+                                    </span>
+                                </td>
+                                <td style="padding: 8px; text-align: center;">
+                                    <span></span>
+                                </td>
+                                <td style="padding: 8px; text-align: center;">
+                                    <span style="font-weight: bold;" t-esc="data['total_codes_count']"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center;">
+                                    <span style="font-weight: bold;" t-esc="data['total_of_amount']"/>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <div style="border-bottom: 5px solid #4d4d4d; width: 100%"/>
+
+                    <br/>
+
+                    <div style="text-align: right;" name="company_vat">
+                        <p style="while-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            <t>
+                                <strong>יישום ר.ג. לא:</strong>
+                                <span style="margin-left: 72px" t-esc="env.company.software_registration_number"/>
+                            </t>
+
+                            <t>
+                                <strong>שם תוכנה:</strong>
+                                <span t-esc="env.company.software_name +' '+ env.company.software_edition"/>
+                            </t>
+                        </p>
+                        <p style="while-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            <t>
+                                <strong>תַאֲרִיך:</strong>
+                                <span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')"/>
+                            </t>
+
+                            <t>
+                                <strong style="margin-right: 150px;">זְמַן:</strong>
+                                <span t-esc="data['current_tz'].strftime('%H:%M:%S')"/>
+                            </t>
+
+                        </p>
+                    </div>
+
+                </div>
+
+                <div t-else="" class="page">
+
+                    <h2 style="text-align: center">
+                        <span>
+                            <u>Unified Report 2.6</u>
+                        </span>
+                    </h2>
+
+                    <div id="unified_information">
+
+                        <div name="company_vat">
+                            <div>
+                                <strong>To:</strong>
+                            </div>
+                            <div>
+                                <strong>Company ID:</strong>
+                                <span t-esc="env.company.vat"/>
+                            </div>
+                            <div>
+                                <strong>Company Name:</strong>
+                                <span t-esc="env.company.name"/>
+                            </div>
+                        </div>
+
+                        <br/>
+
+                        <div class="col-auto col-3 mw-100 mb-2">
+
+                            <p style="while-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                <t>
+                                    <strong>From Date:</strong>
+                                    <span t-esc="data['date_start']"/>
+                                </t>
+
+                                <t>
+                                    <strong style="margin-left: 150px;">To Date:</strong>
+                                    <span t-esc="data['date_end']"/>
+                                </t>
+
+                            </p>
+                        </div>
+
+                        <div class="col-auto col-3 mw-100 mb-2">
+                            <span>
+                                <strong>List of Records:</strong>
+                            </span>
+                        </div>
+                    </div>
+
+                    <br/>
+
+                    <table class="table table-bordered mb64" name="invoice_line_table">
+                        <thead>
+                            <tr>
+                                <th style="padding: 8px; text-align: center; border-bottom: 1px solid;">Document Type</th>
+                                <th style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    Document Name (Type)
+                                </th>
+                                <th style="padding: 8px; text-align: center; border-bottom: 1px solid;">Total # of docs</th>
+                                <th style="padding: 8px; text-align: center; border-bottom: 1px solid;">Total Value in NIS</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr t-if="data['100_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="100"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Order</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['100_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['100_counter'][1]"/>
+                                </td>
+                            </tr>
+
+                            <tr t-if="data['200_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>200</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Delivery Note</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['200_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['200_counter'][1]"/>
+                                </td>
+                            </tr>
+
+                            <tr t-if="data['205_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>205</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Agent Delivery Note</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['205_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['205_counter'][1]"/>
+                                </td>
+                            </tr>
+
+                            <tr t-if="data['210_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>210</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Return Certification</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['210_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['210_counter'][1]"/>
+                                </td>
+                            </tr>
+
+                            <tr t-if="data['300_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>300</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Invoice/proforma</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['300_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['300_counter'][1]"/>
+                                </td>
+                            </tr>
+
+                            <tr t-if="data['305_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>305</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Tax Invoice</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['305_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['305_counter'][1]"/>
+                                </td>
+                            </tr>
+
+                            <tr t-if="data['310_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>310</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Summary Invoice</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['310_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['310_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['320_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>320</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Tax Invoice / Receipt</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['320_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['320_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['330_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>330</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Credit Note</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['330_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['330_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['340_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>340</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Reserve Invoice</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['340_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['340_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['345_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>345</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Agent Invoice</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['345_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['345_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['400_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>400</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Receipt</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['400_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['400_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['405_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>405</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Donation Receipt</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['405_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['405_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['410_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>410</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Disbursement from petty cash</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['410_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['410_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['420_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>420</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Bank deposit</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['420_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['420_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['500_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>500</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Purchase order</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['500_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['500_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['600_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>600</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Purchase delivery note</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['600_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['600_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['610_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>610</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Purchase return</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['610_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['610_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['700_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>700</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Purchase invoice</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['700_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['700_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['710_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>710</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Purchase credit note</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['710_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['710_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['800_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>800</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Opening balance</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['800_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['800_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['810_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>810</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Goods receipt</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['810_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['810_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['820_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>820</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Goods issue</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['820_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['820_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['830_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>830</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Goods transfer between warehouses</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['830_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['830_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['840_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>840</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Revision following count</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['840_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['840_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['900_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>900</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Production statement – Issue for production</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['900_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['900_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr t-if="data['910_counter'][0] > 0">
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>910</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Production statement – Receipt from production</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['910_counter'][0]"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['910_counter'][1]"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; text-align: center;">
+                                    <span>
+                                        <strong>Total</strong>
+                                    </span>
+                                </td>
+                                <td style="padding: 8px; text-align: center;">
+                                    <span></span>
+                                </td>
+                                <td style="padding: 8px; text-align: center;">
+                                    <span style="font-weight: bold;" t-esc="data['total_codes_count']"/>
+                                </td>
+                                <td style="padding: 8px; text-align: center;">
+                                    <span style="font-weight: bold;" t-esc="data['total_of_amount']"/>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <div style="border-bottom: 5px solid #4d4d4d; width: 100%"/>
+
+                    <br/>
+
+                    <div name="company_vat">
+                        <p style="while-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            <t>
+                                <strong>Software Name:</strong>
+                                <span t-esc="env.company.software_name +' '+ env.company.software_edition"/>
+                            </t>
+
+                            <t>
+                                <strong style="margin-left: 40px;">Application Reg. No:</strong>
+                                <span t-esc="env.company.software_registration_number"/>
+                            </t>
+                        </p>
+                        <p style="while-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            <t>
+                                <strong>Date:</strong>
+                                <span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')"/>
+                            </t>
+
+                            <t>
+                                <strong style="margin-left: 150px;">Time:</strong>
+                                <span t-esc="data['current_tz'].strftime('%H:%M:%S')"/>
+                            </t>
+
+                        </p>
+                    </div>
+
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

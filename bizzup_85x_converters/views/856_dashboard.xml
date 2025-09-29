@@ -1,0 +1,63 @@
+<odoo>
+    <record id="view_bizzup_856_dashboard_form" model="ir.ui.view">
+        <field name="name">bizzup.856.dashboard.form</field>
+        <field name="model">bizzup.856.dashboard</field>
+        <field name="arch" type="xml">
+            <form string="856 Dashboard" create="false" edit="true" class="o_rtl">
+
+                <header>
+                    <!-- Binary fields to enable download of PDF/TXT (invisible) -->
+                    <field name="r60_pdf_binary" invisible="1" filename="r60_pdf_name"/>
+                    <field name="r70_pdf_binary" invisible="1" filename="r70_pdf_name"/>
+                    <field name="r80_pdf_binary" invisible="1" filename="r80_pdf_name"/>
+                    <field name="report_856_txt_binary" invisible="1" filename="report_856_txt_name"/>
+
+                    <!-- Top-left download buttons -->
+                    <button name="action_download_r60"
+                            type="object"
+                            widget="download"
+                            string="R60 PDF"
+                            class="oe_highlight"/>
+                    <button name="action_download_r70"
+                            type="object"
+                            widget="download"
+                            string="R70 PDF"
+                            class="oe_highlight"/>
+                    <button name="action_download_r80"
+                            type="object"
+                            widget="download"
+                            string="R80 PDF"
+                            class="oe_highlight"/>
+                    <button name="action_download_856_txt"
+                            type="object"
+                            widget="download"
+                            string="TXT 856"
+                            class="oe_secondary"/>
+                </header>
+
+                <sheet>
+                    <!-- A row with Start/End Date and a manual "Reload" button -->
+                    <div class="row" style="margin-bottom: 20px;">
+                        <div class="col-md-3">
+                            <field name="start_date"/>
+                        </div>
+                        <div class="col-md-3">
+                            <field name="end_date"/>
+                        </div>
+                        <div class="col-md-3">
+                            <button name="action_reload_dashboard"
+                                    string="Reload"
+                                    type="object"
+                                    class="oe_highlight"/>
+                        </div>
+                    </div>
+
+                    <!-- Show the HTML table as a preview -->
+                    <group>
+                        <field name="r70_html" nolabel="1" widget="html"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

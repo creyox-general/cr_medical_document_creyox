@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="tranzila_physical_terminal_list" model="ir.ui.view">
+        <field name="name">tranzila.physical.terminal.list</field>
+        <field name="model">tranzila.physical.terminal</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="pos_id" required="1"/>
+                <field name="url"/>
+                <field name="company_id"/>
+                <button name="check_machine_connection"
+                        type="object"
+                        string="Check Connection"/>
+            </list>
+        </field>
+    </record>
+</odoo>

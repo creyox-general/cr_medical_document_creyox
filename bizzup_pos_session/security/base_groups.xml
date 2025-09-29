@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="group_allow_all_user_from_pos_session" model="res.groups">
+        <field name="name">Access all User from pos session</field>
+    </record>
+</odoo>

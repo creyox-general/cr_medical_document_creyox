@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="movein_form" model="ir.ui.view">
+        <field name="name">movein.report.wizard.form</field>
+        <field name="model">movein.report.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="movein_filename" invisible="1"/>
+                <field name="movein_prm_filename" invisible="1"/>
+                <field name="state" invisible="1"/>
+                <group invisible="state != 'choose'">
+                    <group>
+                        <field name="start_date"/>
+                    </group>
+                    <group>
+                        <field name="end_date"/>
+                    </group>
+                </group>
+                <div invisible="state != 'get'">
+                    <h2>Movein Report is generated.</h2>
+                    <field name="movein_data" widget="binary"
+                           filename="movein_filename"/>
+                </div>
+                <div invisible="state != 'get'">
+                    <field name="movein_prm_data" widget="binary"
+                           filename="movein_prm_filename"/>
+                </div>
+                <footer invisible="state != 'choose'">
+                    <button type="object" name="generate" string="Generate"
+                            class="oe_highlight"/>
+                </footer>
+                <footer invisible="state != 'get'">
+                    <button special="cancel" string="Close" type="object"
+                            class="btn-primary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="movein_report_action" model="ir.actions.act_window">
+        <field name="name">Movein Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">movein.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="movein_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="movein_report_parent" parent="account.menu_finance_reports" name="Movein Report">
+        <menuitem id="movein_report_wiz_menu" name="Movein Report"
+                  action="movein_report_action" sequence="1"/>
+    </menuitem>
+</odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="movement_code_1" model="movement.code">
+            <field name="name">Cred/Deb</field>
+            <field name="code">3</field>
+            <field name="code_string">3</field>
+            <field name="account_move_type">entry</field>
+            <field name="journal_id"></field>
+            <field name="fiscal_id"></field>
+            <field name="Details"></field>
+        </record>
+
+        <record id="movement_code_2" model="movement.code">
+            <field name="name">Income</field>
+            <field name="code">100</field>
+            <field name="code_string">100</field>
+            <field name="account_move_type">out_invoice</field>
+            <field name="journal_id"></field>
+            <field name="fiscal_id"></field>
+            <field name="Details"></field>
+        </record>
+
+        <record id="movement_code_3" model="movement.code">
+            <field name="name">Income</field>
+            <field name="code">110</field>
+            <field name="code_string">110</field>
+            <field name="account_move_type">out_refund</field>
+            <field name="journal_id"></field>
+            <field name="fiscal_id"></field>
+            <field name="Details"></field>
+        </record>
+
+        <record id="movement_code_4" model="movement.code">
+            <field name="name">Outcome</field>
+            <field name="code">200</field>
+            <field name="code_string">200</field>
+            <field name="account_move_type">in_invoice</field>
+            <field name="journal_id"></field>
+            <field name="fiscal_id"></field>
+            <field name="Details"></field>
+        </record>
+
+        <record id="movement_code_5" model="movement.code">
+            <field name="name">Outcome</field>
+            <field name="code">210</field>
+            <field name="code_string">210</field>
+            <field name="account_move_type">in_refund</field>
+            <field name="journal_id"></field>
+            <field name="fiscal_id"></field>
+            <field name="Details"></field>
+        </record>
+    </data>
+</odoo>

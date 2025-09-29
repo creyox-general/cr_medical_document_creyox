@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Inherit Form View to Modify it -->
+    <record id="view_company_form_inherit_ygol_l10n_il_unified" model="ir.ui.view">
+        <field name="name">res.company.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <!-- attrs added using withholding_tax_process as withholding module is on depends of this one, and also attrs is for multi-company, using this page will be invisible in other companies -->
+<!--                <page-->
+<!--                    string="Unified Report Information"-->
+<!--                    attrs="{'invisible' : [('withholding_tax_process', '!=', True)]}"-->
+<!--                >-->
+                <page
+                    string="Unified Report Information"
+                >
+                    <group>
+                        <group groups="base.group_no_one">
+                            <field name="software_registration_number" readonly="1" />
+                            <field name="software_name" readonly="1" />
+                            <field name="software_edition" readonly="1" />
+                            <field name="software_manufacture_number" readonly="1" />
+                            <field name="software_type" readonly="1" />
+                            <field name="accounting_software_type" readonly="1" />
+                            <field name="accounting_balance_requires" readonly="1" />
+                            <field name="information_on_branches" readonly="1" />
+                            <field name="path_save_file_location" readonly="1" />
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

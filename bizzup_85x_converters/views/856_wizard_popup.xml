@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_856_wizard_form" model="ir.ui.view">
+        <field name="name">bizzup.856.wizard.form</field>
+        <field name="model">bizzup.856.wizard</field>
+        <field name="arch" type="xml">
+            <form string="856 Converter Wizard" create="False" edit="False">
+                <footer>
+                    <button name="action_process_file" string="Convert" type="object" class="oe_highlight"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+
+                <separator string="R60 Output"/>
+                    <field name="r60_output_pdf" widget="download" filename="r60_output_name" readonly="True" no_open="True"/>
+                    <field name="r60_output_name" string="" invisible="True" nolabel="True" width="0px" no_open="True"/>
+                <separator string="R70 Output"/>
+                    <field name="r70_output_pdf" widget="download" filename="r70_output_name" readonly="True" no_open="True"/>
+                    <field name="r70_output_name" string="" invisible="True" nolabel="True" width="0px" no_open="True"/>
+                <separator string="R80 Output"/>
+                    <field name="r80_output_pdf" widget="download" filename="r80_output_name" readonly="True" no_open="True"/>
+                    <field name="r80_output_name" string="" invisible="True" nolabel="True" width="0px" no_open="True"/>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="rt_report_invoice_document" inherit_id="account.report_invoice_document">
+            <xpath expr="//t[@t-set='layout_document_title']" position="after">
+                <div class="mb-3">
+                    <t t-if="o.move_type in ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'il_invoice_receipt') and o.rt_confirmation_number != False">
+                    Confirmation Number: <span dir="ltr">
+                        <t t-esc="o.rt_confirmation_number[:-9]"/>
+                        <b><t t-esc="o.rt_confirmation_number[-9:]"/></b>
+                    </span>
+                </t>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

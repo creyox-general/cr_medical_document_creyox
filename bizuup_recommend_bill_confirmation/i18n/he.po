@@ -1,0 +1,32 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bizuup_recommend_bill_confirmation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-10 13:15+0000\n"
+"PO-Revision-Date: 2025-07-10 13:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bizuup_recommend_bill_confirmation
+#: model:ir.model.fields,field_description:bizuup_recommend_bill_confirmation.field_account_bank_statement_line__check_9_digits
+#: model:ir.model.fields,field_description:bizuup_recommend_bill_confirmation.field_account_move__check_9_digits
+msgid "Check 9 Digits"
+msgstr ""
+
+#. module: bizuup_recommend_bill_confirmation
+#: model:ir.model,name:bizuup_recommend_bill_confirmation.model_account_move
+msgid "Journal Entry"
+msgstr "פקודת יומן"
+
+#. module: bizuup_recommend_bill_confirmation
+#: model_terms:ir.ui.view,arch_db:bizuup_recommend_bill_confirmation.view_move_form_vendor_bill
+msgid "it will be better to add last 9 digits."
+msgstr "שים לב שמספר הקצאה צריך להיות 9 ספרות אחרונות"

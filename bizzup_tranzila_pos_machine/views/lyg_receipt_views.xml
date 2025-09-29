@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="action_receipt_pay_through_pos_machine" model="ir.actions.act_window">
+        <field name="name">Generate A Transaction Payment</field>
+        <field name="res_model">pos.machine.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="bizzup_tranzila_pos_machine.pos_machine_wizard_form_view"/>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="lyg_receipt.model_lyg_account_receipt"/>
+        <field name="binding_view_types">form</field>
+    </record>
+
+</odoo>

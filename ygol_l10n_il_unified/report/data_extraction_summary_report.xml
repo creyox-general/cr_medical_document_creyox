@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="action_data_extraction_summary_report" model="ir.actions.report">
+        <field name="name">Data Extraction Summary Report</field>
+        <field name="model">report.ygol_l10n_il_unified.data_extraction_summary</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ygol_l10n_il_unified.data_extraction_summary</field>
+        <field name="report_file">ygol_l10n_il_unified.data_extraction_summary</field>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

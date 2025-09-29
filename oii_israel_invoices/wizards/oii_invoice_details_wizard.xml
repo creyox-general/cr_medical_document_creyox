@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="oii_invoice_details_wizard_form_view" model="ir.ui.view">
+        <field name="name">Document Details Wizard</field>
+        <field name="model">oii.invoice.details.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Document Details" create="0" write="0">
+                    <group>
+                        <group>
+                            <field name="invoice_type" readonly="1"/>
+                            <field name="vat_number" readonly="1"/>
+                            <field name="reference_number" readonly="1"/>
+                            <field name="customer_vat_number" readonly="1"/>
+                            <field name="customer_name" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="invoice_date" readonly="1"/>
+                            <field name="invoice_issuance_date" readonly="1"/>
+                            <field name="amount_untaxed" readonly="1"/>
+                            <field name="amount_tax" readonly="1"/>
+                            <field name="amount_total" readonly="1"/>
+                        </group>
+                    </group>
+                <footer>
+                    <button string="OK" special="cancel" data-hotkey="z" class="btn btn-primary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,302 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* lyg_hmk
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-06 06:02+0000\n"
+"PO-Revision-Date: 2025-05-06 06:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: lyg_hmk
+#: model_terms:ir.ui.view,arch_db:lyg_hmk.report_invoice_document_hmk
+msgid "<b>Payment Lines</b>"
+msgstr "<b>שורות תשלום</b>"
+
+#. module: lyg_hmk
+#: model_terms:ir.ui.view,arch_db:lyg_hmk.report_invoice_document_hmk
+msgid "<strong>Subtotal Paid</strong>"
+msgstr "<strong>סה\"כ לתשלום</strong>"
+
+#. module: lyg_hmk
+#: model_terms:ir.ui.view,arch_db:lyg_hmk.report_invoice_document_hmk
+msgid "<strong>Tax Deducted at source</strong>"
+msgstr "<strong>נוכה מס במקור</strong>"
+
+#. module: lyg_hmk
+#: model_terms:ir.ui.view,arch_db:lyg_hmk.report_invoice_document_hmk
+msgid "<strong>Total Amount</strong>"
+msgstr "<strong>סכום כולל</strong>"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_lyg_account_payment_line__amount
+#: model_terms:ir.ui.view,arch_db:lyg_hmk.report_invoice_document_hmk
+msgid "Amount"
+msgstr "כמות"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_lyg_account_payment_line__bank_id
+#: model_terms:ir.ui.view,arch_db:lyg_hmk.report_invoice_document_hmk
+msgid "Bank"
+msgstr "בנק"
+
+#. module: lyg_hmk
+#: model:ir.model.fields.selection,name:lyg_hmk.selection__lyg_account_payment_line__means_of_payment__4
+msgid "Bank Transfer"
+msgstr "העברה בנקאית"
+
+#. module: lyg_hmk
+#. odoo-python
+#: code:addons/lyg_hmk/models/lyg_hmk_payment_line.py:0
+msgid "Before adding payment lines, please add invoiceable lines"
+msgstr ""
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_lyg_account_payment_line__branch
+#: model_terms:ir.ui.view,arch_db:lyg_hmk.report_invoice_document_hmk
+msgid "Branch"
+msgstr "מס' סניף"
+
+#. module: lyg_hmk
+#: model_terms:ir.ui.view,arch_db:lyg_hmk.report_invoice_document_hmk
+msgid "Cancelled Invoice"
+msgstr "חשבונית שבוטלה"
+
+#. module: lyg_hmk
+#: model:ir.model.fields.selection,name:lyg_hmk.selection__lyg_account_payment_line__means_of_payment__1
+msgid "Cash"
+msgstr "מזומן"
+
+#. module: lyg_hmk
+#: model:ir.model.fields.selection,name:lyg_hmk.selection__lyg_account_payment_line__means_of_payment__2
+msgid "Check"
+msgstr "צ'ק"
+
+#. module: lyg_hmk
+#: model_terms:ir.actions.act_window,help:lyg_hmk.action_invoice_type_hmk
+msgid "Create a customer invoice"
+msgstr "יצירת חשבונית לקוח חדשה"
+
+#. module: lyg_hmk
+#: model_terms:ir.actions.act_window,help:lyg_hmk.action_invoice_type_hmk
+msgid ""
+"Create invoices, register payments and keep track of the discussions with "
+"your customers."
+msgstr "צור חשבוניות, רישום תשלומים ועקוב אחר הדיונים עם הלקוחות שלך."
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_lyg_account_payment_line__create_uid
+msgid "Created by"
+msgstr "נוצר ע\"י"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_lyg_account_payment_line__create_date
+msgid "Created on"
+msgstr "נוצר בתאריך"
+
+#. module: lyg_hmk
+#: model:ir.model.fields.selection,name:lyg_hmk.selection__lyg_account_payment_line__means_of_payment__3
+msgid "Credit Card"
+msgstr "כרטיס אשראי"
+
+#. module: lyg_hmk
+#: model_terms:ir.ui.view,arch_db:lyg_hmk.report_invoice_document_hmk
+msgid "Credit/Acc No."
+msgstr "כרטיס אשראי/ מספר חשבון"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_lyg_account_payment_line__credit_account_no
+msgid "Credit/Account Number"
+msgstr "כרטיס אשראי/ מספר חשבון"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_lyg_account_payment_line__currency_id
+msgid "Currency"
+msgstr "שער מטבע"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_lyg_account_payment_line__display_name
+msgid "Display Name"
+msgstr "הצג שם"
+
+#. module: lyg_hmk
+#: model_terms:ir.ui.view,arch_db:lyg_hmk.report_invoice_document_hmk
+msgid "Draft Invoice"
+msgstr "טיוטת חשבונית"
+
+#. module: lyg_hmk
+#: model:ir.model.fields.selection,name:lyg_hmk.selection__lyg_account_payment_line__means_of_payment__5
+msgid "Gift Card"
+msgstr "כרטיס מתנה"
+
+#. module: lyg_hmk
+#: model:ir.actions.act_window,name:lyg_hmk.action_invoice_type_hmk
+#: model:ir.ui.menu,name:lyg_hmk.menu_action_invoice_type_hmk
+msgid "HMK"
+msgstr "חשבונית מס קבלה"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_account_bank_statement_line__is_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_account_journal__is_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_account_move__is_hmk
+msgid "HMK ?"
+msgstr "חשבונית מס קבלה?"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_account_payment__hmk_withholding_payment
+msgid "Hmk Withholding Payment"
+msgstr "ניכוי תשלום במקור"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_lyg_account_payment_line__id
+msgid "ID"
+msgstr "ת.ז"
+
+#. module: lyg_hmk
+#: model_terms:ir.ui.view,arch_db:lyg_hmk.report_invoice_document_hmk
+msgid "Invoice"
+msgstr "חשבונית מס"
+
+#. module: lyg_hmk
+#: model_terms:ir.ui.view,arch_db:lyg_hmk.report_invoice_document_hmk
+msgid "Invoice Receipt"
+msgstr "חשבונית מס קבלה"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_account_payment__is_hmk_payment
+msgid "Is Hmk Payment"
+msgstr "האם תשלום חשבונית מס קבלה"
+
+#. module: lyg_hmk
+#: model:ir.model,name:lyg_hmk.model_account_journal
+#: model:ir.model.fields,field_description:lyg_hmk.field_lyg_account_payment_line__journal_id
+#: model_terms:ir.ui.view,arch_db:lyg_hmk.report_invoice_document_hmk
+msgid "Journal"
+msgstr "יומן"
+
+#. module: lyg_hmk
+#: model:ir.model,name:lyg_hmk.model_account_move
+msgid "Journal Entry"
+msgstr "פקודת יומן"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_lyg_account_payment_line__write_uid
+msgid "Last Updated by"
+msgstr "עודכן לאחרונה ע\"י"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_lyg_account_payment_line__write_date
+msgid "Last Updated on"
+msgstr "עודכן לאחרונה בתאריך"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_lyg_account_payment_line__means_of_payment
+msgid "Means Of Payment"
+msgstr "אמצעי תשלום"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_lyg_account_payment_line__pay_invoice_id
+msgid "Move"
+msgstr "תנועה"
+
+#. module: lyg_hmk
+#: model:ir.model.fields.selection,name:lyg_hmk.selection__lyg_account_payment_line__means_of_payment__9
+msgid "Other"
+msgstr "אחר"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_account_bank_statement_line__total_pay_amount
+#: model:ir.model.fields,field_description:lyg_hmk.field_account_move__total_pay_amount
+msgid "Paid + Withholding amount"
+msgstr "בתשלום + סכום ניכוי במקור"
+
+#. module: lyg_hmk
+#: model:ir.model,name:lyg_hmk.model_lyg_account_payment_line
+#: model:ir.model.fields,field_description:lyg_hmk.field_account_bank_statement_line__payment_lines
+#: model:ir.model.fields,field_description:lyg_hmk.field_account_move__payment_lines
+#: model_terms:ir.ui.view,arch_db:lyg_hmk.account_invoice_view_form_hmk_payment
+msgid "Payment Lines"
+msgstr "שורות תשלום"
+
+#. module: lyg_hmk
+#: model:ir.model,name:lyg_hmk.model_account_payment
+msgid "Payments"
+msgstr "תשלומים"
+
+#. module: lyg_hmk
+#. odoo-python
+#: code:addons/lyg_hmk/models/account_move.py:0
+msgid "Please insert VAT ID on the selected Customer/Vendor."
+msgstr ""
+
+#. module: lyg_hmk
+#: model:ir.model.fields.selection,name:lyg_hmk.selection__lyg_account_payment_line__means_of_payment__7
+msgid "Promissory Note"
+msgstr ""
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_lyg_account_payment_line__validity_date
+msgid "Redemption/Validity Date"
+msgstr "תאריך מימוש/תוקף"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_account_bank_statement_line__remain_amount_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_account_move__remain_amount_hmk
+msgid "Remain Amount Hmk"
+msgstr "כמות שנותרה"
+
+#. module: lyg_hmk
+#: model:ir.model.fields.selection,name:lyg_hmk.selection__lyg_account_payment_line__means_of_payment__6
+msgid "Return Note"
+msgstr "פתק החזרה"
+
+#. module: lyg_hmk
+#: model:ir.model.fields.selection,name:lyg_hmk.selection__lyg_account_payment_line__means_of_payment__8
+msgid "Standing Order"
+msgstr ""
+
+#. module: lyg_hmk
+#. odoo-python
+#: code:addons/lyg_hmk/models/account_move.py:0
+msgid "To confirm HMK invoice, payment amount must be same as Total!!"
+msgstr ""
+
+#. module: lyg_hmk
+#: model_terms:ir.ui.view,arch_db:lyg_hmk.report_invoice_document_hmk
+msgid "Validity Date"
+msgstr "תאריך תוקף"
+
+#. module: lyg_hmk
+#: model_terms:ir.ui.view,arch_db:lyg_hmk.report_invoice_document_hmk
+msgid "Voucher/Check No."
+msgstr "מספר צ'ק"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_lyg_account_payment_line__voucher_check_no
+msgid "Voucher/Check Number"
+msgstr "מספר צ'ק"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_account_bank_statement_line__withholding_tax_process
+#: model:ir.model.fields,field_description:lyg_hmk.field_account_move__withholding_tax_process
+msgid "Withholding Payment Process ?"
+msgstr "תהליך ניכוי תשלום במקור?"
+
+#. module: lyg_hmk
+#: model:ir.model.fields,field_description:lyg_hmk.field_account_bank_statement_line__withholding_amount
+#: model:ir.model.fields,field_description:lyg_hmk.field_account_move__withholding_amount
+msgid "Withholding Tax Amount"
+msgstr "סכום ניכוי מס במקור"
+
+#. module: lyg_hmk
+#. odoo-python
+#: code:addons/lyg_hmk/models/account_move.py:0
+msgid "Write off amount is not grater or same than Total Payable Amount..!!"
+msgstr ""

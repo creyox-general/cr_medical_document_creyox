@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Call the popup windows when requested menu item clicked -->
+    <record id="action_bizzup_856_wizard" model="ir.actions.act_window">
+        <field name="name">856 Converter</field>
+        <field name="res_model">bizzup.856.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="action_bizzup_856_dashboard" model="ir.actions.act_window">
+        <field name="name">856 Dashboard</field>
+        <field name="res_model">bizzup.856.dashboard</field>
+        <field name="view_mode">form</field>
+        <field name="target">current</field>
+    </record>
+
+    <record id="action_bizzup_857_wizard" model="ir.actions.act_window">
+        <field name="name">857 Converter</field>
+        <field name="res_model">bizzup.857.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Declare the menu items -->
+    <menuitem id="report_conversion_wizard_parent"
+              parent="account.menu_finance_reports"
+              name="Report Converters"/>
+
+    <menuitem id="856_dashboard"
+              parent="report_conversion_wizard_parent"
+              name="856 Dashboard"
+              sequence="10"
+              action="bizzup_85x_converters.action_bizzup_856_dashboard"/>
+
+    <menuitem id="856_converter_menu"
+              parent="report_conversion_wizard_parent"
+              name="856 Converter"
+              sequence="100"
+              action="bizzup_85x_converters.action_bizzup_856_wizard"/>
+
+    <menuitem id="857_converter_menu"
+              parent="report_conversion_wizard_parent"
+              name="857 Converter"
+              sequence="110"
+              action="bizzup_85x_converters.action_bizzup_857_wizard"/>
+
+</odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--#HT01720 Insert TAZ field below the name field in res partner form view-->
+    <record id="view_partner_form_taz_field" model="ir.ui.view">
+        <field name="name">res.partner.form.taz</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="taz" placeholder="Enter 9-digit TAZ"/>
+            </xpath>
+        </field>
+    </record>
+    <!--#HT01720 Insert TAZ field below the name field in res partner list view-->
+<!--    <record id="view_partner_list_taz_field" model="ir.ui.view">-->
+<!--        <field name="name">res.partner.list.taz</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="inherit_id" ref="base.view_partner_tree"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//field[@name='vat']" position="after">-->
+<!--                <field name="taz"/>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+</odoo>

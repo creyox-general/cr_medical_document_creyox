@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 Hunki Enterprises BV
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="view_l10n_il_system1000_export_form" model="ir.ui.view">
+        <field name="model">l10n.il.system1000.export</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" />
+                </header>
+                <group invisible="state == 'draft'">
+                    <field name="export_file" filename="export_file_name" />
+                    <field name="export_file_name" invisible="1" />
+                </group>
+                <div invisible="state != 'draft'">
+                    Click below to export your marked moves to system 1000
+                </div>
+                <div invisible="state != 'upload'">
+                    Please go to
+                    <a
+                        href="https://secapp.taxes.gov.il/gmm1000/firstPage.aspx"
+                        target="_blank"
+                    >
+                        https://secapp.taxes.gov.il
+                    </a>
+                    and submit your file,
+                    then upload the resulting files.
+                </div>
+                <br />
+                <group invisible="state != 'upload'">
+                    <field
+                        name="import_file_valid"
+                        filename="import_file_valid_name"
+                        required="state == 'upload' and import_file_invalid == False"
+                    />
+                    <field name="import_file_valid_name" invisible="1" />
+                    <field
+                        name="import_file_invalid"
+                        filename="import_file_invalid_name"
+                        required="state == 'upload' and import_file_invalid == False"
+                    />
+                    <field name="import_file_invalid_name" invisible="1" />
+                </group>
+                <footer>
+                    <button
+                        invisible="state != 'done'"
+                        special="cancel"
+                        string="Close"
+                        class="btn btn-primary"
+                    />
+                    <button
+                        invisible="state != 'draft'"
+                        type="object"
+                        name="button_export"
+                        string="Export"
+                        class="btn btn-primary"
+                    />
+                    <button
+                        invisible="state != 'upload'"
+                        type="object"
+                        name="button_import"
+                        string="Import results"
+                        class="btn btn-primary"
+                    />
+                    <button
+                        invisible="state == 'done'"
+                        special="cancel"
+                        string="Cancel"
+                        class="btn btn-secondary"
+                    />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_l10n_il_system1000_export" model="ir.actions.act_window">
+        <field name="name">Export to system 1000</field>
+        <field name="res_model">l10n.il.system1000.export</field>
+        <field name="binding_model_id" ref="account.model_account_move" />
+        <field name="target">new</field>
+        <field name="view_mode">form</field>
+    </record>
+</odoo>

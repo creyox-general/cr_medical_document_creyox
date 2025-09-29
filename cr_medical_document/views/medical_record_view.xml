@@ -50,7 +50,7 @@
                             <field name="patient_phone" widget="phone"/>
                             <field name="kupat_holim"/>
                             <field name="privat_insurence"/>
-                            <field name="patient_dob"/>
+                            <field name="patient_dob_display" />
                             <field name="gender"/>
                             <field name="last_visit"/>
                             <field name="history_of_visit"/>
@@ -67,9 +67,9 @@
                             <field name="medical_disease_ids" widget="one2many_list">
                                 <list>
                                     <field name="procedure_name" optional="hide"/>
-                                    <field name="nomed_code" optional="hide"/>
+                                    <field name="nomed_code"/>
                                     <field name="code"/>
-                                    <field name="short_name"/>
+                                    <field name="name"/>
                                     <field name="long_name"/>
                                 </list>
                             </field>

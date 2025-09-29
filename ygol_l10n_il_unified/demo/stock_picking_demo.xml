@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="sale_order_unified1" model="sale.order">
+        <field name="partner_id" ref="base.res_partner_1" />
+        <field name="partner_invoice_id" ref="base.res_partner_address_1" />
+        <field name="partner_shipping_id" ref="base.res_partner_address_1" />
+        <field name="user_id" ref="base.user_demo" />
+        <field name="company_id" ref="l10n_il.demo_company_il" />
+        <field name="team_id" ref="sales_team.team_sales_department" />
+        <field
+            name="date_order"
+            eval="(datetime.now() + relativedelta(days=3)).strftime('%Y-%m-%d %H:%M:%S')"
+        />
+        <field
+            name="warehouse_id"
+            model="stock.warehouse"
+            search="[('company_id', '=', ref('l10n_il.demo_company_il'))]"
+        />
+    </record>
+
+    <record id="sale_order_line_unified1" model="sale.order.line">
+        <field name="order_id" ref="sale_order_unified1" />
+        <field
+            name="name"
+            model="sale.order.line"
+            eval="obj().env.ref('ygol_l10n_il_unified.product_delivery_unified6').get_product_multiline_description_sale()"
+        />
+        <field name="product_id" ref="ygol_l10n_il_unified.product_delivery_unified6" />
+        <field name="product_uom_qty">60</field>
+        <field name="price_unit">14</field>
+    </record>
+
+    <function
+        model="sale.order"
+        name="action_confirm"
+        eval="[[
+        ref('ygol_l10n_il_unified.sale_order_unified1'),
+    ]]"
+    />
+
+    <!-- Change date of those sale orders' delivery -->
+    <function model="stock.picking" name="write">
+        <value
+            model="stock.picking"
+            search="[('sale_id', '=', obj().env.ref('ygol_l10n_il_unified.sale_order_unified1').id)]"
+        />
+        <value
+            eval="{'scheduled_date': (datetime.now() + relativedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')}"
+        />
+    </function>
+
+    <!-- Delivery Order for Invoice : INV/2021/09/0001-->
+    <record id="outgoing_shipment_main_warehouse_unif" model="stock.picking">
+        <field
+            name="picking_type_id"
+            model="stock.picking.type"
+            search="[('code', '=', 'outgoing'), ('company_id', '=', ref('l10n_il.demo_company_il'))]"
+        />
+        <field name="user_id" />
+        <field name="partner_id" ref="base.res_partner_3" />
+        <field name="scheduled_date" eval="DateTime.today() - timedelta(days=7)" />
+        <field name="company_id" ref="l10n_il.demo_company_il" />
+        <field
+            name="location_id"
+            model="stock.location"
+            search="[('usage', '=', 'internal'), ('company_id', '=', ref('l10n_il.demo_company_il'))]"
+        />
+        <field name="location_dest_id" ref="stock.stock_location_customers" />
+        <field
+            name="move_lines"
+            model="stock.move"
+            eval="[
+            (0, 0, {
+                'name': obj().env.ref('ygol_l10n_il_unified.product_delivery_unified1').name,
+                'product_id': ref('ygol_l10n_il_unified.product_delivery_unified1'),
+                'product_uom': ref('uom.product_uom_unit'),
+                'product_uom_qty': 100.0,
+                'picking_type_id': ref('stock.picking_type_out'),
+                'location_id': ref('stock.stock_location_stock'),
+                'location_dest_id': ref('stock.stock_location_customers'),
+            }),
+            (0, 0, {
+                'name': obj().env.ref('ygol_l10n_il_unified.product_delivery_unified2').name,
+                'product_id': ref('ygol_l10n_il_unified.product_delivery_unified2'),
+                'product_uom': ref('uom.product_uom_unit'),
+                'product_uom_qty': 20.0,
+                'picking_type_id': ref('stock.picking_type_out'),
+                'location_id': ref('stock.stock_location_stock'),
+                'location_dest_id': ref('stock.stock_location_customers'),
+            }),
+            (0, 0, {
+                'name': obj().env.ref('ygol_l10n_il_unified.product_delivery_unified3').name,
+                'product_id': ref('ygol_l10n_il_unified.product_delivery_unified3'),
+                'product_uom': ref('uom.product_uom_unit'),
+                'product_uom_qty': 80.0,
+                'picking_type_id': ref('stock.picking_type_out'),
+                'location_id': ref('stock.stock_location_stock'),
+                'location_dest_id': ref('stock.stock_location_customers'),
+            }),
+            (0, 0, {
+                'name': obj().env.ref('ygol_l10n_il_unified.product_delivery_unified4').name,
+                'product_id': ref('ygol_l10n_il_unified.product_delivery_unified4'),
+                'product_uom': ref('uom.product_uom_unit'),
+                'product_uom_qty': 50.0,
+                'picking_type_id': ref('stock.picking_type_out'),
+                'location_id': ref('stock.stock_location_stock'),
+                'location_dest_id': ref('stock.stock_location_customers'),
+            }),
+            (0, 0, {
+                'name': obj().env.ref('ygol_l10n_il_unified.product_delivery_unified5').name,
+                'product_id': ref('ygol_l10n_il_unified.product_delivery_unified5'),
+                'product_uom': ref('uom.product_uom_unit'),
+                'product_uom_qty': 50.0,
+                'picking_type_id': ref('stock.picking_type_out'),
+                'location_id': ref('stock.stock_location_stock'),
+                'location_dest_id': ref('stock.stock_location_customers'),
+            }),
+        ]"
+        />
+    </record>
+</odoo>

@@ -1,0 +1,99 @@
+<odoo>
+    <template id="deposite_all_data">
+        <t t-call="web.html_container">
+            <center>
+                <h3>Deposite Report :
+                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>
+                </h3>
+            </center>
+            <body>
+                <!-- Set the table width to 100% and the headers to be centered -->
+                <table class="table table-sm o_main_table mt-4"
+                       style="border: 1px solid black; border-collapse: collapse; width: 100%; direction: rtl; text-align: right; margin: 0 auto;">
+                    <thead style="background-color: #f2f2f2; text-align: center;">
+                        <tr>
+                            <th name="th_validity_date">Validity Date</th>
+                            <th name="th_subject_receipt">Subject Receipt</th>
+                            <th name="th_number_receipt">Number Receipt</th>
+                            <th name="th_pay_due">Check/Credit Pay Due Date</th>
+                            <th name="th_bank_number">Bank Number</th>
+                            <th name="th_branch_number">Branch Number</th>
+                            <th name="th_account_number">Account Number</th>
+                            <th name="th_amount">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody class="sale_tbody">
+                        <t t-foreach="docs_list" t-as="doc">
+                            <tr t-if="doc">
+                                <td name="td_validity_date">
+                                    <span t-esc="doc.get('validity_date')"/>
+                                </td>
+                                <td name="td_subject_report">
+                                    <span t-esc="doc.get('subject_report')"/>
+                                </td>
+                                <td name="td_name_report" align="center">
+                                    <span t-esc="doc.get('name_report')"/>
+                                </td>
+                                <td name="td_check_payment_due_date" align="center">
+                                    <span t-esc="doc.get('check_payment_due_date')"/>
+                                </td>
+                                <td name="td_bank_number" align="center">
+                                    <span t-esc="doc.get('bank_number')"/>
+                                </td>
+                                <td name="td_branch_number" align="center">
+                                    <span t-esc="doc.get('branch_number')"/>
+                                </td>
+                                <td name="td_name" align="center">
+                                    <span t-esc="doc.get('account_number')"/>
+                                </td>
+                                <td name="td_account_number" align="center">
+                                    <span t-esc="doc.get('amount')"/>
+                                </td>
+                            </tr>
+                        </t>
+                        <t t-foreach="docs" t-as="docs">
+                            <tr>
+                                <td name="td_validity_date">
+                                    <span t-esc="docs.validity_date if docs.validity_date else docs.date"/>
+                                </td>
+                                <td name="td_subject_report">
+                                    <span t-esc="docs.receipt_id.subject if docs.receipt_id.subject else docs.memo"/>
+                                </td>
+                                <td name="td_name_report" align="center">
+                                    <span t-esc="docs.receipt_id.name if docs.receipt_id.name else docs.memo"/>
+                                </td>
+                                <td name="td_check_payment_due_date" align="center">
+                                    <span t-esc="docs.check_payment_due_date"/>
+                                </td>
+                                <td name="td_bank_number" align="center">
+                                    <span t-esc="docs.bank_number"/>
+                                </td>
+                                <td name="td_branch_number" align="center">
+                                    <span t-esc="docs.branch_number"/>
+                                </td>
+                                <td name="td_name" align="center">
+                                    <span t-esc="docs.account_number"/>
+                                </td>
+                                <td name="td_account_number" align="center">
+                                    <span t-esc="docs.amount"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                <div t-if="doc" style="padding-left: 725px;">
+                    <h4>Total =
+                        <t t-if="doc" t-esc="doc.get('total')"/>
+                    </h4>
+                </div>
+            </body>
+        </t>
+    </template>
+
+    <template id="deposite_report_data">
+        <t t-call="web.html_container">
+            <t t-call="bizzup_deposite_report.deposite_all_data"/>
+        </t>
+    </template>
+
+</odoo>

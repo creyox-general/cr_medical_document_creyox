@@ -1,0 +1,535 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ygol_l10n_il_whithholding
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-23 11:04+0000\n"
+"PO-Revision-Date: 2022-06-23 11:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model,name:ygol_l10n_il_whithholding.model_withholding_supplier_system
+msgid "1000 System"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_withholding_supplier_system__extraction_data
+msgid "1000 System Report"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_partner__supplier_id
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_users__supplier_id
+msgid "1000 System SupplierID"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model_terms:ir.ui.view,arch_db:ygol_l10n_il_whithholding.view_1000_system_report_form
+msgid "1000 System report generated."
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.actions.act_window,name:ygol_l10n_il_whithholding.withholding_1000_system_action
+#: model:ir.actions.act_window,name:ygol_l10n_il_whithholding.withholding_1000_system_action_import
+#: model:ir.ui.menu,name:ygol_l10n_il_whithholding.1000_system
+msgid "1000 System(ITA)"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model_terms:ir.ui.view,arch_db:ygol_l10n_il_whithholding.res_config_settings_view_form_withholding
+msgid ""
+"<span class=\"o_form_label\">The following default accounts are used for "
+"withholding process:</span>"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_payment.py:0
+#, python-format
+msgid "A payment must always belongs to a bank or cash journal."
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_partner__accounting_authorization
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_users__accounting_authorization
+msgid "Accounting authorization"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_partner__app_issuing_date
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_users__app_issuing_date
+msgid "Approval Issuing Date"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model_terms:ir.ui.view,arch_db:ygol_l10n_il_whithholding.view_1000_system_report_form
+msgid "Cancel"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields.selection,name:ygol_l10n_il_whithholding.selection__withholding_supplier_system__state__choose
+msgid "Choose"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model_terms:ir.ui.view,arch_db:ygol_l10n_il_whithholding.view_1000_system_report_form
+#: model_terms:ir.ui.view,arch_db:ygol_l10n_il_whithholding.view_1000_system_report_form_import
+msgid "Close"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_partner__code
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_users__code
+msgid "Code"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model,name:ygol_l10n_il_whithholding.model_res_company
+msgid "Companies"
+msgstr "חברות"
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields.selection,name:ygol_l10n_il_whithholding.selection__res_company__company_status__company
+#: model:ir.model.fields.selection,name:ygol_l10n_il_whithholding.selection__res_partner__company_status__company
+msgid "Company"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_company__company_status
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_partner__company_status
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_users__company_status
+msgid "Company Status"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model,name:ygol_l10n_il_whithholding.model_res_config_settings
+msgid "Config Settings"
+msgstr "הגדר הגדרות"
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model,name:ygol_l10n_il_whithholding.model_res_partner
+msgid "Contact"
+msgstr "צור קשר"
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_withholding_supplier_system__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_withholding_supplier_system__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_payment.py:0
+#, python-format
+msgid "Customer Payment"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_payment.py:0
+#, python-format
+msgid "Customer Reimbursement"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_company__cust_withholding_tax_account_id
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_config_settings__cust_withholding_tax_account_id
+msgid "Customer Withholdingtax Account"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model_terms:ir.ui.view,arch_db:ygol_l10n_il_whithholding.res_config_settings_view_form_withholding
+msgid "Default Accounts for Withholding"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_company__def_withholding_tax_rate
+msgid "Default Withholding Tax(%)"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_withholding_supplier_system__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields.selection,name:ygol_l10n_il_whithholding.selection__withholding_supplier_system__state__done
+msgid "Done"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model,name:ygol_l10n_il_whithholding.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "אשף יצירת דוא\"ל"
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_partner__entity_no
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_users__entity_no
+msgid "Entity Number"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model_terms:ir.ui.view,arch_db:ygol_l10n_il_whithholding.view_1000_system_report_form
+msgid "Export"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.ui.menu,name:ygol_l10n_il_whithholding.withholding_1000_system_menu_import
+msgid "Export 1000 System Data"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_withholding_supplier_system__extraction_filename
+msgid "Extraction Filename"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields.selection,name:ygol_l10n_il_whithholding.selection__withholding_supplier_system__state__get
+msgid "Get"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_withholding_supplier_system__id
+msgid "ID"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model_terms:ir.ui.view,arch_db:ygol_l10n_il_whithholding.view_1000_system_report_form_import
+msgid "Import"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.ui.menu,name:ygol_l10n_il_whithholding.withholding_1000_system_menu_export
+msgid "Import 1000 System Data"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_payment.py:0
+#, python-format
+msgid "Internal Transfer"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model,name:ygol_l10n_il_whithholding.model_account_move
+msgid "Journal Entry"
+msgstr "פקודת יומן"
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_payment.py:0
+#, python-format
+msgid ""
+"Journal Entry %s is not valid. In order to proceed, all optional journal "
+"items must share the same account."
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_payment.py:0
+#, python-format
+msgid ""
+"Journal Entry %s is not valid. In order to proceed, the journal items must "
+"include one and only one outstanding payments/receipts account."
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_payment.py:0
+#, python-format
+msgid ""
+"Journal Entry %s is not valid. In order to proceed, the journal items must "
+"include one and only one receivable/payable account (with an exception of "
+"internal transfers)."
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_payment.py:0
+#, python-format
+msgid ""
+"Journal Entry %s is not valid. In order to proceed, the journal items must "
+"share the same currency."
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_payment.py:0
+#, python-format
+msgid ""
+"Journal Entry %s is not valid. In order to proceed, the journal items must "
+"share the same partner."
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_withholding_supplier_system____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_withholding_supplier_system__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_withholding_supplier_system__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_partner__limited_amount
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_users__limited_amount
+msgid "Limited amount"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_partner__located_ita_file
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_users__located_ita_file
+msgid "Located ITA File"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_partner__located_vat_file
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_users__located_vat_file
+msgid "Located Vat File"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields.selection,name:ygol_l10n_il_whithholding.selection__res_company__company_status__ngo
+#: model:ir.model.fields.selection,name:ygol_l10n_il_whithholding.selection__res_partner__company_status__ngo
+msgid "NGO"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields.selection,name:ygol_l10n_il_whithholding.selection__res_partner__withholding_tax_approval__no
+msgid "No"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/mail_compose_message.py:0
+#, python-format
+msgid "No recipient found."
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields.selection,name:ygol_l10n_il_whithholding.selection__res_company__company_status__partnership
+#: model:ir.model.fields.selection,name:ygol_l10n_il_whithholding.selection__res_partner__company_status__partnership
+msgid "Partnership"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model,name:ygol_l10n_il_whithholding.model_account_payment
+msgid "Payments"
+msgstr "תשלומים"
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_payment.py:0
+#, python-format
+msgid "Payments without a customer can't be matched"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/res_partner.py:0
+#, python-format
+msgid "Please add withholding Validity date"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model_terms:ir.ui.view,arch_db:ygol_l10n_il_whithholding.view_1000_system_report_form_import
+msgid "Please upload 1000 system data here..!!!"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_move.py:0
+#, python-format
+msgid "Register Payment"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields.selection,name:ygol_l10n_il_whithholding.selection__res_company__company_status__single_person
+#: model:ir.model.fields.selection,name:ygol_l10n_il_whithholding.selection__res_partner__company_status__single_person
+msgid "Single Person"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_withholding_supplier_system__state
+msgid "State"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields.selection,name:ygol_l10n_il_whithholding.selection__res_company__company_status__state_company
+#: model:ir.model.fields.selection,name:ygol_l10n_il_whithholding.selection__res_partner__company_status__state_company
+msgid "State Company"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model_terms:ir.ui.view,arch_db:ygol_l10n_il_whithholding.view_1000_system_report_form
+msgid "The 1000 System report you can export from here!"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_move.py:0
+#, python-format
+msgid "The Bill/Refund Bill Reference is required to validate this document."
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,help:ygol_l10n_il_whithholding.field_res_partner__code
+#: model:ir.model.fields,help:ygol_l10n_il_whithholding.field_res_users__code
+msgid ""
+"The ISO country code in two chars. \n"
+"You can use this field for quick search."
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,help:ygol_l10n_il_whithholding.field_res_config_settings__withholding_tax_account_id
+msgid "The account of vendor withholding"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_move.py:0
+#, python-format
+msgid "This move will be posted at the accounting date: %(date)s"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_payment.py:0
+#, python-format
+msgid ""
+"To calculating withholding amount please, choose right company for "
+"partner..!!"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_payment.py:0
+#, python-format
+msgid "Transfer from %s"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_payment.py:0
+#, python-format
+msgid "Transfer to %s"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_withholding_supplier_system__upload_ita_file
+msgid "Upload File"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_partner__valid_for
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_users__valid_for
+msgid "Valid For"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_partner__valid_start_date
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_users__valid_start_date
+msgid "Valid Start Date"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_partner__valid_until_date
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_users__valid_until_date
+msgid "Valid Until Date"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_partner__valid_for_deduction_file
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_users__valid_for_deduction_file
+msgid "Valid for deduction file"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_partner__vendor_occupation
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_users__vendor_occupation
+msgid "Vendor Occupation"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_payment.py:0
+#, python-format
+msgid "Vendor Payment"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_payment.py:0
+#, python-format
+msgid "Vendor Reimbursement"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_company__withholding_tax_account_id
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_config_settings__withholding_tax_account_id
+msgid "Vendor Withholdingtax Account"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_partner__l10n_il_withh_tax_id_number
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_users__l10n_il_withh_tax_id_number
+msgid "WHT ID"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_account_payment__withtholding_amount
+msgid "Withholding Amount"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model_terms:ir.ui.view,arch_db:ygol_l10n_il_whithholding.view_partner_form_l10n_il_withhlding
+msgid "Withholding Information"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_account_payment__withholding_tax_process
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_company__withholding_tax_process
+msgid "Withholding Payment Process ?"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_partner__withholding_tax_approval
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_users__withholding_tax_approval
+msgid "Withholding Tax Approval"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_partner__withholding_tax_rate
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_users__withholding_tax_rate
+msgid "Withholding Tax Rate(%)"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_partner__withholding_tax_reason
+#: model:ir.model.fields,field_description:ygol_l10n_il_whithholding.field_res_users__withholding_tax_reason
+msgid "Withholding Tax Reason"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: model:ir.model.fields.selection,name:ygol_l10n_il_whithholding.selection__res_partner__withholding_tax_approval__yes
+msgid "Yes"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/res_partner.py:0
+#, python-format
+msgid "You can not choose past date for validity date"
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_payment.py:0
+#, python-format
+msgid ""
+"You can't create a new payment without an outstanding payments/receipts "
+"account set either on the company or the %s payment method in the %s "
+"journal."
+msgstr ""
+
+#. module: ygol_l10n_il_whithholding
+#: code:addons/ygol_l10n_il_whithholding/models/account_move.py:0
+#, python-format
+msgid "You don't have the access rights to post an invoice."
+msgstr ""

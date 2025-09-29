@@ -2,6 +2,7 @@
 # Part of Creyox Technologies
 
 from odoo import fields, models, api, _
+from datetime import datetime, timedelta
 
 
 class ResPartner(models.Model):
@@ -24,8 +25,6 @@ class ResPartner(models.Model):
          ("מכבי שבן", "מכבי שבן"), ("אחר", "אחר")],
         string="Rating")
     needs = fields.Html(string="Needs")
-    write_uid = fields.Many2one('res.users', string="Updated By", readonly=True)
-    write_date = fields.Datetime(string="Updated On", readonly=True)
     id_number = fields.Char(string="Id Number")
     phone_number = fields.Char(string="Phone #2")
     phone_number_search = fields.Char(string="Fax")
@@ -35,6 +34,4 @@ class ResPartner(models.Model):
          ("לא מעוניין", "לא מעוניין"), ("הומר ללקוח", "הומר ללקוח")], string="Action Status Code")
     campaign_id = fields.Char(string="Campaign ID")
     convert_date = fields.Datetime(string="Convert date")
-    create_uid = fields.Many2one('res.users', string="Created By", readonly=True)
-    create_date = fields.Date(string="Created On", readonly=True)
     income_fireberry = fields.Float(string="Income Fireberry")

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_movement_code,movement.code,model_movement_code,base.group_user,1,1,1,1
+access_movein,movein,model_movein_report_wizard,,1,1,1,1

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <!-- Invoice demo data-->
+    <record id="demo_invoice_unified1" model="account.move">
+        <field name="move_type">out_invoice</field>
+        <field name="ref">INV/2021/07/0001</field>
+        <field name="partner_id" ref="base.res_partner_3" />
+        <field name="invoice_user_id" ref="base.user_demo" />
+        <field name="company_id" ref="l10n_il.demo_company_il" />
+        <field
+            name="invoice_payment_term_id"
+            ref="account.account_payment_term_end_following_month"
+        />
+        <field
+            name="invoice_date"
+            eval="(datetime.now() + relativedelta(months=1)).strftime('%Y-%m-01')"
+        />
+        <field
+            name="journal_id"
+            model="account.journal"
+            eval="obj().search([
+                ('type', '=', 'sale'),
+                ('company_id', '=', ref('l10n_il.demo_company_il'))], limit=1).id"
+        />
+        <field
+            name="invoice_line_ids"
+            model="account.move.line"
+            eval="[
+            (0, 0, {
+                'product_id': ref('ygol_l10n_il_unified.product_delivery_unified1'),
+                'quantity': 100,
+                'price_unit': 3000.0,
+                'discount': 5,
+                'tax_ids': [(6, 0, obj().tax_ids.search([
+                    ('company_id', '=', ref('l10n_il.demo_company_il')),
+                    ('type_tax_use', '=', 'sale'),
+                    ('amount','=', 17),
+                    ('tax_group_id', '=', ref('l10n_il.tax_group_vat_17'))], limit=1).ids)]
+            }),
+            (0, 0, {
+                'product_id': ref('ygol_l10n_il_unified.product_delivery_unified2'),
+                'quantity': 20,
+                'price_unit': 1200.0,
+                'discount': 10,
+                'tax_ids': [(6, 0, obj().tax_ids.search([
+                    ('company_id', '=', ref('l10n_il.demo_company_il')),
+                    ('type_tax_use', '=', 'sale'),
+                    ('amount','=', 17),
+                    ('tax_group_id', '=', ref('l10n_il.tax_group_vat_17'))], limit=1).ids)]
+            }),
+            (0, 0, {
+                'product_id': ref('ygol_l10n_il_unified.product_delivery_unified3'),
+                'quantity': 80,
+                'price_unit': 50.0,
+                'tax_ids': [(6, 0, obj().tax_ids.search([
+                    ('company_id', '=', ref('l10n_il.demo_company_il')),
+                    ('type_tax_use', '=', 'sale'),
+                    ('amount','=', 17),
+                    ('tax_group_id', '=', ref('l10n_il.tax_group_vat_17'))], limit=1).ids)]
+            }),
+            (0, 0, {
+                'product_id': ref('ygol_l10n_il_unified.product_delivery_unified4'),
+                'quantity': 50,
+                'price_unit': 120.0,
+                'tax_ids': [(6, 0, obj().tax_ids.search([
+                    ('company_id', '=', ref('l10n_il.demo_company_il')),
+                    ('type_tax_use', '=', 'sale'),
+                    ('amount','=', 17),
+                    ('tax_group_id', '=', ref('l10n_il.tax_group_vat_17'))], limit=1).ids)]
+            }),
+            (0, 0, {
+                'product_id': ref('ygol_l10n_il_unified.product_delivery_unified5'),
+                'quantity': 50,
+                'price_unit': 188.0,
+                'tax_ids': [(6, 0, obj().tax_ids.search([
+                    ('company_id', '=', ref('l10n_il.demo_company_il')),
+                    ('type_tax_use', '=', 'sale'),
+                    ('amount','=', 17),
+                    ('tax_group_id', '=', ref('l10n_il.tax_group_vat_17'))], limit=1).ids)]
+            }),
+            (0, 0, {
+                'product_id': ref('ygol_l10n_il_unified.product_delivery_unified7'),
+                'quantity': 1,
+                'price_unit': -16300.0,
+                'account_id': obj().account_id.search([('code', '=', '215000'),
+                ('company_id', '=', ref('l10n_il.demo_company_il'))]).id,
+                'tax_ids': [(6, 0, obj().tax_ids.search([
+                    ('company_id', '=', ref('l10n_il.demo_company_il')),
+                    ('type_tax_use', '=', 'sale'),
+                    ('amount','=', 17),
+                    ('tax_group_id', '=', ref('l10n_il.tax_group_vat_17'))], limit=1).ids)]
+            }),
+        ]"
+        />
+    </record>
+<!--    <record id="demo_invoice_2_unified" model="account.move">-->
+<!--        <field name="move_type">out_invoice</field>-->
+<!--        <field name="ref">INV/2021/02/0004</field>-->
+<!--        <field-->
+<!--            name="invoice_origin"-->
+<!--            model="sale.order"-->
+<!--            eval="obj().env.ref('ygol_l10n_il_unified.sale_order_unified1').name"-->
+<!--        />-->
+<!--        <field name="partner_id" ref="base.res_partner_1" />-->
+<!--        <field name="invoice_user_id" ref="base.user_demo" />-->
+<!--        <field-->
+<!--            name="invoice_payment_term_id"-->
+<!--            ref="account.account_payment_term_end_following_month"-->
+<!--        />-->
+<!--        <field name="invoice_date" eval="time.strftime('%Y-%m')+'-01'" />-->
+<!--        <field name="company_id" ref="l10n_il.demo_company_il" />-->
+<!--        <field-->
+<!--            name="journal_id"-->
+<!--            model="account.journal"-->
+<!--            search="[('type', '=', 'sale'), ('company_id', '=', ref('l10n_il.demo_company_il'))]"-->
+<!--        />-->
+<!--        <field-->
+<!--            name="invoice_line_ids"-->
+<!--            model="account.move.line"-->
+<!--            eval="[-->
+<!--            (0, 0, {'product_id': ref('ygol_l10n_il_unified.product_delivery_unified6'), 'price_unit': 14.0, 'quantity': 60,-->
+<!--            'tax_ids': [(6, 0, obj().tax_ids.search([-->
+<!--                    ('company_id', '=', ref('l10n_il.demo_company_il')),-->
+<!--                    ('type_tax_use', '=', 'sale'),-->
+<!--                    ('amount','=', 17),-->
+<!--                    ('tax_group_id', '=', ref('l10n_il.tax_group_vat_17'))], limit=1).ids)],-->
+<!--            'sale_line_ids': [(6,0, [ref('ygol_l10n_il_unified.sale_order_line_unified1')])]-->
+<!--            }),-->
+<!--        ]"-->
+<!--        />-->
+<!--    </record>-->
+    <record id="demo_invoice_1_unified" model="account.move">
+        <field name="move_type">out_invoice</field>
+        <field name="ref">HMK/2021/0001</field>
+        <field name="partner_id" ref="base.res_partner_10" />
+        <field name="invoice_user_id" ref="base.user_demo" />
+        <field
+            name="invoice_payment_term_id"
+            ref="account.account_payment_term_end_following_month"
+        />
+        <field name="invoice_date" eval="time.strftime('%Y')+'-03'+'-01'" />
+        <field name="company_id" ref="l10n_il.demo_company_il" />
+        <field
+            name="journal_id"
+            model="account.journal"
+            search="[('is_hmk', '=', True), ('type', '=', 'sale'), ('company_id', '=', ref('l10n_il.demo_company_il'))]"
+        />
+        <field
+            name="invoice_line_ids"
+            model="account.move.line"
+            eval="[
+            (0, 0, {'product_id': ref('ygol_l10n_il_unified.product_delivery_unified8'), 'price_unit': 450.0, 'quantity': 1,
+            'tax_ids': [(6, 0, obj().tax_ids.search([
+                    ('company_id', '=', ref('l10n_il.demo_company_il')),
+                    ('type_tax_use', '=', 'sale'),
+                    ('amount','=', 17),
+                    ('tax_group_id', '=', ref('l10n_il.tax_group_vat_17'))], limit=1).ids)]
+            }),
+        ]"
+        />
+    </record>
+
+    <!-- Out Refund -->
+    <record id="demo_outrefund_1_unified" model="account.move">
+        <field name="move_type">out_refund</field>
+        <field name="ref">RINV/2006/02/0001</field>
+        <field name="partner_id" ref="base.res_partner_3" />
+        <field name="invoice_user_id" ref="base.user_demo" />
+        <field
+            name="invoice_payment_term_id"
+            ref="account.account_payment_term_end_following_month"
+        />
+        <field name="invoice_date" eval="time.strftime('%Y-%m')+'-01'" />
+        <field name="reversed_entry_id" ref="demo_invoice_unified1" />
+        <field name="company_id" ref="l10n_il.demo_company_il" />
+        <field
+            name="journal_id"
+            model="account.journal"
+            search="[('type', '=', 'sale'), ('company_id', '=', ref('l10n_il.demo_company_il'))]"
+        />
+        <field
+            name="invoice_line_ids"
+            model="account.move.line"
+            eval="[
+            (0, 0, {'product_id': ref('ygol_l10n_il_unified.product_delivery_unified1'), 'price_unit': 3000.0, 'quantity': 20,'discount': 5,
+            'tax_ids': [(6, 0, obj().tax_ids.search([
+                    ('company_id', '=', ref('l10n_il.demo_company_il')),
+                    ('type_tax_use', '=', 'sale'),
+                    ('amount','=', 17),
+                    ('tax_group_id', '=', ref('l10n_il.tax_group_vat_17'))], limit=1).ids)]
+            }),
+        ]"
+        />
+    </record>
+    <!-- Posted created Invoices-->
+    <function model="account.move" name="action_post">
+        <value eval="[ref('demo_invoice_unified1')]" />
+    </function>
+<!--    <function model="account.move" name="action_post">-->
+<!--        <value eval="[ref('demo_invoice_2_unified')]" />-->
+<!--    </function>-->
+    <function model="account.move" name="action_post">
+        <value eval="[ref('demo_invoice_1_unified')]"/>
+    </function>
+    <function model="account.move" name="action_post">
+        <value eval="[ref('demo_outrefund_1_unified')]" />
+    </function>
+</odoo>

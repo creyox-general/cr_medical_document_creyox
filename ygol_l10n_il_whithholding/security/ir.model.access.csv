@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+withholding_supplier_system,withholding_supplier_system,model_withholding_supplier_system,account.group_account_manager,1,1,1,1
+access_withholding_supplier_system,access_withholding_supplier_system,model_withholding_supplier_system,base.group_user,1,0,0,0

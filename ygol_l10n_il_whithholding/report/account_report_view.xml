@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- QWeb Reports -->
+        <!-- Override report action to re-use attachment-->
+        <record id="account.account_invoices" model="ir.actions.report">
+            <field name="binding_model_id" eval="False"/>
+        </record>
+        <!--        <record id="account.account_invoices_without_payment" model="ir.actions.report">-->
+        <!--            <field name="attachment_use">True</field>-->
+        <!--        </record>-->
+    </data>
+</odoo>

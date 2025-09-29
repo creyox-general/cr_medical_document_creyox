@@ -1,0 +1,12 @@
+<odoo>
+    <record id="deposite_report" model="ir.actions.report">
+        <field name="name">Deposit Report</field>
+        <field name="model">account.payment</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">bizzup_deposite_report.deposite_report_data</field>
+        <field name="report_file">bizzup_deposite_report.deposite_report_data</field>
+        <field name="print_report_name">'Deposite Report'</field>
+        <field name="binding_model_id" ref="model_account_payment"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

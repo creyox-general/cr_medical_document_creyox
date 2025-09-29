@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- INITEXT Report Header-->
+    <!-- INITEXT Report Value-->
+    <template id="ini_summary">
+        <t t-foreach="docs_list" t-as="doc">
+            <t t-esc="doc.get('entry_code')" />
+            <t t-esc="doc.get('future_use_space_1')" />
+            <t t-esc="doc.get('total_record_bkmvdata')" />
+            <t t-esc="doc.get('author_del_number')" />
+            <t t-esc="doc.get('primaryid')" />
+            <t t-esc="doc.get('settled_system')" />
+            <t t-esc="doc.get('software_registration_number')" />
+            <t t-esc="doc.get('software_name')" />
+            <t t-esc="doc.get('software_edition')" />
+            <t t-esc="doc.get('software_manufacture_number')" />
+            <t t-esc="doc.get('software_manufacturer_name')" />
+            <t t-esc="doc.get('software_type')" />
+            <t t-esc="doc.get('path_save_file_location')" />
+            <t t-esc="doc.get('accounting_software_type')" />
+            <t t-esc="doc.get('accounting_balance_requires')" />
+            <t t-esc="doc.get('registrar_number')" />
+            <t t-esc="doc.get('withholdings_file_number')" />
+            <t t-esc="doc.get('future_use_space_2')" />
+            <t t-esc="doc.get('business_name')" />
+            <t t-esc="doc.get('business_address_street')" />
+            <t t-esc="doc.get('business_address_house_number')" />
+            <t t-esc="doc.get('business_address_city')" />
+            <t t-esc="doc.get('business_address_zip_code')" />
+            <t t-esc="doc.get('tax_year')" />
+            <t t-esc="doc.get('start_date')" />
+            <t t-esc="doc.get('end_date')" />
+            <t t-esc="doc.get('current_date_process')" />
+            <t t-esc="doc.get('current_time_process')" />
+            <t t-esc="doc.get('language_code')" />
+            <t t-esc="doc.get('character_set')" />
+            <t t-esc="doc.get('the_name_of_the_shrink_software')" />
+            <t t-esc="doc.get('leading_currency')" />
+            <t t-esc="doc.get('information_on_branches')" />
+            <t t-esc="doc.get('future_use_space_3')" />
+            <t t-esc="'!@#*^$'" />
+            <t t-esc="'C100'" />
+            <t t-esc="doc.get('c100_counter')" />
+            <t t-esc="'!@#*^$'" />
+            <t t-esc="'D110'" />
+            <t t-esc="doc.get('d110_counter')" />
+            <t t-esc="'!@#*^$'" />
+            <t t-esc="'D120'" />
+            <t t-esc="doc.get('d120_counter')" />
+            <t t-esc="'!@#*^$'" />
+            <t t-esc="'B100'" />
+            <t t-esc="doc.get('b100_counter')" />
+            <t t-esc="'!@#*^$'" />
+            <t t-esc="'B110'" />
+            <t t-esc="doc.get('b110_counter')" />
+            <t t-esc="'!@#*^$'" />
+            <t t-esc="'M100'" />
+            <t t-esc="doc.get('m100_counter')" />
+            <t t-esc="'!@#*^$'" />
+        </t>
+    </template>
+    <!-- INITEXT File Template-->
+    <template id="ini_text_file">
+        <p>
+            <!-- <t t-call="ygol_l10n_il_unified.ini_header"/> -->
+            <t t-call="ygol_l10n_il_unified.ini_summary" />
+        </p>
+    </template>
+    <!--BKMVDATA REPORT | Acceptance Information-->
+
+    <!--
+    Unified report even includes sales orders, purchase orders, and stock inventory data.
+    So the template can be further scaled in other modules. For instance, module for registering
+    sales orders shall inherit the template as shown below:
+    -->
+    <template id="bkmvdata_Header">
+
+    </template>
+    <template id="bkmvdata_footer">
+
+    </template>
+    <template id="bkmvdata_all_data">
+        <t t-set="total_record_file" t-value="0" />
+        <t t-foreach="docs_list" t-as="doc">
+            <t t-set="total_record_file" t-value="total_record_file+1" />
+            <!-- <t t-esc="total_record_file"/> -->
+            <!-- Passed data for Type A100-->
+            <t t-if="doc.get('a100')">
+                <t t-esc="doc.get('a100').get('entry_code')" />
+                <t t-esc="doc.get('a100').get('counter')" />
+                <t t-esc="doc.get('a100').get('authorized_dealer_number')" />
+                <t t-esc="doc.get('a100').get('primary_id')" />
+                <t t-esc="doc.get('a100').get('settled_system')" />
+                <t t-esc="doc.get('a100').get('future_space')" />
+            </t>
+            <!-- Passed data for Type C100-->
+            <t t-if="doc.get('c100')">
+                <t t-esc="'!@#*^$'" />
+                <t t-esc="doc.get('c100').get('entry_code')" />
+                <t t-esc="doc.get('c100').get('counter')" />
+                <t t-esc="doc.get('c100').get('authorized_dealer_number')" />
+                <t t-esc="doc.get('c100').get('document_type')" />
+                <t t-esc="doc.get('c100').get('document_number')" />
+                <t t-esc="doc.get('c100').get('date_of_document_production')" />
+                <t t-esc="doc.get('c100').get('document_production_time')" />
+                <t t-esc="doc.get('c100').get('consumer_supplier_name')" />
+                <t t-esc="doc.get('c100').get('consumer_supplier_street')" />
+                <t t-esc="doc.get('c100').get('consumer_supplier_street2')" />
+                <t t-esc="doc.get('c100').get('consumer_supplier_city')" />
+                <t t-esc="doc.get('c100').get('consumer_supplier_zip')" />
+                <t t-esc="doc.get('c100').get('consumer_supplier_county')" />
+                <t t-esc="doc.get('c100').get('consumer_supplier_county_code')" />
+                <t t-esc="doc.get('c100').get('consumer_supplier_phone')" />
+                <t t-esc="doc.get('c100').get('authorized_supplier_customer_num')" />
+                <t t-esc="doc.get('c100').get('date_value')" />
+                <t t-esc="doc.get('c100').get('final_amount_document_in_for_curr')" />
+                <t t-esc="doc.get('c100').get('foreign_currency_code')" />
+                <t t-esc="doc.get('c100').get('amount_before_discount')" />
+                <t t-esc="doc.get('c100').get('discount_amount')" />
+                <t t-esc="doc.get('c100').get('amount_after_discount')" />
+                <t t-esc="doc.get('c100').get('vat_amount')" />
+                <t t-esc="doc.get('c100').get('amount_includes_vat')" />
+                <t t-esc="doc.get('c100').get('amount_withholding_tax')" />
+                <t t-esc="doc.get('c100').get('customer_supplier_core')" />
+                <t t-esc="doc.get('c100').get('match_field')" />
+                <t t-esc="doc.get('c100').get('deleted_document')" />
+                <t t-esc="doc.get('c100').get('document_date')" />
+                <t t-esc="doc.get('c100').get('branch_id')" />
+                <t t-esc="doc.get('c100').get('operation')" />
+                <t t-esc="doc.get('c100').get('field_linking_to_row')" />
+                <t t-esc="doc.get('c100').get('space_future_data')" />
+            </t>
+            <!-- Passed data for Type D110-->
+            <t t-if="doc.get('d110')">
+                <t t-esc="'!@#*^$'" />
+                <t t-esc="doc.get('d110').get('entry_code')" />
+                <t t-esc="doc.get('d110').get('counter')" />
+                <t t-esc="doc.get('d110').get('authorized_dealer_number')" />
+                <t t-esc="doc.get('d110').get('document_type')" />
+                <t t-esc="doc.get('d110').get('document_number')" />
+                <t t-esc="doc.get('d110').get('row_number_in_the_document')" />
+                <t t-esc="doc.get('d110').get('base_document_type')" />
+                <t t-esc="doc.get('d110').get('base_document_number')" />
+                <t t-esc="doc.get('d110').get('transaction_type_document')" />
+                <t t-esc="doc.get('d110').get('internal_number')" />
+                <t t-esc="doc.get('d110').get('description_of_goods')" />
+                <t t-esc="doc.get('d110').get('manufacturer_name')" />
+                <t t-esc="doc.get('d110').get('product_serial_number')" />
+                <t t-esc="doc.get('d110').get('description_of_uom')" />
+                <t t-esc="doc.get('d110').get('quantity')" />
+                <t t-esc="doc.get('d110').get('price_per_unit_without_vat')" />
+                <t t-esc="doc.get('d110').get('discount_line')" />
+                <t t-esc="doc.get('d110').get('the_total_amount_per_row')" />
+                <t t-esc="doc.get('d110').get('vat_rate_in_row')" />
+                <t t-esc="doc.get('d110').get('branch_id')" />
+                <t t-esc="doc.get('d110').get('document_date')" />
+                <t t-esc="doc.get('d110').get('field_linking_to_title')" />
+                <t t-esc="doc.get('d110').get('branch_id_for_base_document')" />
+                <t t-esc="doc.get('d110').get('future_data_space')" />
+            </t>
+            <!-- Passed data for Type D120-->
+            <t t-if="doc.get('d120')">
+                <t t-esc="'!@#*^$'" />
+                <t t-esc="doc.get('d120').get('entry_code')" />
+                <t t-esc="doc.get('d120').get('counter')" />
+                <t t-esc="doc.get('d120').get('authorized_dealer_number')" />
+                <t t-esc="doc.get('d120').get('document_type')" />
+                <t t-esc="doc.get('d120').get('document_number')" />
+                <t t-esc="doc.get('d120').get('row_number_in_the_document')" />
+                <t t-esc="doc.get('d120').get('payment_method_type')" />
+                <t t-esc="doc.get('d120').get('bank_number')" />
+                <t t-esc="doc.get('d120').get('branch_number')" />
+                <t t-esc="doc.get('d120').get('account_number')" />
+                <t t-esc="doc.get('d120').get('check_number')" />
+                <t t-esc="doc.get('d120').get('check_payment_due_date')" />
+                <t t-esc="doc.get('d120').get('row_amount')" />
+                <t t-esc="doc.get('d120').get('company_code_clears')" />
+                <t t-esc="doc.get('d120').get('clearing_card_name')" />
+                <t t-esc="doc.get('d120').get('credit_transaction_type')" />
+                <t t-esc="doc.get('d120').get('branch_id')" />
+                <t t-esc="doc.get('d120').get('document_date')" />
+                <t t-esc="doc.get('d120').get('field_linking_to_the_title')" />
+                <t t-esc="doc.get('d120').get('future_data_space')" />
+            </t>
+            <!-- Passed data for Type B100-->
+            <t t-if="doc.get('b100')">
+                <t t-esc="'!@#*^$'" />
+                <t t-esc="doc.get('b100').get('entry_code')" />
+                <t t-esc="doc.get('b100').get('counter')" />
+                <t t-esc="doc.get('b100').get('authorized_dealer_number')" />
+                <t t-esc="doc.get('b100').get('transactions_number')" />
+                <t t-esc="doc.get('b100').get('transactions_row_number')" />
+                <t t-esc="doc.get('b100').get('batch')" />
+                <t t-esc="doc.get('b100').get('transactions_type')" />
+                <t t-esc="doc.get('b100').get('reference')" />
+                <t t-esc="doc.get('b100').get('transactions_type2')" />
+                <t t-esc="doc.get('b100').get('reference2')" />
+                <t t-esc="doc.get('b100').get('reference_document_type2')" />
+                <t t-esc="doc.get('b100').get('details')" />
+                <t t-esc="doc.get('b100').get('date')" />
+                <t t-esc="doc.get('b100').get('value_date')" />
+                <t t-esc="doc.get('b100').get('account_in_motion')" />
+                <t t-esc="doc.get('b100').get('counter_account')" />
+                <t t-esc="doc.get('b100').get('action_mark')" />
+                <t t-esc="doc.get('b100').get('foreign_currency_code')" />
+                <t t-esc="doc.get('b100').get('amount_of_action')" />
+                <t t-esc="doc.get('b100').get('amount_of_foreign_currency')" />
+                <t t-esc="doc.get('b100').get('quantity_field')" />
+                <t t-esc="doc.get('b100').get('match_field1')" />
+                <t t-esc="doc.get('b100').get('match_field2')" />
+                <t t-esc="doc.get('b100').get('branch_id')" />
+                <t t-esc="doc.get('b100').get('order_date')" />
+                <t t-esc="doc.get('b100').get('operation')" />
+                <t t-esc="doc.get('b100').get('future_data_space')" />
+            </t>
+            <!-- Passed data for Type M100-->
+            <t t-if="doc.get('m100')">
+                <t t-esc="'!@#*^$'" />
+                <t t-esc="doc.get('m100').get('entry_code')" />
+                <t t-esc="doc.get('m100').get('counter')" />
+                <t t-esc="doc.get('m100').get('authorized_dealer_number')" />
+                <t t-esc="doc.get('m100').get('universal_item_number')" />
+                <t t-esc="doc.get('m100').get('supplier_manufacturer_number')" />
+                <t t-esc="doc.get('m100').get('internal_number')" />
+                <t t-esc="doc.get('m100').get('item_name')" />
+                <t t-esc="doc.get('m100').get('sort_code')" />
+                <t t-esc="doc.get('m100').get('sorting_code_description')" />
+                <t t-esc="doc.get('m100').get('unit_of_measurement_description')" />
+                <t t-esc="doc.get('m100').get('item_balance_at_the_beginning')" />
+                <t t-esc="doc.get('m100').get('total_entrances')" />
+                <t t-esc="doc.get('m100').get('total_expenditure')" />
+                <t t-esc="doc.get('m100').get('cost_price_inventory_out_cut_off')" />
+                <t t-esc="doc.get('m100').get('cost_price_inventory_in_cut_off')" />
+                <t t-esc="doc.get('m100').get('future_space')" />
+            </t>
+            <!-- Passed data for Type B110-->
+            <t t-if="doc.get('b110')">
+                <t t-esc="'!@#*^$'" />
+                <t t-esc="doc.get('b110').get('entry_code')" />
+                <t t-esc="doc.get('b110').get('counter')" />
+                <t t-esc="doc.get('b110').get('authorized_dealer_number')" />
+                <t t-esc="doc.get('b110').get('account_key')" />
+                <t t-esc="doc.get('b110').get('account_name')" />
+                <t t-esc="doc.get('b110').get('test_balance_code')" />
+                <t t-esc="doc.get('b110').get('description_of_test_balance_code')" />
+                <t t-esc="doc.get('b110').get('client_supplier_street')" />
+                <t t-esc="doc.get('b110').get('customer_supplier_street2')" />
+                <t t-esc="doc.get('b110').get('customer_supplier_address_city')" />
+                <t t-esc="doc.get('b110').get('customer_supplier_address_zip')" />
+                <t t-esc="doc.get('b110').get('customer_supplier_address_country')" />
+                <t t-esc="doc.get('b110').get('country_code')" />
+                <t t-esc="doc.get('b110').get('prime_account')" />
+                <t t-esc="doc.get('b110').get('beginning_balance')" />
+                <t t-esc="doc.get('b110').get('total_required')" />
+                <t t-esc="doc.get('b110').get('total_right')" />
+                <t t-esc="doc.get('b110').get('accounting_classification_code')" />
+                <t t-esc="doc.get('b110').get('supplier_customer_dealer_no')" />
+                <t t-esc="doc.get('b110').get('branch_id')" />
+                <t t-esc="doc.get('b110').get('beginning_bal_foreign_currency')" />
+                <t t-esc="doc.get('b110').get('curr_code_acc_balance_at_opp_cutoff')" />
+                <t t-esc="doc.get('b110').get('future_data_space')" />
+            </t>
+            <!-- Passed data for Type Z900-->
+            <t t-if="doc.get('z900')">
+                <t t-esc="'!@#*^$'" />
+                <t t-esc="doc.get('z900').get('entry_code')" />
+                <t t-esc="doc.get('z900').get('counter')" />
+                <t t-esc="doc.get('z900').get('authorized_dealer_number')" />
+                <t t-esc="doc.get('z900').get('primary_id')" />
+                <t t-esc="doc.get('z900').get('settled_system')" />
+                <t t-esc="doc.get('z900').get('total_counter')" />
+                <t t-esc="doc.get('z900').get('future_space')" />
+            </t>
+        </t>
+    </template>
+    <template id="bkmvdata_text_file">
+        <p>
+            <t t-call="ygol_l10n_il_unified.bkmvdata_all_data" />
+        </p>
+    </template>
+</odoo>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_form_l10n_il_withhlding" model="ir.ui.view">
+            <field name="name">l10n_il.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='vat']" position="after">
+                    <field name="code" invisible="1"/>
+                </xpath>
+                <xpath expr="//page[@name='internal_notes']" position="after">
+                    <page name="withholding" string="Withholding Information" invisible="code != 'IL'">
+                        <group>
+                            <group>
+                                <field name="withholding_tax_rate"/>
+                                <field name="valid_until_date"/>
+                                <field name="company_status"/>
+                            </group>
+                            <group>
+                                <field name="l10n_il_withh_tax_id_number"/>
+                                <field name="vendor_occupation"/>
+                                <field name="withholding_tax_reason"/>
+                                <field name="accounting_authorization"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,143 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* studio_customization
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-23 10:43+0000\n"
+"PO-Revision-Date: 2025-09-23 10:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: studio_customization
+#: model:mail.template,body_html:studio_customization.welcome_d6e80392-7577-40f1-8346-0a5100c1e9a7
+msgid ""
+"<div data-oe-version=\"1.2\">\n"
+"  <t t-set=\"name_raw\" t-value=\"object.partner_id.name if object.partner_id else False\"/>\n"
+"  <t t-set=\"name_clean\" t-value=\"(name_raw.split('@')[0] if name_raw and '@' in name_raw else name_raw) or object.contact_name or 'Dear Customer'\"/>\n"
+"\n"
+"  Hello&nbsp;<t t-out=\"name_clean\"/>\n"
+"</div>\n"
+"<div>\n"
+"  Thank you for your recent inquiry.\n"
+"</div>\n"
+"<div>\n"
+"  We have received your message and our team will contact you shortly to answer your questions and help you with your request.&nbsp;\n"
+"</div>\n"
+"<div><br/></div>\n"
+"<div>\n"
+"  Sincerely,&nbsp;\n"
+"</div>\n"
+"<div>\n"
+"  The Hamarpea&nbsp;Team\n"
+"</div>\n"
+msgstr ""
+"<div data-oe-version=\"1.2\">שלום&nbsp;<t "
+"t-out=\"object.contact_name\"/></div><div>תודה על פנייתך "
+"אלינו.&nbsp;</div><div>קיבלנו את הודעתך והצוות שלנו ייצור איתך קשר בקרוב כדי"
+" לענות על שאלותיך ולעזור לך עם "
+"בקשתך.&nbsp;</div><div><br/></div><div>בברכה,&nbsp;</div><div>צוות "
+"המרפאה</div>"
+
+
+
+#. module: studio_customization
+#: model:ir.model.fields,field_description:studio_customization.new_many2one_calenda_523dd864-b8a4-424c-a059-c10be762238e
+#: model_terms:ir.ui.view,arch_db:studio_customization.odoo_studio_calendar_c8cd8998-c3c8-4dc3-b7ea-1678c4cf5665
+msgid "Device"
+msgstr "מכשיר"
+
+
+#. module: studio_customization
+#: model_terms:ir.ui.view,arch_db:studio_customization.odoo_studio_calendar_c8cd8998-c3c8-4dc3-b7ea-1678c4cf5665
+msgid "Find Replacement Meeting"
+msgstr "מצא פגישה חלופית"
+
+
+#. module: studio_customization
+#: model:ir.model.fields,field_description:studio_customization.new_many2many_produc_c75c4221-8cf8-4362-ab1c-0d02a5839d9c
+#: model:ir.model.fields,field_description:studio_customization.new_text_product_2d961b42-27a9-4d7c-aa71-5d3080fa8bc1
+#: model:ir.model.fields,field_description:studio_customization.new_text_product_e1c62dc9-644c-4f44-8111-81525e3160e7
+msgid "ICD-10-PCS Code"
+msgstr "קוד ICD-10-PCS"
+
+
+#. module: studio_customization
+#: model:ir.model.fields,field_description:studio_customization.new_priority_lead_op_c0526cc8-ddac-48db-a431-46a18103088c
+msgid "Interest Level"
+msgstr "רמת עניין"
+
+#. module: studio_customization
+#: model_terms:ir.ui.view,arch_db:studio_customization.odoo_studio_crm_lead_816bb358-55d2-4066-b767-1ee0b1b18c2d
+msgid "Interested Service"
+msgstr "שירות מבוקש"
+
+#. module: studio_customization
+#: model:ir.model.fields,field_description:studio_customization.new_related_field_sa_a1b15f46-7a57-483b-84bd-b3f0a27890db
+#: model:ir.model.fields,field_description:studio_customization.new_selection_lead_o_f8a35a18-3c7b-43d4-aac3-c3ee9de491f5
+msgid "Interested Service "
+msgstr "שירות מבוקש"
+
+#. module: studio_customization
+#: model:ir.model.fields,field_description:studio_customization.new_text_product_19560076-cbf4-43b7-aa96-dcd54751c3eb
+#: model:ir.model.fields,field_description:studio_customization.new_text_product_c178e375-8718-4ccc-8a4c-cc5585f62a55
+msgid "Internal Billing Code"
+msgstr "קוד חיוב פנימי"
+
+#. module: studio_customization
+#: model:ir.model.fields,field_description:studio_customization.new_many2one_calenda_ae7a4b56-73ef-4a01-b0ba-72e337e75a9a
+#: model_terms:ir.ui.view,arch_db:studio_customization.odoo_studio_calendar_c8cd8998-c3c8-4dc3-b7ea-1678c4cf5665
+msgid "Meeting Room"
+msgstr "חדר ישיבות"
+
+#. module: studio_customization
+#: model:ir.model.fields,field_description:studio_customization.new_selection_calend_b76bcc78-a87d-400c-8c38-91d5cffe3290
+msgid "Meeting Status"
+msgstr "סטטוס פגישה"
+
+#. module: studio_customization
+#: model_terms:ir.ui.view,arch_db:studio_customization.odoo_studio_product__9346d9c9-8b16-4f8f-87d8-cd921fb9f639
+msgid "Procedure Codes"
+msgstr "סטטוס פרוצדורה"
+
+#. module: studio_customization
+#: model:ir.model.fields,field_description:studio_customization.new_text_product_110b014f-f540-4853-8065-34eba5649d22
+#: model:ir.model.fields,field_description:studio_customization.new_text_product_823da40b-383d-4980-9166-c8638dda8749
+msgid "Snomed Code"
+msgstr "קוד SNOMED"
+
+#. module: studio_customization
+#: model:ir.model.fields,field_description:studio_customization.new_selection_lead_o_a3cb92a6-8b20-4e54-b62e-a2ed6ed5a802
+#: model_terms:ir.ui.view,arch_db:studio_customization.odoo_studio_crm_lead_816bb358-55d2-4066-b767-1ee0b1b18c2d
+msgid "Source Channel"
+msgstr "ערוץ מקור"
+
+
+#. module: studio_customization
+#: model:mail.template,subject:studio_customization.welcome_d6e80392-7577-40f1-8346-0a5100c1e9a7
+msgid "Thank you for contacting Hamarpea"
+msgstr "תודה שיצרתה קשר עם המרפאה"
+
+
+#. module: studio_customization
+#: model:ir.model.fields,field_description:studio_customization.new_integer_calendar_baa6ed8f-33e0-4cf3-9ca3-88d6f3d2bc77
+msgid "Time before meeting (minutes)"
+msgstr "זמן לפני הפגישה (בדקות)"
+
+#. module: studio_customization
+#: model:ir.model.fields,field_description:studio_customization.new_many2many_produc_79286bb4-a373-4f2f-a338-be5e2dc1d33a
+#: model:ir.model.fields,field_description:studio_customization.new_many2many_produc_c0e51605-654a-4826-84fb-e00bc206fe27
+#: model_terms:ir.ui.view,arch_db:studio_customization.odoo_studio_product__9346d9c9-8b16-4f8f-87d8-cd921fb9f639
+msgid "User Shortlist"
+msgstr "רשימת משתמש"
+
+#. module: studio_customization
+#: model:ir.model.fields,field_description:studio_customization.new_text_product_72d904d8-e35b-4522-bd14-57a1444267e2
+msgid "Status"
+msgstr "מצב"

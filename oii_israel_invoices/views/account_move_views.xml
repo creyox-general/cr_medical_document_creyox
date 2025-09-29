@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_move_form" model="ir.ui.view">
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <field name="amount_untaxed" invisible="1"/>
+                <field name="amount_tax" invisible="1"/>
+                <field name="rt_taxes_minimum_untaxed_amount" invisible="1"/>
+                <field name="enable_taxes_integration" invisible="1"/>
+                <div class="alert alert-warning fw-bold"
+                     role="alert"
+                     invisible="enable_taxes_integration != True or move_type not in ('in_invoice', 'in_refund')
+                      or amount_untaxed &lt; rt_taxes_minimum_untaxed_amount">
+                    Note that you should verify the confirmation number of this Bill.
+                </div>
+                <div class="alert alert-warning fw-bold"
+                     role="alert"
+                     invisible="enable_taxes_integration != True or rt_confirmation_number != False or move_type not in ('out_invoice', 'out_refund', 'il_invoice_receipt')
+                      or amount_untaxed &lt; rt_taxes_minimum_untaxed_amount or amount_tax == 0">
+                    This Invoice needs confirmation number (which will be generated upon confirm).
+                </div>
+            </xpath>
+            <xpath expr="//button[@name='action_invoice_sent']" position="before">
+                <field name="rt_number_approved" invisible="1"/>
+                <field name="rt_tax_call_counter" invisible="1"/>
+                <button string="Verify Confirmation Number"
+                        name="verify_bill_conf_number" type="object" class="btn-primary"
+                        invisible="move_type not in ('in_invoice', 'in_refund')"/>
+            </xpath>
+            <xpath expr="//group[@id='header_right_group']/field[@name='invoice_date']" position="after">
+                <label for="rt_confirmation_number" class="oe_inline"
+                       invisible="move_type not in ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'il_invoice_receipt')"/>
+                <div class="o_row o_row_readonly">
+                    <span class="fa fa-exclamation-triangle text-warning oe_edit_only"
+                          title="Use caution when editing this field."
+                          invisible="rt_number_approved == True or move_type not in ('out_invoice', 'out_refund', 'il_invoice_receipt')"/>
+                    <field name="rt_confirmation_number" readonly="rt_number_approved and move_type in ('out_invoice', 'out_refund', 'il_invoice_receipt')"
+                           invisible="move_type not in ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'il_invoice_receipt')"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

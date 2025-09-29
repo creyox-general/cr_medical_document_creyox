@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Partner Form View -->
+        <record id="hr_employee_view_form_inherit" model="ir.ui.view">
+            <field name="name">hr.employee.view.form.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <!-- Add page after internal_notes -->
+                <xpath expr="//page[@name='hr_settings']" position="after">
+                    <page string="Medical Certificate" name="page_medical_certificate">
+                        <field name="medical_id" widget="one2many_list">
+                            <list editable="bottom">
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="expiration_date"/>
+                                <field name="certificate_file"/>
+                            </list>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

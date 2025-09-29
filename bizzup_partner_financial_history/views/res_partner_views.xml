@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_inherit_financial" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.financial</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <!-- Add Smart Button -->
+            <div name="button_box" position="inside">
+                <button type="object"
+                        invisible="not total_financial_amount"
+                        name="do_nothing"
+                        class="oe_stat_button"
+                        icon="fa-money">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="currency_id" invisible="1"/>
+                            <field name="total_financial_amount"
+                                   widget="monetary"
+                                   options="{'currency_field': 'currency_id'}"/>
+                        </span>
+                        <span class="o_stat_text">Total Financial Amount
+                        </span>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Add Tab -->
+            <xpath expr="//notebook" position="inside">
+                <page string="Financial History">
+                    <field name="financial_history_ids">
+                        <list string="Financial History" create="0" editable="bottom">
+                            <field name="account_id"/>
+                            <field name="date"/>
+                            <field name="document_id"/>
+                            <field name="document_type"/>
+                            <field name="document_fireberry_id"/>
+                            <field name="description"/>
+                            <field name="amount_total" sum="Total"/>
+                            <field name="total_payment"/>
+                            <field name="products_total" sum="Total Untaxed amount"/>
+                            <field name="tax_value" sum="Total taxed amount"/>
+                            <field name="tax_percentage"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_financial_history_search" model="ir.ui.view">
+        <field name="name">financial.history.search</field>
+        <field name="model">financial.history</field>
+        <field name="arch" type="xml">
+            <search string="Financial History">
+                <!-- Default filters -->
+                <filter name="current_month" string="This Month"
+                        domain="[('date', '&gt;=', (context_today()).strftime('%Y-%m-01'))]"
+                        help="Invoices from this month"/>
+
+                <!-- Group by options -->
+                <group expand="0" string="Group By">
+                    <filter name="group_by_date" string="Date" context="{'group_by': 'date'}"/>
+                    <filter name="group_by_partner" string="Contact" context="{'group_by': 'partner_id'}"/>
+                </group>
+
+                <!-- Fields for text search -->
+                <field name="partner_id"/>
+
+            </search>
+        </field>
+    </record>
+
+
+</odoo>

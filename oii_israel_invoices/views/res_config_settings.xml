@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_taxes_config_settings" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.taxes</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="70"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Taxes API" string="Taxes API" name="oii_israel_invoices">
+                    <block title="Taxes Authority API Connector">
+                        <setting>
+                            <div class="row mt8">
+                                <label class="col-lg-3" string="Enable Taxes Integration" for="rt_taxes_host"/>
+                                <field name="enable_taxes_integration"/>
+                            </div>
+                            <div class="row mt8">
+                                <label class="col-lg-3" string="Taxes Base URL" for="rt_taxes_host"/>
+                                <field name="rt_taxes_host" required="enable_taxes_integration == True"/>
+                            </div>
+                            <div class="row mt8">
+                                <label class="col-lg-3" string="Client Id" for="rt_client_id"/>
+                                <field name="rt_client_id"/>
+                            </div>
+                            <div class="row mt8">
+                                <label class="col-lg-3" string="Client Secret Key" for="rt_client_secret"/>
+                                <field name="rt_client_secret"/>
+                            </div>
+                            <!--    TODO: remove token from view    -->
+                            <div class="row mt8">
+                                <label class="col-lg-3" string="Access Token" for="rt_taxes_access_token"/>
+                                <field name="rt_taxes_access_token"/>
+                            </div>
+                            <!--    TODO: remove token from view    -->
+                            <div class="row mt8">
+                                <label class="col-lg-3" string="Refresh Token" for="rt_taxes_refresh_token"/>
+                                <field name="rt_taxes_refresh_token"/>
+                            </div>
+                            <div class="row mt8">
+                                <label class="col-lg-3" string="Minimum Untaxed Amount"
+                                       for="rt_taxes_minimum_untaxed_amount"/>
+                                <field name="rt_taxes_minimum_untaxed_amount" required="enable_taxes_integration == True"/>
+                            </div>
+                            <div>
+                                <button type="object"
+                                        name="refresh_token"
+                                        string="Refresh Token"
+                                        class="btn-link col-auto"
+                                        icon="oi-arrow-right"
+                                />
+                            </div>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>

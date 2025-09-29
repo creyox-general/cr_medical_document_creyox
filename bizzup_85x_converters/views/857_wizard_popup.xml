@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_857_wizard_form" model="ir.ui.view">
+        <field name="name">bizzup.857.wizard.form</field>
+        <field name="model">bizzup.857.wizard</field>
+        <field name="arch" type="xml">
+            <form string="857 Converter Wizard" create="False" edit="False">
+                <footer>
+                    <button name="action_process_file" string="Convert" type="object" class="oe_highlight"
+                            invisible = "state != 'choose'"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+                <separator string="Output" />
+                <group invisible = "state == 'choose'">
+                    <field name="output_data" widget="download" filename="output_filename" readonly="True"/>
+                    <field name="output_filename" string="" invisible="True" nolabel="True" width="0px" no_open="True"/>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

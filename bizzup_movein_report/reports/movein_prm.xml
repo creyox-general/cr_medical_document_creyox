@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="movein_prm">
+        <t t-foreach="docs_list" t-as="doc">
+            <t t-esc="doc.get('1')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('2')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('3')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('4')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('5')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('6')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('7')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('8')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('9')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('10')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('11')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('12')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('13')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('14')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('15')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('16')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('17')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('18')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('19')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('20')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('21')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('22')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('23')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('24')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('25')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('26')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('27')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('28')"/>
+            <t t-esc="'!@#*^$'"/>
+            <t t-esc="doc.get('29')"/>
+            <t t-esc="'!@#*^$'"/>
+        </t>
+    </template>
+    <template id="movein_prm_file">
+        <p>
+            <t t-call="bizzup_movein_report.movein_prm"/>
+        </p>
+    </template>
+
+</odoo>

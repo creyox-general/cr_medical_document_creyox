@@ -1,0 +1,38 @@
+<odoo>
+    <data noupdate="1">
+        <record id="email_template_certificate_reminder" model="mail.template">
+            <field name="name">Certificate Expiration Reminder</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="email_from">${(user.email or '')|safe}</field>
+            <field name="email_to">{{object.work_email}}</field>
+            <field name="subject">Certificate Expiration Reminder</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p>
+                        Dear <t t-out="object.name"/>,
+                    </p>
+                    <div>
+                        <p>
+                            These is a reminder mail that your Medical Certificate
+                            <b>
+                                <t t-out="object.medical_id.name"/>
+                            </b>
+                            is expiring at
+                            <b>
+                                <t t-out="object.medical_id.expiration_date"/>
+                            </b>
+                            so, please don't miss renewing it.
+                        </p>
+                    </div>
+                    <p>
+                        If you have any questions or concerns regarding your loan, please do not hesitate to contact us.
+                    </p>
+                    Regards,
+                    <br/>
+                    Admin
+                    <br/>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

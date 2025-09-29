@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="data_extraction_summary">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div t-if="env.user.lang == 'he_IL'" class="page">
+
+                    <h2 style="text-align: center">
+                        <span>
+                            <u>דו"ח מאוחד 5.4</u>
+                        </span>
+                    </h2>
+
+                    <div style="text-align: right;" id="unified_information">
+
+                        <div name="company_vat">
+                            <div>
+                                <strong>ל:</strong>
+                            </div>
+                            <div>
+                                <strong>פרטי זיהוי של החברה:</strong>
+                                <span t-esc="env.company.vat"/>
+                            </div>
+                            <div>
+                                <strong>שם החברה:</strong>
+                                <span t-esc="env.company.name"/>
+                            </div>
+                        </div>
+
+                        <br/>
+
+                        <h5 style="text-align: center">
+                            <span><strong>** ביצוע ממשק פתוח הושלם בהצלחה **</strong></span>
+                        </h5>
+
+                        <div class="col-auto col-3 mw-100 mb-2">
+                            <div>
+                                <strong>נתיב שמירת מיקום קובץ:</strong>
+                                <span t-esc="env.company.path_save_file_location"/>
+                            </div>
+                        </div>
+
+                        <div class="col-auto col-3 mw-100 mb-2">
+
+                            <p style="while-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+
+                                <t>
+                                    <strong>מתאריך:</strong>
+                                    <span t-esc="data['date_start']"/>
+                                </t>
+
+                                <t>
+                                    <strong style="margin-right: 150px;">היוםעד:</strong>
+                                    <span t-esc="data['date_end']"/>
+                                </t>
+
+
+                            </p>
+                        </div>
+
+                        <div class="col-auto col-3 mw-100 mb-2">
+                            <span>
+                                <strong>רשימה של סוג רשומה ב-BKMVDATA.TXT:</strong>
+                            </span>
+                        </div>
+                    </div>
+
+                    <br/>
+
+                    <table style="margin-right: 215px; width: 50%;" name="invoice_line_table">
+                        <thead>
+                            <tr>
+                                <th style="padding: 8px; text-align: center; border-bottom: 1px solid;">סוּג</th>
+                                <th style="padding: 8px; text-align: center; border-bottom: 1px solid;">תיאור</th>
+                                <th style="padding: 8px; text-align: center; border-bottom: 1px solid;">כמות</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>A100</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>פתח את הרשומה</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['a100_counter']"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>B100</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>עסקאות</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['b100_counter']"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>B110</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>חשבונאות</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['b110_counter']"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>C100</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>כותרת מסמך</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['c100_counter']"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>D110</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>פרטי מסמך</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['d110_counter']"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>D120</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>פרטי קבלות</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['d120_counter']"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>M100</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>מְלַאי</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['m100_counter']"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Z900</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>שיא סגירה</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['z900_counter']"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; text-align: center;">
+                                    <span>
+                                        <strong>סך הכל מסמכים</strong>
+                                    </span>
+                                </td>
+                                <td style="padding: 8px; text-align: center;">
+                                    <span></span>
+                                </td>
+                                <td style="padding: 8px; text-align: center;">
+                                    <span style="font-weight: bold;" t-esc="data['total_of_records']"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div style="border-bottom: 5px solid #4d4d4d; width: 100%"/>
+
+                    <br/>
+
+                    <div style="text-align: right;" name="company_vat">
+                        <p style="while-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            <t>
+                                <strong>יישום ר.ג. לא:</strong>
+                                <span style="margin-left: 72px" t-esc="env.company.software_registration_number"/>
+                            </t>
+
+                            <t>
+                                <strong>שם תוכנה:</strong>
+                                <span t-esc="env.company.software_name +' '+ env.company.software_edition"/>
+                            </t>
+                        </p>
+                        <p style="while-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            <t>
+                                <strong>תַאֲרִיך:</strong>
+                                <span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')"/>
+                            </t>
+
+                            <t>
+                                <strong style="margin-right: 150px;">זְמַן:</strong>
+                                <span t-esc="data['current_tz'].strftime('%H:%M:%S')"/>
+                            </t>
+
+                        </p>
+                    </div>
+
+                </div>
+
+                <div t-else="" class="page">
+
+                    <h2 style="text-align: center">
+                        <span>
+                            <u>Unified Report 5.4</u>
+                        </span>
+                    </h2>
+
+                    <div id="unified_information">
+
+                        <div name="company_vat">
+                            <div>
+                                <strong>To:</strong>
+                            </div>
+                            <div>
+                                <strong>Company ID:</strong>
+                                <span t-esc="env.company.vat"/>
+                            </div>
+                            <div>
+                                <strong>Company Name:</strong>
+                                <span t-esc="env.company.name"/>
+                            </div>
+                        </div>
+
+                        <br/>
+
+                        <h5 style="text-align: center">
+                            <span>
+                                <strong>** Execution of an open interface was completed successfully **</strong>
+                            </span>
+                        </h5>
+
+                        <div class="col-auto col-3 mw-100 mb-2">
+                            <div>
+                                <strong>Path Save File Location:</strong>
+                                <span t-esc="env.company.path_save_file_location"/>
+                            </div>
+                        </div>
+
+                        <div class="col-auto col-3 mw-100 mb-2">
+
+                            <p style="while-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                <t>
+                                    <strong>From Date:</strong>
+                                    <span t-esc="data['date_start']"/>
+                                </t>
+
+                                <t>
+                                    <strong style="margin-left: 150px;">To Date:</strong>
+                                    <span t-esc="data['date_end']"/>
+                                </t>
+
+                            </p>
+                        </div>
+
+                        <div class="col-auto col-3 mw-100 mb-2">
+                            <span>
+                                <strong>List of Records in BKMVDATA.TXT:</strong>
+                            </span>
+                        </div>
+                    </div>
+
+                    <br/>
+
+                    <table style="margin-left: 215px; width: 50%;" name="invoice_line_table">
+                        <thead>
+                            <tr>
+                                <th style="padding: 8px; text-align: center; border-bottom: 1px solid;">Type</th>
+                                <th style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    Description
+                                </th>
+                                <th style="padding: 8px; text-align: center; border-bottom: 1px solid;">Amount</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>A100</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Open Record</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['a100_counter']"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>B100</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Transactions</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['b100_counter']"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>B110</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Accounting</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['b110_counter']"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>C100</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Document Header</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['c100_counter']"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>D110</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Document Details</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['d110_counter']"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>D120</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Receipts Details</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['d120_counter']"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>M100</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Inventory</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['m100_counter']"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Z900</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span>Closing Record</span>
+                                </td>
+                                <td style="padding: 8px; text-align: center; border-bottom: 1px solid;">
+                                    <span t-esc="data['z900_counter']"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; text-align: center;">
+                                    <span>
+                                        <strong>Total of Docs</strong>
+                                    </span>
+                                </td>
+                                <td style="padding: 8px; text-align: center;">
+                                    <span></span>
+                                </td>
+                                <td style="padding: 8px; text-align: center;">
+                                    <span style="font-weight: bold;" t-esc="data['total_of_records']"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div style="border-bottom: 5px solid #4d4d4d; width: 100%"/>
+
+                    <br/>
+
+                    <div name="company_vat">
+                        <p style="while-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            <t>
+                                <strong>Software Name:</strong>
+                                <span t-esc="env.company.software_name +' '+ env.company.software_edition"/>
+                            </t>
+
+                            <t>
+                                <strong style="margin-left: 40px;">Application Reg. No:</strong>
+                                <span t-esc="env.company.software_registration_number"/>
+                            </t>
+                        </p>
+                        <p style="while-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            <t>
+                                <strong>Date:</strong>
+                                <span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')"/>
+                            </t>
+
+                            <t>
+                                <strong style="margin-left: 150px;">Time:</strong>
+                                <span t-esc="data['current_tz'].strftime('%H:%M:%S')"/>
+                            </t>
+
+                        </p>
+                    </div>
+
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

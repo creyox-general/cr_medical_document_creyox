@@ -1,0 +1,184 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_il_lyg
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-23 11:09+0000\n"
+"PO-Revision-Date: 2022-06-23 11:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_il_lyg
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_l10n_il_tax_reason__code
+msgid "Code for Withh Tax Reason"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model,name:l10n_il_lyg.model_res_company
+msgid "Companies"
+msgstr "חברות"
+
+#. module: l10n_il_lyg
+#: model:ir.model,name:l10n_il_lyg.model_res_partner
+msgid "Contact"
+msgstr "צור קשר"
+
+#. module: l10n_il_lyg
+#: model_terms:ir.ui.view,arch_db:l10n_il_lyg.l10n_il_report_invoice_document_inherit
+msgid "Copy"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_l10n_il_ita_branch__create_uid
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_l10n_il_tax_reason__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_l10n_il_ita_branch__create_date
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_l10n_il_tax_reason__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_l10n_il_ita_branch__display_name
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_l10n_il_tax_reason__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_l10n_il_ita_branch__id
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_l10n_il_tax_reason__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model,name:l10n_il_lyg.model_l10n_il_ita_branch
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_l10n_il_ita_branch__name
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_res_partner__l10n_il_ita_branch
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_res_users__l10n_il_ita_branch
+msgid "ITA Branch"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_l10n_il_ita_branch__code
+msgid "ITA Branch Code"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_res_partner__l10n_il_income_tax_id_number
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_res_users__l10n_il_income_tax_id_number
+msgid "IncomeTax ID"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_account_journal__is_l10n_installed
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_res_company__is_l10n_installed
+msgid "Is L10N Installed"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_account_bank_statement_line__is_original_printed
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_account_move__is_original_printed
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_account_payment__is_original_printed
+msgid "Is Original Printed"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model,name:l10n_il_lyg.model_account_journal
+msgid "Journal"
+msgstr "יומן"
+
+#. module: l10n_il_lyg
+#: model:ir.model,name:l10n_il_lyg.model_account_move
+msgid "Journal Entry"
+msgstr "פקודת יומן"
+
+#. module: l10n_il_lyg
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_l10n_il_ita_branch____last_update
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_l10n_il_tax_reason____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_l10n_il_ita_branch__write_uid
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_l10n_il_tax_reason__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_l10n_il_ita_branch__write_date
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_l10n_il_tax_reason__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model_terms:ir.ui.view,arch_db:l10n_il_lyg.l10n_il_report_invoice_document_inherit
+msgid "Original"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_res_partner__l10n_il_registry_number
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_res_users__l10n_il_registry_number
+msgid "Registry Number"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model,name:l10n_il_lyg.model_account_tax
+msgid "Tax"
+msgstr "מס"
+
+#. module: l10n_il_lyg
+#: model:ir.model,name:l10n_il_lyg.model_l10n_il_tax_reason
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_account_tax__l10n_il_tax_reason
+msgid "Tax Reason"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model.fields,help:l10n_il_lyg.field_account_bank_statement_line__is_original_printed
+#: model:ir.model.fields,help:l10n_il_lyg.field_account_move__is_original_printed
+#: model:ir.model.fields,help:l10n_il_lyg.field_account_payment__is_original_printed
+msgid "Technical field used to display 'Original' on first pdf print"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model.constraint,message:l10n_il_lyg.constraint_l10n_il_ita_branch_code_name_uniq
+msgid "The code of the ITA Branch must be unique!"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model.constraint,message:l10n_il_lyg.constraint_l10n_il_tax_reason_code_name_uniq
+msgid "The code of the Withholding Tax Reason must be unique!"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model.fields,help:l10n_il_lyg.field_res_partner__l10n_il_ita_branch
+#: model:ir.model.fields,help:l10n_il_lyg.field_res_users__l10n_il_ita_branch
+msgid ""
+"This field contains the ITA branch that expended the withholding tax rate "
+"and that will be used for Annual Witholding Tax Report"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model.fields,help:l10n_il_lyg.field_account_tax__l10n_il_tax_reason
+msgid ""
+"This field contains the withholding tax reason that will be used for Annual "
+"Witholding Tax Report'"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_res_company__l10n_il_withh_tax_id_number
+msgid "WHT ID"
+msgstr ""
+
+#. module: l10n_il_lyg
+#: model:ir.model.fields,field_description:l10n_il_lyg.field_l10n_il_tax_reason__name
+msgid "Withh Tax Reason"
+msgstr ""

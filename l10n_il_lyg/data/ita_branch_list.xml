@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="ita_branch_01" model="l10n.il.ita.branch">
+        <field name="name">טבריה</field>
+        <field name="code">01</field>
+    </record>
+    <record id="ita_branch_02" model="l10n.il.ita.branch">
+        <field name="name">עפולה</field>
+        <field name="code">02</field>
+    </record>
+    <record id="ita_branch_04" model="l10n.il.ita.branch">
+        <field name="name">צפת</field>
+        <field name="code">04</field>
+    </record>
+    <record id="ita_branch_05" model="l10n.il.ita.branch">
+        <field name="name">נצרת</field>
+        <field name="code">05</field>
+    </record>
+    <record id="ita_branch_07" model="l10n.il.ita.branch">
+        <field name="name">עכו</field>
+        <field name="code">07</field>
+    </record>
+    <record id="ita_branch_10" model="l10n.il.ita.branch">
+        <field name="name">חיפה</field>
+        <field name="code">10</field>
+    </record>
+    <record id="ita_branch_17" model="l10n.il.ita.branch">
+        <field name="name">חדרה</field>
+        <field name="code">17</field>
+    </record>
+    <record id="ita_branch_21" model="l10n.il.ita.branch">
+        <field name="name">נתניה</field>
+        <field name="code">21</field>
+    </record>
+    <record id="ita_branch_23" model="l10n.il.ita.branch">
+        <field name="name">כפר סבא</field>
+        <field name="code">23</field>
+    </record>
+    <record id="ita_branch_24" model="l10n.il.ita.branch">
+        <field name="name">פתח תקווה</field>
+        <field name="code">24</field>
+    </record>
+    <record id="ita_branch_25" model="l10n.il.ita.branch">
+        <field name="name">רמלה</field>
+        <field name="code">25</field>
+    </record>
+    <record id="ita_branch_26" model="l10n.il.ita.branch">
+        <field name="name">רחובות</field>
+        <field name="code">26</field>
+    </record>
+    <record id="ita_branch_30" model="l10n.il.ita.branch">
+        <field name="name">תל אביב 5</field>
+        <field name="code">30</field>
+    </record>
+    <record id="ita_branch_31" model="l10n.il.ita.branch">
+        <field name="name">תל אביב 1</field>
+        <field name="code">31</field>
+    </record>
+    <record id="ita_branch_32" model="l10n.il.ita.branch">
+        <field name="name">חולון</field>
+        <field name="code">32</field>
+    </record>
+    <record id="ita_branch_34" model="l10n.il.ita.branch">
+        <field name="name">תל אביב 4</field>
+        <field name="code">34</field>
+    </record>
+    <record id="ita_branch_38" model="l10n.il.ita.branch">
+        <field name="name">תל אביב 3</field>
+        <field name="code">38</field>
+    </record>
+    <record id="ita_branch_39" model="l10n.il.ita.branch">
+        <field name="name">גוש-דן</field>
+        <field name="code">39</field>
+    </record>
+    <record id="ita_branch_41" model="l10n.il.ita.branch">
+        <field name="name">ירושלים</field>
+        <field name="code">41</field>
+    </record>
+    <record id="ita_branch_43" model="l10n.il.ita.branch">
+        <field name="name">ירושלים 3</field>
+        <field name="code">43</field>
+    </record>
+    <record id="ita_branch_45" model="l10n.il.ita.branch">
+        <field name="name">ירושלים 2</field>
+        <field name="code">45</field>
+    </record>
+    <record id="ita_branch_48" model="l10n.il.ita.branch">
+        <field name="name">הרשות הפלסטינית</field>
+        <field name="code">48</field>
+    </record>
+    <record id="ita_branch_50" model="l10n.il.ita.branch">
+        <field name="name">אילת</field>
+        <field name="code">50</field>
+    </record>
+    <record id="ita_branch_51" model="l10n.il.ita.branch">
+        <field name="name">אשקלון</field>
+        <field name="code">51</field>
+    </record>
+    <record id="ita_branch_52" model="l10n.il.ita.branch">
+        <field name="name">באר שבע</field>
+        <field name="code">52</field>
+    </record>
+
+</odoo>

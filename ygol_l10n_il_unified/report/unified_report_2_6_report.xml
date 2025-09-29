@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="action_unified_report_2_6_report" model="ir.actions.report">
+        <field name="name">Unified Report 2.6</field>
+        <field name="model">report.ygol_l10n_il_unified.unified_report_2_6</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ygol_l10n_il_unified.unified_report_2_6</field>
+        <field name="report_file">ygol_l10n_il_unified.unified_report_2_6</field>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

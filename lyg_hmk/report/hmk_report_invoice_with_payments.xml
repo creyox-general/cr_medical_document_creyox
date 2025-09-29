@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit report according to odoo standard  -->
+        <template id="report_invoice_document_hmk" inherit_id="account.report_invoice_document">
+            <xpath expr="//t[@t-set='layout_document_title']/span"
+                   position="before">
+                <span t-if="o.journal_id.is_hmk and o.move_type in ['out_invoice', 'out_refund']">
+                    Invoice Receipt
+                </span>
+            </xpath>
+            <xpath expr="//t[@t-set='layout_document_title']/span[contains(@t-if, 'out_invoice') and contains(@t-if, 'posted')]"
+                   position="replace">
+                <span t-if="o.move_type == 'out_invoice' and o.state == 'posted' and not o.journal_id.is_hmk">
+                    Invoice
+                </span>
+            </xpath>
+            <xpath expr="//t[@t-set='layout_document_title']/span[contains(@t-elif, 'out_invoice') and contains(@t-elif, 'cancel')]"
+                   position="replace">
+                <span t-elif="o.move_type == 'out_invoice' and o.state == 'cancel' and not o.journal_id.is_hmk">
+                    Cancelled Invoice
+                </span>
+            </xpath>
+            <xpath expr="//t[@t-set='layout_document_title']/span[contains(@t-elif, 'out_invoice') and contains(@t-elif, 'draft')]"
+                   position="replace">
+                <span t-elif="o.move_type == 'out_invoice' and o.state == 'draft' and not o.journal_id.is_hmk">
+                    Draft Invoice
+                </span>
+            </xpath>
+            <xpath expr="//div[hasclass('clearfix')]" position="after">
+                <t t-if="o.journal_id.is_hmk">
+                    <br/>
+                    <p>
+                        <b>Payment Lines</b>
+                    </p>
+                    <table class="table table-sm">
+                        <thead style="display: table-row-group">
+                            <tr width="100%">
+                                <th name="th_journal" class="text-left" width="10%">Journal</th>
+                                <th name="th_credit_acc" class="text-center" width="20%">Credit/Acc No.</th>
+                                <th name="th_branch" width="10%">Branch</th>
+                                <th name="th_bank" width="10%">Bank</th>
+                                <th name="th_vc" class="text-center" width="25">Voucher/Check No.</th>
+                                <th name="th_date" class="text-center" width="10%">Validity Date</th>
+                                <th name="th_amount" class="text-right" width="15%">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="o.payment_lines" t-as="p_line">
+                                <tr>
+                                    <td>
+                                        <span t-esc="p_line.journal_id.name"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-esc="p_line.credit_account_no"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-esc="p_line.branch"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-esc="p_line.bank_id.name"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-esc="p_line.voucher_check_no"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-esc="p_line.validity_date"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-esc="p_line.amount"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                    <div class="clearfix" name="so_total_summary">
+                        <div id="total" class="row" name="total">
+                            <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
+                                <table class="table table-sm">
+                                    <tr>
+                                        <td name="td_amount_untaxed_label">
+                                            <strong>Subtotal Paid</strong>
+                                        </td>
+                                        <td name="td_amount_untaxed" class="text-right">
+                                            <span t-esc="(o.total_pay_amount)"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td name="td_amount_total_label">
+                                            <strong>Tax Deducted at source</strong>
+                                        </td>
+                                        <td name="td_amount_total" class="text-right">
+                                            <span t-esc="o.withholding_amount"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td name="td_amount_total_label">
+                                            <strong>Total Amount</strong>
+                                        </td>
+                                        <td name="td_amount_total" class="text-right">
+                                            <span t-esc="o.total_pay_amount"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                </t>
+            </xpath>
+        </template>
+    </data>
+</odoo>

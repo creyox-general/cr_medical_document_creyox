@@ -1,0 +1,175 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_il_system1000
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-12-05 14:02+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: he_IL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: l10n_il_system1000
+#: model_terms:ir.ui.view,arch_db:l10n_il_system1000.view_l10n_il_system1000_export_form
+msgid "Cancel"
+msgstr "ביטול"
+
+#. module: l10n_il_system1000
+#: model_terms:ir.ui.view,arch_db:l10n_il_system1000.view_l10n_il_system1000_export_form
+msgid "Click below to export your marked moves to system 1000"
+msgstr "קליק למטה ליצוא התנועות המסומנות למערכת 1000 "
+
+#. module: l10n_il_system1000
+#: model_terms:ir.ui.view,arch_db:l10n_il_system1000.view_l10n_il_system1000_export_form
+msgid "Close"
+msgstr "סגירה"
+
+#. module: l10n_il_system1000
+#: model:ir.model,name:l10n_il_system1000.model_res_company
+msgid "Companies"
+msgstr "יוזמות"
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields,field_description:l10n_il_system1000.field_l10n_il_system1000_export__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields,field_description:l10n_il_system1000.field_l10n_il_system1000_export__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields,field_description:l10n_il_system1000.field_l10n_il_system1000_export__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields.selection,name:l10n_il_system1000.selection__l10n_il_system1000_export__state__done
+msgid "Done"
+msgstr ""
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields.selection,name:l10n_il_system1000.selection__l10n_il_system1000_export__state__draft
+msgid "Draft"
+msgstr "טיוטת ייצוא"
+
+#. module: l10n_il_system1000
+#: model_terms:ir.ui.view,arch_db:l10n_il_system1000.view_l10n_il_system1000_export_form
+msgid "Export"
+msgstr "ייצוא"
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields,field_description:l10n_il_system1000.field_l10n_il_system1000_export__export_file
+msgid "Export File"
+msgstr "קובץ ייצוא להורדה"
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields,field_description:l10n_il_system1000.field_l10n_il_system1000_export__export_file_name
+msgid "Export File Name"
+msgstr "שם קובץ הייצוא"
+
+#. module: l10n_il_system1000
+#: model:ir.actions.act_window,name:l10n_il_system1000.action_l10n_il_system1000_export
+msgid "Export to system 1000"
+msgstr "ייצוא למערכת 1000"
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields,field_description:l10n_il_system1000.field_l10n_il_system1000_export__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields,field_description:l10n_il_system1000.field_l10n_il_system1000_export__import_date
+msgid "Import Date"
+msgstr "תאריך ייבוא"
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields,field_description:l10n_il_system1000.field_l10n_il_system1000_export__import_file_invalid
+msgid "Import File Invalid"
+msgstr ""
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields,field_description:l10n_il_system1000.field_l10n_il_system1000_export__import_file_invalid_name
+msgid "Import File Invalid Name"
+msgstr "שם קובץ ייבוא שגוי"
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields,field_description:l10n_il_system1000.field_l10n_il_system1000_export__import_file_valid
+msgid "Import File Valid"
+msgstr ""
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields,field_description:l10n_il_system1000.field_l10n_il_system1000_export__import_file_valid_name
+msgid "Import File Valid Name"
+msgstr "שם קובץ ייבוא תקין"
+
+#. module: l10n_il_system1000
+#: model_terms:ir.ui.view,arch_db:l10n_il_system1000.view_l10n_il_system1000_export_form
+msgid "Import results"
+msgstr "ייבוא תוצאות"
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields,field_description:l10n_il_system1000.field_l10n_il_system1000_export____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields,field_description:l10n_il_system1000.field_l10n_il_system1000_export__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields,field_description:l10n_il_system1000.field_l10n_il_system1000_export__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_il_system1000
+#: model_terms:ir.ui.view,arch_db:l10n_il_system1000.view_l10n_il_system1000_export_form
+msgid "Please go to"
+msgstr "יש להעלות את קובץ הייצוא כאן בלינק"
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields,field_description:l10n_il_system1000.field_l10n_il_system1000_export__state
+msgid "State"
+msgstr "סטטוס"
+
+#. module: l10n_il_system1000
+#: model:ir.model,name:l10n_il_system1000.model_l10n_il_system1000_export
+msgid "System 1000 export"
+msgstr "ייצוא למערכת 1000"
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields,field_description:l10n_il_system1000.field_res_company__l10n_il_tax_deduction_id
+msgid "Tax deduction ID"
+msgstr "מזהה ניכוי מס"
+
+#. module: l10n_il_system1000
+#: model:ir.model.fields.selection,name:l10n_il_system1000.selection__l10n_il_system1000_export__state__upload
+msgid "Upload Results"
+msgstr "העלאת תוצאות"
+
+#. module: l10n_il_system1000
+#. odoo-python
+#: code:addons/l10n_il_system1000/wizards/l10n_il_system1000_export.py:0
+#, python-format
+msgid "Upload results"
+msgstr "העלאת תוצאות"
+
+#. module: l10n_il_system1000
+#: model_terms:ir.ui.view,arch_db:l10n_il_system1000.view_l10n_il_system1000_export_form
+msgid ""
+"and submit your file,\n"
+"                    then upload the resulting files."
+msgstr "ואז להעלות את קבצי הייבוא בהתאם"
+
+#. module: l10n_il_system1000
+#: model_terms:ir.ui.view,arch_db:l10n_il_system1000.view_l10n_il_system1000_export_form
+msgid "https://secapp.taxes.gov.il"
+msgstr ""

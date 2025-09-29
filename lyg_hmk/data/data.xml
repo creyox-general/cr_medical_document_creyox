@@ -1,0 +1,19 @@
+<odoo noupdate="1">
+    <record id="sequence_hmk_payment" model="ir.sequence">
+            <field name="name">HMK Payments sequence</field>
+            <field name="code">account.payment</field>
+            <field name="prefix">HMK-Invoice/%(range_year)s/</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field eval="True" name="use_date_range"/>
+            <field eval="False" name="company_id"/>
+            <field name="padding">4</field>
+    </record>
+    <record id="hmk_sales_journal" model="account.journal">
+        <field name="name">Invoice Receipt</field>
+        <field name="type">sale</field>
+        <field name="is_hmk" eval="True"/>
+        <field name="code">HMK</field>
+        <field name="company_id" model="res.company" eval="obj().env.ref('l10n_il.demo_company_il')"/>
+    </record>
+</odoo>

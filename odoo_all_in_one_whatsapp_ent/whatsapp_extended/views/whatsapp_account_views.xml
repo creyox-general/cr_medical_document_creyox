@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="whatsapp_account_view__inherit_form" model="ir.ui.view">
+            <field name="name">whatsapp.account.view.inherit.form</field>
+            <field name="model">whatsapp.account</field>
+            <field name="inherit_id" ref="whatsapp.whatsapp_account_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('content-group')]" position="inside">
+                    <br/>
+                    <button name="get_whatsapp_business_details"
+                            type="object" string="Sync Templates" class="btn-link p-1" icon="fa-refresh">Get Business
+                        Details
+                    </button>
+                    <br/>
+                    <button name="get_phone_number_by_id"
+                            type="object" string="Sync Templates" class="btn-link p-1" icon="fa-refresh">Get Phone
+                        Number
+                    </button>
+                </xpath>
+
+
+                <xpath expr="//div[@id='tocontrol']" position="after">
+
+                    <notebook>
+                        <page string="Business Details" name="business_details">
+                            <group>
+                                <group>
+                                    <field name="about"/>
+                                    <field name="business_address"/>
+                                    <field name="business_description"/>
+                                    <field name="business_email"/>
+                                </group>
+                                <group>
+                                    <field name="business_profile_picture" widget="image"
+                                           options='{"size": [192, 192]}'/>
+                                    <field name="business_website"/>
+                                    <field name="business_vertical"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Phone Number Details" name="phone_details">
+                            <group>
+                                <group>
+                                    <field name="verified_name"/>
+                                    <field name="code_verification_status"/>
+                                    <field name="display_phone_number"/>
+                                    <field name="quality_rating"/>
+                                </group>
+                                <group>
+                                    <field name="platform_type"/>
+                                    <field name="throughput_level"/>
+                                    <field name="webhook_configuration"/>
+                                </group>
+                            </group>
+                        </page>
+
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

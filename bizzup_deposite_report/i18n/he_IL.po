@@ -1,0 +1,217 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* habayta_deposite_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-15 11:51+0000\n"
+"PO-Revision-Date: 2023-02-15 11:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: habayta_deposite_report
+#: model_terms:ir.ui.view,arch_db:habayta_deposite_report.deposite_all_data
+msgid "<strong>Account Number</strong>"
+msgstr "<strong>מספר חשבון</strong>"
+
+#. module: habayta_deposite_report
+#: model_terms:ir.ui.view,arch_db:habayta_deposite_report.deposite_all_data
+msgid "<strong>Amount</strong>"
+msgstr "<strong>כמות</strong>"
+
+#. module: habayta_deposite_report
+#: model_terms:ir.ui.view,arch_db:habayta_deposite_report.deposite_all_data
+msgid "<strong>Bank Number</strong>"
+msgstr "<strong>מספר בנק</strong>"
+
+#. module: habayta_deposite_report
+#: model_terms:ir.ui.view,arch_db:habayta_deposite_report.deposite_all_data
+msgid "<strong>Branch Number</strong>"
+msgstr "<strong>מספר סניף</strong>"
+
+#. module: habayta_deposite_report
+#: model_terms:ir.ui.view,arch_db:habayta_deposite_report.deposite_all_data
+msgid ""
+"<strong>Check/Credit Pay Due Date\n"
+"                                </strong>"
+msgstr "<strong>תאריך פירעון של צ'ק/אשראי\n"
+"</strong>"
+
+#. module: habayta_deposite_report
+#: model_terms:ir.ui.view,arch_db:habayta_deposite_report.deposite_all_data
+msgid "<strong>Number Receipt</strong>"
+msgstr "<strong>קבלת מספר</strong>"
+
+#. module: habayta_deposite_report
+#: model_terms:ir.ui.view,arch_db:habayta_deposite_report.deposite_all_data
+msgid "<strong>Subject Receipt</strong>"
+msgstr "<strong>קבלת נושא</strong>"
+
+#. module: habayta_deposite_report
+#: model_terms:ir.ui.view,arch_db:habayta_deposite_report.deposite_all_data
+msgid "<strong>Validity Date</strong>"
+msgstr "<strong>תאריך תוקף</strong>"
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields.selection,name:habayta_deposite_report.selection__deposits_report_wizard__depo_means_of_payment__1
+msgid "Cash"
+msgstr "כסף מזומן"
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields.selection,name:habayta_deposite_report.selection__deposits_report_wizard__depo_means_of_payment__2
+msgid "Check"
+msgstr "חשבון"
+
+#. module: habayta_deposite_report
+#: model_terms:ir.ui.view,arch_db:habayta_deposite_report.deposite_wizard_form
+msgid "Close"
+msgstr "סגור"
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields,field_description:habayta_deposite_report.field_deposits_report_wizard__company_id
+msgid "Company"
+msgstr "חֶברָה"
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields,field_description:habayta_deposite_report.field_deposits_report_wizard__create_uid
+msgid "Created by"
+msgstr "נוצר על ידי"
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields,field_description:habayta_deposite_report.field_deposits_report_wizard__create_date
+msgid "Created on"
+msgstr "נוצר ב"
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields,field_description:habayta_deposite_report.field_deposits_report_wizard__deposite_filename
+msgid "Deposite Filename"
+msgstr "שם קובץ הפקדה"
+
+#. module: habayta_deposite_report
+#: model:ir.actions.act_window,name:habayta_deposite_report.deposite_report_action
+#: model:ir.actions.report,name:habayta_deposite_report.deposite_report
+#: model:ir.actions.report,print_report_name:habayta_deposite_report.deposite_report
+#: model:ir.model.fields,field_description:habayta_deposite_report.field_deposits_report_wizard__deposite_data
+#: model:ir.ui.menu,name:habayta_deposite_report.deposite_report_wiz
+msgid "Deposite Report"
+msgstr "דוח הפקדה"
+
+#. module: habayta_deposite_report
+#: model_terms:ir.ui.view,arch_db:habayta_deposite_report.deposite_all_data
+msgid "Deposite Report :"
+msgstr "דוח הפקדה:"
+
+#. module: habayta_deposite_report
+#: model_terms:ir.ui.view,arch_db:habayta_deposite_report.deposite_wizard_form
+msgid "Deposite Report is generated."
+msgstr "דוח הפקדה נוצר."
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields,field_description:habayta_deposite_report.field_account_payment__is_deposited
+msgid "Deposited ?"
+msgstr "הופקד?"
+
+#. module: habayta_deposite_report
+#: model:ir.model,name:habayta_deposite_report.model_deposits_report_wizard
+msgid "Deposits Report Wizard"
+msgstr "אשף דיווח הפקדות"
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields,field_description:habayta_deposite_report.field_deposits_report_wizard__display_name
+msgid "Display Name"
+msgstr "הצג שם"
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields,field_description:habayta_deposite_report.field_deposits_report_wizard__end_date
+msgid "End Date"
+msgstr "תאריך סיום"
+
+#. module: habayta_deposite_report
+#: model_terms:ir.ui.view,arch_db:habayta_deposite_report.deposite_wizard_form
+msgid "Generate"
+msgstr "לִיצוֹר"
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields,field_description:habayta_deposite_report.field_deposits_report_wizard__id
+msgid "ID"
+msgstr "תְעוּדַת זֶהוּת"
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields,field_description:habayta_deposite_report.field_deposits_report_wizard____last_update
+msgid "Last Modified on"
+msgstr "השתנה לאחרונה בתאריך"
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields,field_description:habayta_deposite_report.field_deposits_report_wizard__write_uid
+msgid "Last Updated by"
+msgstr "עודכן לאחרונה על ידי"
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields,field_description:habayta_deposite_report.field_deposits_report_wizard__write_date
+msgid "Last Updated on"
+msgstr "עודכן לאחרונה ב"
+
+#. module: habayta_deposite_report
+#: model:ir.actions.server,name:habayta_deposite_report.action_deposite_payment
+msgid "Make Deposite"
+msgstr "בצע הפקדות"
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields,field_description:habayta_deposite_report.field_deposits_report_wizard__depo_means_of_payment
+msgid "Means of Payment"
+msgstr "אמצעי תשלום"
+
+#. module: habayta_deposite_report
+#: code:addons/habayta_deposite_report/wizard/deposite_report_wizard.py:0
+#: code:addons/habayta_deposite_report/wizard/deposite_report_wizard.py:0
+#, python-format
+msgid "No Payments found in this period"
+msgstr "לא נמצאו תשלומים בתקופה זו"
+
+#. module: habayta_deposite_report
+#: model:ir.model,name:habayta_deposite_report.model_account_payment
+msgid "Payments"
+msgstr "תשלומים"
+
+#. module: habayta_deposite_report
+#: code:addons/habayta_deposite_report/wizard/deposite_report_wizard.py:0
+#: code:addons/habayta_deposite_report/wizard/deposite_report_wizard.py:0
+#, python-format
+msgid "Please add valid dates. Start date cannot be greater than end date"
+msgstr "נא להוסיף תאריכים תקפים. תאריך ההתחלה לא יכול להיות גדול מתאריך הסיום"
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields,field_description:habayta_deposite_report.field_deposits_report_wizard__start_date
+msgid "Start Date"
+msgstr "תאריך התחלה"
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields,field_description:habayta_deposite_report.field_deposits_report_wizard__state
+msgid "State"
+msgstr "מדינה"
+
+#. module: habayta_deposite_report
+#: model_terms:ir.ui.view,arch_db:habayta_deposite_report.deposite_all_data
+msgid "Total ="
+msgstr "סך הכל ="
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields,field_description:habayta_deposite_report.field_account_payment__validity_date
+msgid "Validity Date"
+msgstr "תאריך תוקף"
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields.selection,name:habayta_deposite_report.selection__deposits_report_wizard__state__choose
+msgid "choose"
+msgstr "בחר"
+
+#. module: habayta_deposite_report
+#: model:ir.model.fields.selection,name:habayta_deposite_report.selection__deposits_report_wizard__state__get
+msgid "get"
+msgstr "לקבל"

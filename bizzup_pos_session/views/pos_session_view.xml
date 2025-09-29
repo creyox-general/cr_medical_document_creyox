@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_pos_session_form_add_page" model="ir.ui.view">
+        <field name="name">pos.session.form.view</field>
+        <field name="model">pos.session</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet" position="inside">
+                <notebook>
+                    <page name="report_history_page" string="Report History">
+                        <field name="report_history_ids">
+                            <list editable="bottom">
+                                <field name="pos_id" column_invisible="1"/>
+                                <field name="user_id" readonly="1"/>
+                                <field name="report_print_time" readonly="1"/>
+                            </list>
+                        </field>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+</odoo>

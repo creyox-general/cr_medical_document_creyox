@@ -1,0 +1,3 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_oii_invoices_logs,access_oii_invoices_logs,model_oii_invoices_logs,account.group_account_invoice,1,1,1,1
+access_oii_invoice_details_wizard,access_oii_invoice_details_wizard,model_oii_invoice_details_wizard,account.group_account_invoice,1,1,1,1

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="movein_all_data">
+        <t t-foreach="docs_list" t-as="doc">
+            <t t-esc="doc.get('movement_code')"/>
+            <t t-esc="doc.get('name')"/>
+            <t t-esc="doc.get('account_date')"/>
+            <t t-esc="doc.get('reference')"/>
+            <t t-esc="doc.get('validity_date')"/>
+            <t t-esc="doc.get('מטבע')"/>
+            <t t-esc="doc.get('custom_name')"/>
+            <t t-esc="doc.get('debit_account1')"/>
+            <t t-esc="doc.get('debit_account2')"/>
+            <t t-esc="doc.get('credit_account1')"/>
+            <t t-esc="doc.get('credit_account2')"/>
+            <t t-esc="doc.get('debit_amount_1')"/>
+            <t t-esc="doc.get('debit_amount_2')"/>
+            <t t-esc="doc.get('credit_amount_1')"/>
+            <t t-esc="doc.get('credit_amount_2')"/>
+            <t t-esc="'!@#*^$'"/>
+        </t>
+    </template>
+    <template id="movein_dat_file">
+        <p>
+            <t t-call="bizzup_movein_report.movein_all_data"/>
+        </p>
+    </template>
+
+</odoo>

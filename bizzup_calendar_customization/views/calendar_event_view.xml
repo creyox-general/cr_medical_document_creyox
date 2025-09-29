@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_calendar_event_form_inherit" model="ir.ui.view">
+        <field name="name">calendar.event.form.inherit</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button name="action_find_replacement_meeting"
+                            type="object"
+                            string="Find Replacement Meeting"
+                            class="oe_highlight"/>
+                </header>
+            </xpath>
+            <field name="location" position="after">
+                <group>
+                    <field name="priority_code"/>
+<!--                    <field name="activity_id" readonly="1"/>-->
+                </group>
+            </field>
+        </field>
+    </record>
+
+        <record id="view_calendar_event_search_inherit" model="ir.ui.view">
+            <field name="name">calendar.event.search.inherit</field>
+            <field name="model">calendar.event</field>
+            <field name="inherit_id" ref="calendar.view_calendar_event_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <field name="priority_code" string="Priority"/>
+                    <separator/>
+                    <filter name="search_priority_1_3" string="Priority Yes or Rejected 1"
+                            domain="[('priority_code', 'in', ['1', '3'])]"/>
+                    <separator/>
+                    <filter name="search_future_only" string="After Meeting Time"
+                            domain="[('start', '&gt;', context.get('start_date'))]"/>
+<!--                    <filter name="search_same_activity" string="Same Activity"-->
+<!--                            domain="[('activity_id', '=', context.get('activity_id'))]"/>-->
+                </xpath>
+            </field>
+        </record>
+
+
+</odoo>

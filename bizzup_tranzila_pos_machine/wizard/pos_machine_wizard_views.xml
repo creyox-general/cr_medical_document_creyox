@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pos_machine_wizard_form_view" model="ir.ui.view">
+        <field name="name">pos.machine.wizard.form.view</field>
+        <field name="model">pos.machine.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="physical_terminal_id"/>
+                    <field name="is_receipt" invisible="1"/>
+                    <field name="payment_limit" invisible="is_receipt == True"/>
+                    <field name="amount_to_charge"/>
+                    <field name="currency_id" invisible="1"/>
+                </group>
+                <footer>
+                    <button name="generate_request_for_payment"
+                            type="object"
+                            string="Generate Request"
+                            class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

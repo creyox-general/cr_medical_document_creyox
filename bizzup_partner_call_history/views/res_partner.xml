@@ -1,0 +1,25 @@
+<odoo>
+    <record id="view_partner_form_call_history" model="ir.ui.view">
+        <field name="name">res.partner.form.call.history</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Call History">
+                    <field name="partner_call_history_ids">
+                        <list>
+                            <field name="time"/>
+                            <field name="caller"/>
+                            <field name="target"/>
+                            <field name="status"/>
+                            <field name="type"/>
+                            <field name="record" widget="url"/>
+                            <field name="representative_name"/>
+                            <field name="duration"/>
+                        </list>
+                    </field>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_oii_invoices_logs_search" model="ir.ui.view">
+        <field name="name">oii.invoices.logs.search</field>
+        <field name="model">oii.invoices.logs</field>
+        <field name="arch" type="xml">
+           <search string="Integration Logs">
+                <field name="create_date"/>
+                <separator/>
+               <filter string="New" name="new" domain="[('state', '=', 'new')]"/>
+               <filter string="Successful" name="success" domain="[('state', '=', 'success')]"/>
+               <filter string="Failed" name="failed" domain="[('state', '=', 'fail')]"/>
+               <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Create Date" name="create_date" domain="[]" context="{'group_by':'create_date','visible':True}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_oii_invoices_logs_tree" model="ir.ui.view">
+        <field name="name">oii.invoices.logs.list</field>
+        <field name="model">oii.invoices.logs</field>
+        <field name="arch" type="xml">
+            <list decoration-success="state=='success'" decoration-danger="state=='fail'" create="0">
+                <field name="object_id"/>
+                <field name="type"/>
+                <field name="method" optional="hide"/>
+                <field name="state"/>
+                <field name="status_code" optional="hide"/>
+                <field name="create_date"/>
+                <field name="user_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_oii_invoices_logs_form" model="ir.ui.view">
+        <field name="name">oii.invoices.logs.form</field>
+        <field name="model">oii.invoices.logs</field>
+        <field name="arch" type="xml">
+            <form create="0" edit="0">
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group name="left">
+                            <field name="object_id" readonly="1"/>
+                        </group>
+                        <group name="right">
+                            <field name="type" readonly="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="end_point" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="headers" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="method" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="request_body" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="status_code" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="response" readonly="1"/>
+                    </group>
+                    <group invisible="state != 'fail'">
+                        <field name="failure_reason" readonly="1"/>
+                    </group>
+                    <group>
+                        <group name="left">
+                            <field name="create_date"/>
+                        </group>
+                        <group name="right">
+                            <field name="user_id" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_oii_invoices_logs" model="ir.actions.act_window">
+        <field name="name">Israel Invoices API Logs</field>
+        <field name="res_model">oii.invoices.logs</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_oii_invoices_logs"
+        name="Israel Invoices API Logs"
+        action="action_oii_invoices_logs"
+        parent="base.menu_administration"
+        sequence="5"/>
+</odoo>

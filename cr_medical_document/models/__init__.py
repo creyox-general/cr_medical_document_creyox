@@ -11,3 +11,5 @@ from . import medical_services
 from . import private_insurence
 from . import private_insurance_tag
 from . import res_partner
+from . import medical_certificate
+from . import hr_employee

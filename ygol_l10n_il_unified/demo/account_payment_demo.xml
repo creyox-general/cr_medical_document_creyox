@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <!-- Demo of account invoice payment.-->
+    <record id="demo_payment_uni1" model="account.payment">
+        <field name="partner_id" ref="base.res_partner_10" />
+        <field name="partner_type">customer</field>
+        <field name="amount">126.50</field>
+        <field name="payment_type">inbound</field>
+        <field name="date" eval="'2021-03-01'" />
+        <field
+            name="journal_id"
+            model="account.journal"
+            eval="obj().search([
+                ('type', '=', 'cash'),
+                ('company_id', '=', ref('l10n_il.demo_company_il'))], limit=1).id"
+        />
+    </record>
+
+    <record id="demo_payment_uni2" model="account.payment">
+        <field name="partner_id" ref="base.res_partner_10" />
+        <field name="partner_type">customer</field>
+        <field name="amount">200.00</field>
+        <field name="payment_type">inbound</field>
+        <field name="date" eval="'2021-04-15'" />
+        <field
+            name="journal_id"
+            model="account.journal"
+            eval="obj().search([
+                ('type', '=', 'bank'),
+                ('company_id', '=', ref('l10n_il.demo_company_il'))], limit=1).id"
+        />
+    </record>
+
+    <record id="demo_payment_uni3" model="account.payment">
+        <field name="partner_id" ref="base.res_partner_10" />
+        <field name="partner_type">customer</field>
+        <field name="amount">200.00</field>
+        <field name="payment_type">inbound</field>
+        <field name="date" eval="'2021-04-15'" />
+        <field
+            name="journal_id"
+            model="account.journal"
+            eval="obj().search([
+                ('type', '=', 'bank'),
+                ('company_id', '=', ref('l10n_il.demo_company_il'))], limit=1).id"
+        />
+    </record>
+    <!-- Posted Created Payment-->
+    <function model="account.payment" name="action_post">
+        <value
+            eval="[ref('demo_payment_uni1'), ref('demo_payment_uni2'), ref('demo_payment_uni3')]"
+        />
+    </function>
+</odoo>

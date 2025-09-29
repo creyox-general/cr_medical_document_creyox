@@ -1,0 +1,26 @@
+# -*- coding: UTF-8 -*-
+{
+    'name': 'Israeli Invoices model',
+    'version': '18.0.2.3.2',
+    'summary': 'Israeli Invoices model for confirmation numbers',
+    'description': 'Create and Manage confirmation numbers according to tax authority regulations',
+    'author': 'Retama',
+    'company': 'Retama',
+    'maintainer': 'Retama',
+    'website': 'https://retama.co.il/',
+    'license': 'OPL-1',
+    # 'depends': ['account', 'l10n_il', 'oii_documents'],
+    'depends': ['account', 'l10n_il',],
+    'data': [
+        'security/ir.model.access.csv',
+        'data/ir_cron.xml',
+        'views/account_move_views.xml',
+        'views/oii_invoices_logs.xml',
+        'views/report_invoice.xml',
+        'views/res_config_settings.xml',
+        'wizards/oii_invoice_details_wizard.xml',
+    ],
+    'installable': True,
+    'application': False,
+    'auto_install': False,
+}

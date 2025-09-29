@@ -1,0 +1,66 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bizzup_calendar_customization
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-14 10:36+0000\n"
+"PO-Revision-Date: 2025-05-14 10:36+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bizzup_calendar_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_calendar_customization.view_calendar_event_search_inherit
+msgid "After Meeting Time"
+msgstr ""
+
+#. module: bizzup_calendar_customization
+#: model:ir.model,name:bizzup_calendar_customization.model_calendar_event
+msgid "Calendar Event"
+msgstr "אירוע לוח שנה"
+
+#. module: bizzup_calendar_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_calendar_customization.view_calendar_event_form_inherit
+msgid "Find Replacement Meeting"
+msgstr ""
+
+#. module: bizzup_calendar_customization
+#: model:ir.model.fields.selection,name:bizzup_calendar_customization.selection__calendar_event__priority_code__2
+msgid "No"
+msgstr "לא"
+
+#. module: bizzup_calendar_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_calendar_customization.view_calendar_event_search_inherit
+msgid "Priority"
+msgstr ""
+
+#. module: bizzup_calendar_customization
+#: model:ir.model.fields,field_description:bizzup_calendar_customization.field_calendar_event__priority_code
+msgid "Priority Code"
+msgstr ""
+
+#. module: bizzup_calendar_customization
+#: model_terms:ir.ui.view,arch_db:bizzup_calendar_customization.view_calendar_event_search_inherit
+msgid "Priority Yes or Rejected 1"
+msgstr ""
+
+#. module: bizzup_calendar_customization
+#: model:ir.model.fields.selection,name:bizzup_calendar_customization.selection__calendar_event__priority_code__3
+msgid "Rejected 1"
+msgstr "נדחה 1"
+
+#. module: bizzup_calendar_customization
+#: model:ir.model.fields.selection,name:bizzup_calendar_customization.selection__calendar_event__priority_code__4
+msgid "Rejected 2"
+msgstr "נדחה 2"
+
+#. module: bizzup_calendar_customization
+#: model:ir.model.fields.selection,name:bizzup_calendar_customization.selection__calendar_event__priority_code__1
+msgid "Yes"
+msgstr "כן"

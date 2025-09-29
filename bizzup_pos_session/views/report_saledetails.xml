@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_saledetails_add_field" inherit_id="point_of_sale.pos_session_sales_details">
+        <xpath expr="//t[@t-if='session_name']" position="before">
+            <t t-if="company_name"> <strong>Company :</strong> <span t-out="company_name"/><br/></t>
+            <t t-if="company_vat"> <strong>Vat : </strong><span t-out="company_vat"/><br/></t>
+        </xpath>
+        <xpath expr="//div[hasclass('page')]/div[hasclass('row')]/div/span/strong/span" position="attributes">
+            <attribute name="t-esc">context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y')</attribute>
+        </xpath>
+    </template>
+</odoo>

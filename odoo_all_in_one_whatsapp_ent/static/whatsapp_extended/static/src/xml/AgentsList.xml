@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="discuss.AgentListPanel">
+        <ActionPanel title="title">
+            <View t-props="viewProps"/>
+        </ActionPanel>
+    </t>
+    <!--   NAME OF PARTNER IN CHATTER WINDOW HEADER -->
+    <t t-name="whatsapp_extended.ChatWindow.headerContent" t-inherit="mail.ChatWindow.headerContent"
+       t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[@t-if='!state.editingName']" position="replace">
+            <div t-if="thread and (['whatsapp', 'FbChannels', 'InstaChannels'].includes(thread.channel_type)) and thread.correspondent and thread.correspondent.persona and thread.correspondent.persona.name"
+                 class="text-truncate fw-bold border border-transparent me-1 my-0"
+                 t-att-title="thread.correspondent.persona.name" t-esc="thread.correspondent.persona.name"
+                 t-att-class="thread ? 'ms-1' : 'ms-3'"/>
+            <div t-elif="!state.editingName" class="text-truncate fw-bold border border-transparent me-1 my-0"
+                 t-att-title="props.chatWindow.displayName" t-esc="props.chatWindow.displayName"
+                 t-att-class="thread ? 'ms-1' : 'ms-3'"/>
+        </xpath>
+    </t>
+
+    <!-- NAME OF PARTNER IN DISCUSS SIDEBAR -->
+    <t t-name="whatsapp_extended.DiscussSidebarChannel" t-inherit="mail.DiscussSidebarChannel.main"
+       t-inherit-mode="extension">
+            <xpath expr="//t[@t-esc='thread.displayName']" position="replace">
+                <t t-if="thread and (['whatsapp', 'FbChannels', 'InstaChannels'].includes(thread.channel_type)) and thread.correspondent and thread.correspondent.persona and thread.correspondent.persona.name"
+                   t-esc="thread.correspondent.persona.name"/>
+                <t t-else="" t-esc="thread.displayName"/>
+            </xpath>
+        </t>
+    <!--   NAME OF PARTNER IN DISCUSS HEADER -->
+    <t t-name="whatsapp_extended.Discuss" t-inherit="mail.Discuss" t-inherit-mode="extension">
+        <xpath expr="//AutoresizeInput[@value='thread.displayName']" position="attributes">
+            <attribute name="value">thread and (['whatsapp', 'FbChannels', 'InstaChannels'].includes(thread.channel_type)) and thread.correspondent and thread.correspondent.persona ? thread.correspondent.persona.name : thread.displayName</attribute>
+        </xpath>
+    </t>
+    <!--&lt;!&ndash;   ADD WHATSAPP Channels and NAME OF PARTNER IN Messaging Dropdown &ndash;&gt;-->
+        <t t-name="whatsapp_extended.MessagingMenu.content" t-inherit="mail.MessagingMenu.content" t-inherit-mode="extension">
+            <xpath expr="//div[hasclass('o-mail-MessagingMenu-header')]/t[@t-if='!ui.isSmall']" position="inside">
+                <button class="btn btn-link py-2 rounded-0" t-att-class="store.discuss.activeTab === 'whatsapp' ? 'fw-bold' : 'text-muted'" type="button" role="tab" t-on-click="() => store.discuss.activeTab = 'WpChannels'">WhatsApp</button>
+            </xpath>
+            <xpath expr="//t[@t-esc='thread.displayName']" position="attributes">
+                <attribute name="t-esc">thread and (['whatsapp', 'FbChannels', 'InstaChannels'].includes(thread.channel_type)) and thread.correspondent and thread.correspondent.persona ? thread.correspondent.persona.name : thread.displayName</attribute>
+            </xpath>
+        </t>
+
+</templates>
+

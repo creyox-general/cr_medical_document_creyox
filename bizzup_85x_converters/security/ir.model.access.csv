@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bizzup_856_wizard,bizzup.856.wizard,model_bizzup_856_wizard,,1,1,1,1
+access_bizzup_857_wizard,bizzup.857.wizard,model_bizzup_857_wizard,,1,1,1,1
+access_bizzup_856_dashboard,bizzup.856.dashboard,model_bizzup_856_dashboard,,1,1,1,1
+access_bizzup_856_r60_lineholder,bizzup.856.r60.lineholder,model_bizzup_856_r60_lineholder,,1,1,1,1

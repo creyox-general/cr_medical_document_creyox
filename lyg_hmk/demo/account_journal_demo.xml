@@ -1,0 +1,9 @@
+<odoo noupdate="1">
+    <record id="hmk_sales_journal" model="account.journal">
+        <field name="name">Invoice Receipt</field>
+        <field name="type">sale</field>
+        <field name="is_hmk">True</field>
+        <field name="code">HMK</field>
+        <field name="company_id" ref="l10n_il.demo_company_il"></field>
+    </record>
+</odoo>

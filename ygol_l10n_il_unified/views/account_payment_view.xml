@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_account_payment_form" model="ir.ui.view">
+        <field name="name">account.payment.form</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date']" position="after">
+                <field name="credit_transaction_type" />
+                <field name="credit_card_name" />
+                <field name="comp_code_clears" string="Code Clearing company" />
+            </xpath>
+<!--            <xpath expr="//field[@name='journal_id']" position="after">-->
+<!--                <field name="bank_number"/>-->
+<!--                <field name="branch_number"/>-->
+<!--                <field name="account_number"/>-->
+<!--                <field name="check_payment_due_date"/>-->
+<!--                <field name="means_of_payment"/>-->
+<!--            </xpath>-->
+        </field>
+    </record>
+</odoo>

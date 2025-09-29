@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Register Payment Wizard for Receipt-->
+        <record id="view_account_payment_wizard_form" model="ir.ui.view">
+            <field name="name">account.payment.wizard.form</field>
+            <field name="model">account.payment.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Register Payment">
+                    <group>
+                        <field name="company_id" invisible="1"/>
+                        <field name="remain_amount" invisible="1"/>
+                        <field name="invoice_receipt_line_ids"
+                               invisible="invoice_receipt_line_ids == []">
+                            <list editable="bottom" create="false"
+                                  delete="false">
+                                <field name="company_id" invisible="1"/>
+                                <field name="invoice_id" readonly="1"
+                                       force_save="1"/>
+                                <field name="payment_diff" readonly="1"/>
+                                <field name="payment_difference_handling"/>
+                                <field name="write_off_account_id"
+                                       string="Post Difference In"
+                                       options="{'no_create': True}"
+                                       required="payment_difference_handling == 'reconcile'"
+                                       readonly="payment_difference_handling == 'open'"
+                                       />
+                                <field name="write_off_label"
+                                       required="payment_difference_handling == 'reconcile'"
+                                       readonly="payment_difference_handling == 'open'"
+                                        />
+                            </list>
+                        </field>
+                        <field name="line_ids" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button string="Create Payment"
+                                name="action_create_payment" type="object"
+                                class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-secondary"
+                                special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

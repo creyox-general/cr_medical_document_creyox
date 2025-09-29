@@ -1,0 +1,1079 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* lyg_receipt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-23 11:03+0000\n"
+"PO-Revision-Date: 2022-06-23 11:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: lyg_receipt
+#: model:ir.actions.report,print_report_name:lyg_receipt.action_report_receipt
+msgid "(object._get_report_base_filename())"
+msgstr ""
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "<b>Donation Receipt: </b>"
+msgstr "<b>קבלה על תרומה: </b>"
+
+#. module: lyg_receipt
+#: model:mail.template,body_html:lyg_receipt.lyg_mail_template_receipt
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px;font-size: 13px;\">\n"
+"                        Hello<t t-out=\"object.partner_id.name or ''\"/>,\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Here is your Receipt\n"
+"                        <strong t-out=\"object.name or ''\"/>\n"
+"                        amounting in\n"
+"                        <strong><t t-out=\"format_amount(object.total_pay_amount, object.currency_id) or ''\">$ 100.00</t>\n"
+"                            .\n"
+"                        </strong>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        You can reply to this email if you have any questions.\n"
+"                        <br/>\n"
+"                        Thank you,\n"
+"                        <t t-if=\"user.signature\">\n"
+"                            <br/>\n"
+"                            <t t-out=\"user.signature or ''\">--<br/>Mitchell Admin\n"
+"                            </t>\n"
+"                        </t>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px;font-size: 13px;\">\n"
+"                        Hello<t t-out=\"object.partner_id.name or ''\" contenteditable=\"false\" data-oe-t-inline=\"true\"></t>,\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        Here is your Receipt\n"
+"                        <strong t-out=\"object.name or ''\" contenteditable=\"false\"></strong>\n"
+"                        amounting in\n"
+"                        <strong><t t-out=\"format_amount(object.total_pay_amount, object.currency_id) or ''\" contenteditable=\"false\" data-oe-t-inline=\"true\">$ 100.00</t>\n"
+"                            .\n"
+"                        </strong>\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        You can reply to this email if you have any questions.\n"
+"                        <br>\n"
+"                        Thank you,\n"
+"                        <t t-if=\"user.signature\" data-oe-t-group=\"0\" data-oe-t-group-active=\"true\" data-oe-t-inline=\"true\">\n"
+"                            <br>\n"
+"                            <t t-out=\"user.signature or ''\" contenteditable=\"false\" data-oe-t-inline=\"true\">--<br>Mitchell Admin\n"
+"                            </t>\n"
+"                        </t>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_receipt_page
+msgid "<i class=\"fa fa-download\"/> Download"
+msgstr "<i class=\"fa fa-download\"/> הורד"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_receipt_page
+msgid "<i class=\"fa fa-fw fa-comments\"/><b>Send message</b>"
+msgstr "<i class=\"fa fa-fw fa-comments\"/><b>שלח הודעה</b>"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_receipt_page
+msgid "<i class=\"fa fa-print\"/> Print"
+msgstr "<i class=\"fa fa-print\"/> הדפס"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.view_account_receipt_form
+msgid ""
+"<span attrs=\"{'invisible': [('payment_count','&gt;', 1)]}\">Payment</span>\n"
+"                            <span attrs=\"{'invisible': [('payment_count','&lt;=', 1)]}\">Payments</span>"
+msgstr ""
+"<span attrs=\"{'invisible': [('payment_count','&gt;', 1)]}\">תשלום</span>\n"
+" <span attrs=\"{'invisible': [('payment_count','&lt;=', 1)]}\">תשלומים</span>"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_receipt_page
+msgid ""
+"<strong class=\"text-muted\">\n"
+"                                        Salesperson</strong>"
+msgstr ""
+"<strong class=\"text-muted\">\n"
+"                                        איש מכירות</strong>"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "<strong>Date of Document:</strong>"
+msgstr "<strong>תאריך המסמך:</strong>"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "<strong>For Invoice Number:</strong>"
+msgstr "<strong>עבור מספר חשבונית:</strong>"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "<strong>Printing Date:</strong>"
+msgstr "<strong>תאריך הדפסה:</strong>"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "<strong>Subject:</strong>"
+msgstr "<strong>נושא:</strong>"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "<strong>Subtotal Paid</strong>"
+msgstr "<strong>סך משנה בתשלום</strong>"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "<strong>Tax Deducted at source</strong>"
+msgstr "<strong>נוכה מס במקור</strong>"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "<strong>Total Amount</strong>"
+msgstr "<strong>סכום כולל</strong>"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "<strong>Total ILS</strong>"
+msgstr "<strong>סה'כ ₪</strong>"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__access_warning
+msgid "Access warning"
+msgstr "אזהרת גישה"
+
+#. module: lyg_receipt
+#: code:addons/lyg_receipt/models/account_receipt.py:0
+#, python-format
+msgid ""
+"According to the Goverment law, you cannot modify a receipt. Forbidden "
+"fields: %s."
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__message_needaction
+msgid "Action Needed"
+msgstr "פעולה נדרשת"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.res_config_settings_view_form_receipt
+msgid "Activate to send a receipt to customers"
+msgstr "הפעל כדי לשלוח קבלה ללקוחות"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__activity_ids
+msgid "Activities"
+msgstr "פעילויות"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "קישוט פעילות חריגה "
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__activity_state
+msgid "Activity State"
+msgstr "שלב פעילות"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "סמל סוג פעילות"
+
+#. module: lyg_receipt
+#: model_terms:ir.actions.act_window,help:lyg_receipt.action_account_receipt_form
+msgid "Add a new Receipt"
+msgstr "הוסף קבלה חדשה"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.view_account_receipt_form
+msgid "Advance Settings"
+msgstr "הגדרות מתקדמות"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__amount
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_my_receipts
+msgid "Amount"
+msgstr "כמות"
+
+#. module: lyg_receipt
+#: code:addons/lyg_receipt/models/account_receipt.py:0
+#, python-format
+msgid ""
+"An error occurred when computing the inalterability. Impossible to get the "
+"unique previous posted receipt."
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__message_attachment_count
+msgid "Attachment Count"
+msgstr "ספירת קבצים מצורפים"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__bank
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "Bank"
+msgstr "בנק"
+
+#. module: lyg_receipt
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__account_payment__means_of_payment__4
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__lyg_account_receipt_line__means_of_payment__4
+msgid "Bank Transfer"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__branch
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "Branch"
+msgstr "מספר סניף"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.view_account_payment_wizard_form
+msgid "Cancel"
+msgstr "בטל"
+
+#. module: lyg_receipt
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__account_payment__means_of_payment__1
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__lyg_account_receipt_line__means_of_payment__1
+msgid "Cash"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,help:lyg_receipt.field_payment_receipt_line__write_off_label
+msgid "Change label of the counterpart that will hold the payment difference"
+msgstr "שנה תווית של העמית שיחזיק בהפרש התשלום"
+
+#. module: lyg_receipt
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__account_payment__means_of_payment__2
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__lyg_account_receipt_line__means_of_payment__2
+msgid "Check"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_bank_statement_line__code
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_move__code
+msgid "Code of Country"
+msgstr "קוד מדינה"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_payment__code
+msgid "Code-Country"
+msgstr "קוד מדינה"
+
+#. module: lyg_receipt
+#: model:ir.model,name:lyg_receipt.model_res_company
+msgid "Companies"
+msgstr "חברות"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_payment_wizard__company_id
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__company_id
+#: model:ir.model.fields,field_description:lyg_receipt.field_payment_receipt_line__company_id
+msgid "Company"
+msgstr "שם החברה"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_payment_wizard__company_currency_id
+#: model:ir.model.fields,field_description:lyg_receipt.field_payment_receipt_line__company_currency_id
+msgid "Company Currency"
+msgstr "מטבע החברה"
+
+#. module: lyg_receipt
+#: model:ir.model,name:lyg_receipt.model_res_config_settings
+msgid "Config Settings"
+msgstr "הגדר הגדרות"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_receipt_page
+msgid "Contact"
+msgstr "שם איש הקשר"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.view_account_payment_wizard_form
+msgid "Create Payment"
+msgstr "צור תשלום"
+
+#. module: lyg_receipt
+#: model:ir.actions.server,name:lyg_receipt.action_create_receipt
+msgid "Create Receipt"
+msgstr "צור קבלה"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_payment_wizard__create_uid
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__create_uid
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__create_uid
+#: model:ir.model.fields,field_description:lyg_receipt.field_payment_receipt_line__create_uid
+msgid "Created by"
+msgstr "נוצר ע\"י"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_payment_wizard__create_date
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__create_date
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__create_date
+#: model:ir.model.fields,field_description:lyg_receipt.field_payment_receipt_line__create_date
+msgid "Created on"
+msgstr "נוצר בתאריך"
+
+#. module: lyg_receipt
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__account_payment__means_of_payment__3
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__lyg_account_receipt_line__means_of_payment__3
+msgid "Credit Card"
+msgstr ""
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "Credit/Acc No."
+msgstr "מס' אשראי/חשבון"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__credit_account_no
+msgid "Credit/Account Number"
+msgstr "כרטיס אשראי/ מספר חשבון"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_payment_wizard__currency_id
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__currency_id
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__currency_id
+msgid "Currency"
+msgstr "שער מטבע"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__currency_code
+msgid "Currency Code"
+msgstr "קוד מטבע"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,help:lyg_receipt.field_lyg_account_receipt__currency_code
+msgid "Currency Code (ISO 4217)"
+msgstr "קוד מטבע (ISO 4217)"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__partner_id
+msgid "Customer"
+msgstr "שם הלקוח"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,help:lyg_receipt.field_lyg_account_receipt__access_url
+msgid "Customer Portal URL"
+msgstr "כתובת אתר של פורטל לקוחות"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__date
+msgid "Date of Document"
+msgstr "תאריך המסמך"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_my_receipts
+msgid "Date of Documents"
+msgstr "תאריך המסמכים"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_payment_receipt_line__write_off_account_id
+msgid "Difference Account"
+msgstr "הבדלי חשבון"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_payment_wizard__display_name
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__display_name
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__display_name
+#: model:ir.model.fields,field_description:lyg_receipt.field_payment_receipt_line__display_name
+msgid "Display Name"
+msgstr "הצג שם"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__donation_text
+msgid "Donation Receipt"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__is_donation
+msgid "Donation?"
+msgstr "תרומה?"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_receipt_page
+msgid "Download"
+msgstr "הורד"
+
+#. module: lyg_receipt
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__lyg_account_receipt__state__draft
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__lyg_account_receipt_line__state__draft
+msgid "Draft"
+msgstr "טיוטה"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__message_follower_ids
+msgid "Followers"
+msgstr "עוקבים"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "עוקבים (שותפים)"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,help:lyg_receipt.field_lyg_account_receipt__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "סמל מדהים של גופן, למשל. משימות"
+
+#. module: lyg_receipt
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__lyg_account_receipt__type__generic
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__lyg_account_receipt_line__type__generic
+msgid "Generic"
+msgstr "גנרי"
+
+#. module: lyg_receipt
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__account_payment__means_of_payment__5
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__lyg_account_receipt_line__means_of_payment__5
+msgid "Gift Card"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__has_message
+msgid "Has Message"
+msgstr "יש לו הודעה"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_receipt_page
+msgid "History"
+msgstr "היסטוריה"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_payment_wizard__id
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__id
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__id
+#: model:ir.model.fields,field_description:lyg_receipt.field_payment_receipt_line__id
+msgid "ID"
+msgstr "ת.ז"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__activity_exception_icon
+msgid "Icon"
+msgstr "סמל (אייקון)"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,help:lyg_receipt.field_lyg_account_receipt__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "סמל (אייקון) לסמן פעילות חריגה."
+
+#. module: lyg_receipt
+#: model:ir.model.fields,help:lyg_receipt.field_lyg_account_receipt__message_needaction
+#: model:ir.model.fields,help:lyg_receipt.field_lyg_account_receipt__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "אם מסומן, הודעות חדשות דורשות את תשומת לבך."
+
+#. module: lyg_receipt
+#: model:ir.model.fields,help:lyg_receipt.field_lyg_account_receipt__message_has_error
+#: model:ir.model.fields,help:lyg_receipt.field_lyg_account_receipt__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "אם מסומן, חלק מההודעות בעלות שגיאת שליחה."
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__receipt_inalterable_hash
+msgid "Inalterability Hash"
+msgstr "תערובת )hash( בלתי ניתנת לשינוי"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__receipt_secure_sequence_number
+msgid "Inalteralbility No Gap Sequence #"
+msgstr "אי-התערבות ללא רצף פער"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_payment_receipt_line__invoice_id
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__lyg_account_receipt__type__invoice
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__lyg_account_receipt_line__type__invoice
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_my_receipts
+msgid "Invoice"
+msgstr "דרישת תשלום"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "Invoice No."
+msgstr "מס' חשבונית"
+
+#. module: lyg_receipt
+#: model:ir.model,name:lyg_receipt.model_payment_receipt_line
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_payment_wizard__invoice_receipt_line_ids
+msgid "Invoice Payment Lines"
+msgstr "שורות דרישת תשלום"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__message_is_follower
+msgid "Is Follower"
+msgstr "האם עוקב?"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__journal_id
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "Journal"
+msgstr "סוג תשלום"
+
+#. module: lyg_receipt
+#: model:ir.model,name:lyg_receipt.model_account_move
+msgid "Journal Entry"
+msgstr "פקודת יומן"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_payment_receipt_line__write_off_label
+msgid "Journal Item Label"
+msgstr "תווית פריט סוג תשלום"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_payment_wizard__line_ids
+msgid "Journal items"
+msgstr "פריטי סוגי תשלום"
+
+#. module: lyg_receipt
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__payment_receipt_line__payment_difference_handling__open
+msgid "Keep open"
+msgstr "השאר פתוח"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_payment_wizard____last_update
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt____last_update
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line____last_update
+#: model:ir.model.fields,field_description:lyg_receipt.field_payment_receipt_line____last_update
+msgid "Last Modified on"
+msgstr "שונה לאחרונה בתאריך"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_payment_wizard__write_uid
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__write_uid
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__write_uid
+#: model:ir.model.fields,field_description:lyg_receipt.field_payment_receipt_line__write_uid
+msgid "Last Updated by"
+msgstr "עודכן לאחרונה בתאריך"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_payment_wizard__write_date
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__write_date
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__write_date
+#: model:ir.model.fields,field_description:lyg_receipt.field_payment_receipt_line__write_date
+msgid "Last Updated on"
+msgstr "עודכן לאחרונה בתאריך"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__receipt_restrict_mode_hash_table
+#: model:ir.model.fields,field_description:lyg_receipt.field_res_company__receipt_restrict_mode_hash
+msgid "Lock Posted Receipts with Hash"
+msgstr "נעל קבלות שפורסמו עם Hash"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "קובץ ראשי"
+
+#. module: lyg_receipt
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__payment_receipt_line__payment_difference_handling__reconcile
+msgid "Mark as fully paid"
+msgstr "סמן כתשלום מלא"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_payment__means_of_payment
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__means_of_payment
+msgid "Means Of Payment"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__message_has_error
+msgid "Message Delivery error"
+msgstr "שגיאת שליחת הודעה"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__message_ids
+msgid "Messages"
+msgstr "הודעות"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.view_account_receipt_form
+msgid "Monthly Subscription"
+msgstr "מנוי חודשי"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "מועד אחרון לפעילות שלי"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__name
+msgid "Name"
+msgstr "שם"
+
+#. module: lyg_receipt
+#: code:addons/lyg_receipt/models/account_receipt.py:0
+#: code:addons/lyg_receipt/models/account_receipt.py:0
+#: code:addons/lyg_receipt/models/account_receipt.py:0
+#: code:addons/lyg_receipt/models/account_receipt.py:0
+#: code:addons/lyg_receipt/models/account_receipt.py:0
+#: code:addons/lyg_receipt/models/payment.py:0
+#: code:addons/lyg_receipt/wizard/payment_register.py:0
+#: code:addons/lyg_receipt/wizard/payment_register.py:0
+#, python-format
+msgid "New"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "אירוע יומן הפעילות הבא"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "מועד אחרון לפעילות הבאה"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__activity_summary
+msgid "Next Activity Summary"
+msgstr "סיכום הפעילות הבאה"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__activity_type_id
+msgid "Next Activity Type"
+msgstr "סוג הפעילות הבאה"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__note
+msgid "Note"
+msgstr "הערה"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__message_needaction_counter
+msgid "Number of Actions"
+msgstr "כמות פעולות"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__message_has_error_counter
+msgid "Number of errors"
+msgstr "כמות שגיאות"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,help:lyg_receipt.field_lyg_account_receipt__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "כמות ההודעות הדורשות פעולה"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,help:lyg_receipt.field_lyg_account_receipt__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "כמות ההודעות עם שגיאת שליחה"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,help:lyg_receipt.field_lyg_account_receipt__message_unread_counter
+msgid "Number of unread messages"
+msgstr "מספר ההודעות שלא נקראו"
+
+#. module: lyg_receipt
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__account_payment__means_of_payment__9
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__lyg_account_receipt_line__means_of_payment__9
+msgid "Other"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__total_pay_amount
+msgid "Paid Amount"
+msgstr "סכום ששולם"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_payment_receipt_line__pay_inv_id
+msgid "Pay Inv"
+msgstr "שלם דרישת תשלום"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__payment_ids
+msgid "Payment"
+msgstr "תשלום"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__payment_count
+msgid "Payment Count"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_payment_receipt_line__payment_diff
+msgid "Payment Difference"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_payment_receipt_line__payment_difference_handling
+msgid "Payment Difference Handling"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__receipt_line_ids
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.view_account_receipt_form
+msgid "Payment Lines"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model,name:lyg_receipt.model_account_payment_wizard
+msgid "Payment Register"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model,name:lyg_receipt.model_payment_transaction
+msgid "Payment Transaction"
+msgstr "עסקת תשלום"
+
+#. module: lyg_receipt
+#: code:addons/lyg_receipt/models/account_receipt.py:0
+#: model:ir.model,name:lyg_receipt.model_account_payment
+#, python-format
+msgid "Payments"
+msgstr "תשלומים"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__access_url
+msgid "Portal Access URL"
+msgstr ""
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.view_account_receipt_form
+msgid "Post"
+msgstr ""
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.view_account_payment_wizard_form
+msgid "Post Difference In"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__lyg_account_receipt__state__post
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__lyg_account_receipt_line__state__post
+msgid "Posted"
+msgstr ""
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.view_account_receipt_form
+msgid "Preview"
+msgstr ""
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_receipt_page
+msgid "Print"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__account_payment__means_of_payment__7
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__lyg_account_receipt_line__means_of_payment__7
+msgid "Promissory Note"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.actions.act_window,name:lyg_receipt.action_account_receipt_form
+#: model:ir.actions.report,name:lyg_receipt.action_report_receipt
+#: model:ir.model,name:lyg_receipt.model_lyg_account_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_payment__receipt_id
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__pay_receipt_id
+#: model:ir.ui.menu,name:lyg_receipt.menu_account_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_my_home_menu_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.view_account_receipt_form
+msgid "Receipt"
+msgstr "קבלה"
+
+#. module: lyg_receipt
+#: model:ir.model,name:lyg_receipt.model_lyg_account_receipt_line
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.view_account_receipt_line_form
+msgid "Receipt Lines"
+msgstr "שורות קבלה"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_res_company__receipt_sequence_id
+msgid "Receipt Sequence"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__receipt_string_to_hash
+msgid "Receipt String To Hash"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:mail.template,name:lyg_receipt.lyg_mail_template_receipt
+msgid "Receipt: Send by email"
+msgstr ""
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_my_home_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_my_receipts
+msgid "Receipts"
+msgstr "קבלות"
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_my_receipts
+msgid "Receipts #"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__validity_date
+msgid "Redemption/Validity Date"
+msgstr "תאריך פירעון / תאריך תוקף"
+
+#. module: lyg_receipt
+#: code:addons/lyg_receipt/models/account_receipt.py:0
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.view_account_payment_wizard_form
+#, python-format
+msgid "Register Payment"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_payment_wizard__remain_amount
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__remain_amount
+msgid "Remain Amount"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__account_payment__means_of_payment__6
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__lyg_account_receipt_line__means_of_payment__6
+msgid "Return Note"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__receipt_user_id
+msgid "Salesperson"
+msgstr ""
+
+#. module: lyg_receipt
+#: code:addons/lyg_receipt/models/res_company.py:0
+#, python-format
+msgid "Securisation of %s - %s"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__access_token
+msgid "Security Token"
+msgstr ""
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.view_account_receipt_form
+msgid "Send By Email"
+msgstr ""
+
+#. module: lyg_receipt
+#: code:addons/lyg_receipt/models/account_receipt.py:0
+#, python-format
+msgid "Send Receipt"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_res_company__send_an_email_receipts
+#: model:ir.model.fields,field_description:lyg_receipt.field_res_config_settings__send_an_email_receipts
+msgid "Send a Receipt"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__sequence_number
+msgid "Sequence Number"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__sequence_prefix
+msgid "Sequence Prefix"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__invoice_id
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__invoice_id
+msgid "Specific Invoice"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__account_payment__means_of_payment__8
+#: model:ir.model.fields.selection,name:lyg_receipt.selection__lyg_account_receipt_line__means_of_payment__8
+msgid "Standing Order"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__state
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__state
+msgid "State"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,help:lyg_receipt.field_lyg_account_receipt__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__subject
+msgid "Subject"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__payment_diff_tax_writeoff
+msgid "Tax deducted at source"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,help:lyg_receipt.field_account_bank_statement_line__code
+#: model:ir.model.fields,help:lyg_receipt.field_account_move__code
+#: model:ir.model.fields,help:lyg_receipt.field_account_payment__code
+msgid ""
+"The ISO country code in two chars. \n"
+"You can use this field for quick search."
+msgstr ""
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_my_receipts
+msgid "There are currently no receipts for your account."
+msgstr ""
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_receipt_error
+msgid "There was an error processing this page."
+msgstr ""
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "Total"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__total_ils
+msgid "Total ILS"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__type
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__type
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_my_receipts
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "Type"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,help:lyg_receipt.field_lyg_account_receipt__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__invoice_amount
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__invoice_amount
+msgid "Unpaid Amount"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "Validity Date"
+msgstr ""
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "Voucher/Check No."
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__voucher_check_no
+msgid "Voucher/Check Number"
+msgstr "ואוצ'ר/מספר צ'ק"
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,help:lyg_receipt.field_lyg_account_receipt__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__withholding_amount
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.report_receipt_document
+msgid "Withholding Amount"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_account_payment__withholding_payment
+msgid "Withholding Payment"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:ir.model.fields,field_description:lyg_receipt.field_lyg_account_receipt_line__withholding_tax_process
+msgid "Withholding Payment Process ?"
+msgstr ""
+
+#. module: lyg_receipt
+#: code:addons/lyg_receipt/models/account_receipt.py:0
+#, python-format
+msgid "You can not add lines without Partner."
+msgstr ""
+
+#. module: lyg_receipt
+#: code:addons/lyg_receipt/models/payment.py:0
+#, python-format
+msgid ""
+"You can not create or edit customer payment, Please create receipt for this "
+"payment..!!"
+msgstr ""
+
+#. module: lyg_receipt
+#: code:addons/lyg_receipt/models/account_receipt.py:0
+#, python-format
+msgid "You can not delete posted receipt."
+msgstr ""
+
+#. module: lyg_receipt
+#: code:addons/lyg_receipt/models/account_receipt.py:0
+#, python-format
+msgid "You can't confirm Receipt without Payment Lines."
+msgstr ""
+
+#. module: lyg_receipt
+#: code:addons/lyg_receipt/models/account_receipt.py:0
+#, python-format
+msgid ""
+"You cannot overwrite the values ensuring the inalterability of the Receipt."
+msgstr "אתה לא יכול להחליף את הערכים כדי להבטיח את אי-השינוי של הקבלה."
+
+#. module: lyg_receipt
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_receipt_error
+#: model_terms:ir.ui.view,arch_db:lyg_receipt.portal_receipt_success
+msgid "close"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:mail.template,report_name:lyg_receipt.lyg_mail_template_receipt
+msgid "{{ (object.name or '').replace('/','_') }}"
+msgstr ""
+
+#. module: lyg_receipt
+#: model:mail.template,subject:lyg_receipt.lyg_mail_template_receipt
+msgid "{{ object.partner_id.name }} Receipt (Ref {{ object.name or 'n/a' }})"
+msgstr ""

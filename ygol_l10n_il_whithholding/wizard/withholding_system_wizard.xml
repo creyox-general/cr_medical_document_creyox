@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- form view of export 1000 system data-->
+    <record id="view_1000_system_report_form" model="ir.ui.view">
+        <field name="name">withholding.supplier.system.form</field>
+        <field name="model">withholding.supplier.system</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="state" invisible="1"/>
+                <field name="extraction_filename" invisible="1"/>
+                <div invisible="state != 'choose'"><p>The 1000 System report you can export from here!</p></div>
+                <div invisible="state != 'get'">
+                    <h2>1000 System report generated.</h2>
+                    <p><field name="extraction_data" filename="extraction_filename"/></p>
+                </div>
+                <footer invisible="state != 'choose'">
+                    <button string="Export"
+                            data-hotkey="q" name="print_1000_txt_report" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary"
+                            special="cancel" data-hotkey="z"/>
+                </footer>
+                <footer invisible="state != 'get'">
+                    <button special="cancel" string="Close" type="object" class="btn-primary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <!-- Action of export 1000 system data-->
+    <record id="withholding_1000_system_action" model="ir.actions.act_window">
+        <field name="name">1000 System(ITA)</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">withholding.supplier.system</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_1000_system_report_form"/>
+        <field name="target">new</field>
+    </record>
+    <!-- Form view of import 1000 system data-->
+    <record id="view_1000_system_report_form_import" model="ir.ui.view">
+        <field name="name">withholding.supplier.system.form</field>
+        <field name="model">withholding.supplier.system</field>
+        <field name="arch" type="xml">
+            <form>
+                <div>Please upload 1000 system data here..!!!</div>
+                <field name="extraction_filename" invisible="1"/>
+                <field name="upload_ita_file" filename="extraction_filename"/>
+                <footer>
+                    <button string="Import" data-hotkey="q"
+                            name="upload_1000_txt_report" type="object"
+                            class="btn-primary"/>
+                    <button special="cancel" string="Close" type="object"
+                            class="btn-primary"/>
+                </footer>
+
+            </form>
+        </field>
+    </record>
+    <!-- Action of import 1000 system data-->
+    <record id="withholding_1000_system_action_import"
+            model="ir.actions.act_window">
+        <field name="name">1000 System(ITA)</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">withholding.supplier.system</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_1000_system_report_form_import"/>
+        <field name="target">new</field>
+    </record>
+    <!-- Menu item for 1000 system-->>
+    <menuitem id="1000_system" name="1000 System(ITA)"
+              parent="account.menu_finance_payables"/>
+    <menuitem action="withholding_1000_system_action"
+              id="withholding_1000_system_menu_import"
+              name="Export 1000 System Data" sequence="110"
+              parent="1000_system"/>
+    <menuitem action="withholding_1000_system_action_import"
+              id="withholding_1000_system_menu_export"
+              name="Import 1000 System Data" sequence="120"
+              parent="1000_system"/>
+</odoo>

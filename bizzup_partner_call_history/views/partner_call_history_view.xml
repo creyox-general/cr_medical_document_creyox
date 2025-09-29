@@ -1,0 +1,78 @@
+<odoo>
+    <!-- Tree (List) View -->
+    <record id="view_partner_call_history_tree" model="ir.ui.view">
+        <field name="name">partner.call.history.tree</field>
+        <field name="model">partner.call.history</field>
+        <field name="arch" type="xml">
+            <list string="Partner Call History" js_class="partner_call_history_list">
+                <field name="partner_ids" widget="many2many_tags"/>
+                <field name="time"/>
+                <field name="caller"/>
+                <field name="target"/>
+                <field name="status"/>
+                <field name="record" widget ="url"/>
+                <field name="type"/>
+                <field name="representative_name"/>
+                <field name="duration"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_partner_call_history_form" model="ir.ui.view">
+        <field name="name">partner.call.history.form</field>
+        <field name="model">partner.call.history</field>
+        <field name="arch" type="xml">
+            <form string="Partner Call History">
+                <sheet>
+                    <group>
+                        <field name="partner_ids" widget="many2many_tags"/>
+                        <field name="time"/>
+                        <field name="did"/>
+                        <field name="caller"/>
+                        <field name="target"/>
+                        <field name="callerextension"/>
+                        <field name="targetextension"/>
+                        <field name="status"/>
+                        <field name="type"/>
+                        <field name="department_name"/>
+                        <field name="record" widget ="url" readonly="True"/>
+                        <field name="representative_name"/>
+                        <field name="duration"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_partner_call_history_search" model="ir.ui.view">
+        <field name="name">partner.call.history.search</field>
+        <field name="model">partner.call.history</field>
+        <field name="arch" type="xml">
+            <search string="Search Call History">
+                <field name="partner_ids"/>
+                <field name="caller"/>
+                <field name="target"/>
+                <field name="status"/>
+                <field name="type"/>
+                <field name="representative_name"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_partner_call_history" model="ir.actions.act_window">
+        <field name="name">Call History</field>
+        <field name="res_model">partner.call.history</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_partner_call_history_search"/>
+    </record>
+
+    <!-- Menu Item under Contacts > Configuration -->
+    <menuitem id="menu_partner_call_history_root"
+              name="Call History"
+              parent="contacts.res_partner_menu_config"
+              action="action_partner_call_history"
+              sequence="100"/>
+</odoo>
