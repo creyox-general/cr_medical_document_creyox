@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="private_insurance_tag_view_tree" model="ir.ui.view">
+        <field name="name">private.insurance.tag.view.tree</field>
+        <field name="model">private.insurance.tag</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="name"/>
+                <field name="color" widget="color_picker"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_private_insurance_tag" model="ir.actions.act_window">
+        <field name="name">Private Insurance Tags</field>
+        <field name="res_model">private.insurance.tag</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <menuitem name="Custom Configuration"
+              id="custom_config_menu"
+              parent="contacts.menu_contacts"
+              sequence="25"/>
+
+    <menuitem name="Private Insurance Tags"
+              id="private_insurance_tag_menu"
+              parent="custom_config_menu"
+              action="action_private_insurance_tag"
+              sequence="10"/>
+
+</odoo>

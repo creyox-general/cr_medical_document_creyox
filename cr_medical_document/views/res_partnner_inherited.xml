@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Partner Form View -->
+        <record id="res_partner_view_form_inherit" model="ir.ui.view">
+            <field name="name">res.partner.view.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!-- Add page after internal_notes -->
+                <xpath expr="//page[@name='internal_notes']" position="after">
+                    <page string="Fireberry" name="page_fireberry">
+                        <group>
+                            <field name="rating" widget="priority"/>
+                            <field name="system_field_10"/>
+                            <field name="sex"/>
+                            <field name="taz"/>
+                            <field name="valid_taz"/>
+                            <field name="private_insurance" widget="many2many_tags"/>
+                            <field name="kupa"/>
+                            <field name="medical_service"/>
+                            <field name="activity_user_id"/>
+                            <field name="originating_lead_code"/>
+                            <field name="needs"/>
+                            <field name="write_uid"/>
+                            <field name="write_date"/>
+                            <field name="id_number"/>
+                            <field name="phone_number" widget="phone"/>
+                            <field name="phone_number_search" widget="phone"/>
+                            <field name="birth_date"/>
+                            <field name="action_status_code"/>
+                            <field name="campaign_id"/>
+                            <field name="convert_date"/>
+                            <field name="create_uid"/>
+                            <field name="create_date"/>
+                            <field name="income_fireberry"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

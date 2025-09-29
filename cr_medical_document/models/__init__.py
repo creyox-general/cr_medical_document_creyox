@@ -7,3 +7,7 @@ from . import medical_disease
 from . import medical_vitals
 from . import medical_prescription
 from . import medical_product_service
+from . import medical_services
+from . import private_insurence
+from . import private_insurance_tag
+from . import res_partner

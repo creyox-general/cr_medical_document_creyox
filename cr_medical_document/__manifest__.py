@@ -17,7 +17,11 @@
     "data": [
         "security/ir.model.access.csv",
         "views/medical_record_view.xml",
-        "views/medical_record_tag_view.xml"
+        "views/medical_record_tag_view.xml",
+        "views/medical_services_view.xml",
+        "views/private_insurance_view.xml",
+        "views/private_insurence_tag_view.xml",
+        "views/res_partnner_inherited.xml",
     ],
     "application": True,
     "installable": True,
