@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="medical_vitals_item_view_tree" model="ir.ui.view">
+        <field name="name">medical.vitals.items.view.tree</field>
+        <field name="model">medical.vitals.items</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="name"/>
+                <field name="unit_id"/>
+                <field name="min_range"/>
+                <field name="max_range"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_medical_vitals" model="ir.actions.act_window">
+        <field name="name">View Record Items</field>
+        <field name="res_model">medical.vitals.items</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <menuitem name="Vitals"
+              id="medical_vitals_menu_root"
+              parent="medical_menu_config"
+              action="action_medical_vitals"
+              sequence="20"/>
+
+</odoo>

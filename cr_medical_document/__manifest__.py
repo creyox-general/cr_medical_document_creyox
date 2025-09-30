@@ -25,6 +25,8 @@
         "views/private_insurence_tag_view.xml",
         "views/res_partnner_inherited.xml",
         "views/hr_employee_inherited.xml",
+        "views/medical_vitals_item_view.xml",
+        "wizard/search_detials_wizard_view.xml",
     ],
     "application": True,
     "installable": True,

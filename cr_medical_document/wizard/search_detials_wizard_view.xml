@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_search_details_wizard_form" model="ir.ui.view">
+        <field name="name">search.details.wizard.form</field>
+        <field name="model">search.details.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Medical Records">
+                <sheet>
+                    <field name="partner_id" readonly="1"/>
+                    <field name="record_ids" widget="many2many_list" options="{'no_create': True}">
+                        <list>
+                            <field name="date_time" string="Date"/>
+                            <field name="visit_type"/>
+                            <field name="therapist_id" string="Doctor"/>
+                        </list>
+                    </field>
+
+                    <field name="selected_record_id" widget="selection"/>
+
+                    <footer>
+                        <button string="Copy Details" type="object" name="action_copy_details" class="btn-primary"/>
+                        <button string="Close" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_search_details_wizard" model="ir.actions.act_window">
+        <field name="name">Search Details</field>
+        <field name="res_model">search.details.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

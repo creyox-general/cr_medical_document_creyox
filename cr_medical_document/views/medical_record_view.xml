@@ -50,7 +50,7 @@
                             <field name="patient_phone" widget="phone"/>
                             <field name="kupat_holim"/>
                             <field name="privat_insurence"/>
-                            <field name="patient_dob_display" />
+                            <field name="patient_dob_display"/>
                             <field name="gender"/>
                             <field name="last_visit"/>
                             <field name="history_of_visit"/>
@@ -74,8 +74,18 @@
                                 </list>
                             </field>
                             <group>
-                                <field name="visit_detail"/>
-                                <field name="recommendations"/>
+                                <group>
+                                    <field name="visit_detail"/>
+                                    <field name="recommendations"/>
+                                </group>
+                                <group>
+                                    <group> </group>
+                                    <group>
+                                        <button name="action_search_details" type="object" class="oe_highlight"
+                                                icon="fa-search"
+                                                string="Search Details"/>
+                                    </group>
+                                </group>
                             </group>
                         </page>
                         <page name="page_vitals" string="Vitals">
@@ -85,7 +95,9 @@
                                     <field name="item"/>
                                     <field name="value"/>
                                     <field name="unit"/>
-                                    <field name="valid_range"/>
+                                    <field name="min_range"/>
+                                    <field name="max_range"/>
+                                    <field name="create_uid" optional="show"/>
                                 </list>
                             </field>
                         </page>

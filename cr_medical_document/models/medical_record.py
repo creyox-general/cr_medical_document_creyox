@@ -85,3 +85,13 @@ class MedicalRecord(models.Model):
 
     def action_clinical_history(self):
         pass
+
+    def action_search_details(self):
+        return {
+            'name': 'Past Visit Records',
+            'type': 'ir.actions.act_window',
+            'res_model': 'search.details.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {'active_id': self.id},
+        }
