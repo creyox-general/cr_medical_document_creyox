@@ -24,7 +24,7 @@
                 <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button name="action_pdf" type="object" class="oe_stat_button" icon="fa-file-text-o"
-                                string="Generate PDF">
+                                string="Generate PDF" invisible="1">
                             <field name="pdf_count" widget="statinfo" string="Generate PDF"/>
                         </button>
                         <button name="action_schedule_followup" type="object" class="oe_stat_button"

@@ -2,7 +2,7 @@
 # Part of Creyox Technologies
 
 from odoo import fields, models, api, _
-from odoo.exceptions import ValidationError
+from odoo.exceptions import UserError, ValidationError
 
 
 class MedicalVitals(models.Model):
@@ -35,23 +35,13 @@ class MedicalVitals(models.Model):
                 min_val = float(rec.min_range) if rec.min_range else None
                 max_val = float(rec.max_range) if rec.max_range else None
             except:
-                raise ValidationError(
-                    _("Invalid min_range or max_range format for vital '%s'. Must be a number.") % rec.item.name
-                )
+                raise ValidationError("Invalid min_range or max_range format for vital.")
 
             # Check if value is outside range
             if min_val is not None and val < min_val:
-                raise ValidationError(
-                    _("Value %.2f is less than the minimum allowed %.2f for vital '%s'.") % (
-                        val, min_val, rec.item.name
-                    )
-                )
+                raise ValidationError("Value is less than the minimum allowed for vital.")
             if max_val is not None and val > max_val:
-                raise ValidationError(
-                    _("Value %.2f is greater than the maximum allowed %.2f for vital '%s'.") % (
-                        val, max_val, rec.item.name
-                    )
-                )
+                raise ValidationError("Value is greater than the maximum allowed for vital.")
 
     def create(self, vals):
         record = super(MedicalVitals, self).create(vals)

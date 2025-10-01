@@ -1,0 +1,21 @@
+<odoo>
+    <record id="action_report_visit_details" model="ir.actions.report">
+        <field name="name">Visit Details Report</field>
+        <field name="model">medical.record</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="attachment">('Visit Details - %s' % (object.name))</field>
+        <field name="report_name">cr_medical_document.report_medical_record_document</field>
+        <field name="report_file">cr_medical_document.report_medical_record_document</field>
+        <field name="binding_model_id" ref="cr_medical_document.model_medical_record"/>
+    </record>
+
+    <record id="action_report_prescription" model="ir.actions.report">
+        <field name="name">Prescription Report</field>
+        <field name="model">medical.record</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="attachment">('Visit Details - %s' % (object.name))</field>
+        <field name="report_name">cr_medical_document.report_prescription</field>
+        <field name="report_file">cr_medical_document.report_prescription</field>
+        <field name="binding_model_id" ref="cr_medical_document.model_medical_record"/>
+    </record>
+</odoo>

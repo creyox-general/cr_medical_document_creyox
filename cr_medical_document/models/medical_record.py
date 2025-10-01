@@ -3,6 +3,7 @@
 
 from odoo import fields, models, api, _
 from datetime import datetime, timedelta
+from odoo.exceptions import UserError, ValidationError
 
 
 class MedicalRecord(models.Model):
@@ -10,14 +11,14 @@ class MedicalRecord(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = "Medical Record"
 
-    name = fields.Char(string="Description")
+    name = fields.Char(string="Description", tracking=True)
     partner_id = fields.Many2one('res.partner', string="Patient", requied=True, tracking=True)
     patient_phone = fields.Char(related="partner_id.phone", string="Phone", readonly=False, tracking=True)
-    partner_image = fields.Binary(related="partner_id.image_1920", string="Image")
+    partner_image = fields.Binary(related="partner_id.image_1920", string="Image", tracking=True)
     kupat_holim = fields.Selection(
         [("clalit", "Clalit"), ("maccabi", "Maccabi"), ("meuhedet", "Meuhedet"), ("leumit", "Leumit")],
-        string="Kupat Holim")
-    privat_insurence = fields.Char(string="Private Insurance")
+        string="Kupat Holim", tracking=True)
+    privat_insurence = fields.Char(string="Private Insurance", tracking=True)
     patient_dob = fields.Date(
         related="partner_id.birth_date",
         string="Birth Date",
@@ -32,18 +33,19 @@ class MedicalRecord(models.Model):
     gender = fields.Selection(
         related="partner_id.sex",
         string="Gender", tracking=True)
-    last_visit = fields.Boolean(string="Last Visit")
+    last_visit = fields.Boolean(string="Last Visit", tracking=True)
     history_of_visit = fields.Selection(
-        [("1/1/2025", "1/1/2025"), ("2/1/2025", "2/1/2025"), ("3/1/2025", "3/1/2025")], string="History Of Visit")
+        [("1/1/2025", "1/1/2025"), ("2/1/2025", "2/1/2025"), ("3/1/2025", "3/1/2025")], string="History Of Visit",
+        tracking=True)
     note = fields.Html(string="Note")
-    therapist_id = fields.Many2one('res.users', string="Dr/ Therapist", tracking=True)
+    therapist_id = fields.Many2one('res.users', string="Dr/ Therapist")
     visit_type = fields.Selection(
         [("consultation", "Consultation"), ("esthetics", "Esthetics"), ("procedure", "Procedure"),
-         ("phone Call", "Phone Call"), ("administration", "Administration")], string="Visit Type")
-    date_time = fields.Datetime(string="Date Time")
-    pdf_count = fields.Float(string="PDF Count")
-    schedule_followup_count = fields.Float(string="Schedule Follow-up Count")
-    clinical_history_count = fields.Float(string="Clinical History Count")
+         ("phone Call", "Phone Call"), ("administration", "Administration")], string="Visit Type", tracking=True)
+    date_time = fields.Datetime(string="Date Time", tracking=True)
+    pdf_count = fields.Float(string="PDF Count", tracking=True)
+    schedule_followup_count = fields.Float(string="Schedule Follow-up Count", tracking=True)
+    clinical_history_count = fields.Float(string="Clinical History Count", tracking=True)
     sequence = fields.Integer("Sequence", default=1)
     visit_detail = fields.Html(string="Visit Details")
     recommendations = fields.Html(string="Recommendations")
@@ -53,10 +55,11 @@ class MedicalRecord(models.Model):
                                                string="Medical Prescription")
     medical_product_service_ids = fields.One2many('medical.product.service', 'medical_document_id',
                                                   string="Medical Product Service")
-    product_id = fields.Many2one('product.template', string="Product Name")
-    product_quantity = fields.Float(string="Quantity")
-    product_price = fields.Float(string="Price")
-    total = fields.Float(string="Total")
+    product_id = fields.Many2one('product.template', string="Product Name", tracking=True)
+    product_quantity = fields.Float(string="Quantity", tracking=True)
+    product_price = fields.Float(string="Price", tracking=True)
+    total = fields.Float(string="Total", tracking=True)
+    is_selected_record = fields.Boolean(string="Select Record to Copy", default=False)
 
     @api.depends('patient_dob')
     def _compute_patient_dob_display(self):

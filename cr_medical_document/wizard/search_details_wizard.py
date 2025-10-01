@@ -10,7 +10,6 @@ class SearchDetailsWizard(models.TransientModel):
 
     partner_id = fields.Many2one('res.partner', string="Patient", required=True)
     record_ids = fields.Many2many('medical.record', string="Medical Records")
-    selected_record_id = fields.Many2one('medical.record', string="Select Record to Copy")
 
     def default_get(self, fields_list):
         res = super(SearchDetailsWizard, self).default_get(fields_list)
@@ -27,18 +26,38 @@ class SearchDetailsWizard(models.TransientModel):
         return res
 
     def action_copy_details(self):
-        if not self.selected_record_id:
-            raise UserError("Please select a record to copy.")
+        """Copy only one selected medical.record if is_selected_record is checked"""
+        self.ensure_one()
 
-        # Copy fields from selected record
+        # Filter selected records
+        selected_records = self.record_ids.filtered(lambda r: r.is_selected_record)
+
+        if not selected_records:
+            raise UserError("Please select one record to copy.")
+        if len(selected_records) > 1:
+            raise UserError("You can only copy one record at a time. Please uncheck extra selections.")
+
+        rec = selected_records[0]
         vals = {
-            'partner_id': self.selected_record_id.partner_id.id,
-            'date_time': self.selected_record_id.date_time,
-            'visit_type': self.selected_record_id.visit_type,
-            'therapist_id': self.selected_record_id.therapist_id.id,
-            # add any other fields you want to copy
+            'partner_id': rec.partner_id.id,
+            'date_time': rec.date_time,
+            'visit_type': rec.visit_type,
+            'therapist_id': rec.therapist_id.id,
+            'kupat_holim': rec.kupat_holim,
+            'privat_insurence': rec.privat_insurence,
+            'patient_dob': rec.patient_dob,
+            'gender': rec.gender,
+            'last_visit': rec.last_visit,
+            'history_of_visit': rec.history_of_visit,
+            'note': rec.note,
+            'visit_detail': rec.visit_detail,
+            'recommendations': rec.recommendations,
+            # handle many2many
+            'medical_disease_ids': [(6, 0, rec.medical_disease_ids.ids)],
         }
         new_record = self.env['medical.record'].create(vals)
+
+        # Always open form view since only one record can be copied
         return {
             'type': 'ir.actions.act_window',
             'name': 'Medical Record',

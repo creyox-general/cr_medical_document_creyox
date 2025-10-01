@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_medical_record_document">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="doc">
+                    <div style="margin: 0px; padding: 0px; font-size: 18px;">
+                        <center>
+                            <h4>Clinic Visit Summary</h4>
+                        </center>
+                        <br/>
+                        <br/>
+                        <div>
+                            <p>
+                                <span>Visit Date:</span>
+                                <t t-esc="doc.date_time.strftime('%m/%d/%y') if doc.date_time else ''"/>
+                            </p>
+                            <br/>
+                            <p>
+                                <span>The Doctor Name:</span>
+                                <t t-out="doc.therapist_id.name"/>
+                            </p>
+                            <br/>
+                            <p>
+                                <span>Diagnoses:</span>
+                            </p>
+                            <br/>
+                            <p>
+                                <span>Complaint &amp; Findings:</span>
+                            </p>
+                            <br/>
+                            <p>
+                                <span>Summary &amp; Recommendations:</span>
+                            </p>
+                            <br/>
+                        </div>
+                        <div>
+                            <span>Sincerely,</span> <br/>
+                            <t t-out="doc.therapist_id.name"/>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
