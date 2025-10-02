@@ -13,7 +13,7 @@
     "description": """
         This module is designed to maintain the Patient Medical Records.
     """,
-    "depends": ["base", "contacts", "sale_management", "icd_manager"],
+    "depends": ["base", "web", "contacts", "sale_management", "icd_manager"],
     "data": [
         "security/ir.model.access.csv",
         "data/cretificate_expiration_reminnder_template.xml",
@@ -28,7 +28,6 @@
         "views/medical_vitals_item_view.xml",
         "wizard/search_detials_wizard_view.xml",
         "reports/visit_details_report_action.xml",
-        "reports/visit_details_report_header.xml",
         "reports/visit_details_report_template.xml",
         "reports/report_prescription.xml",
     ],

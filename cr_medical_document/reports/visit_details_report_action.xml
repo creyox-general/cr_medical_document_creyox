@@ -1,9 +1,25 @@
 <odoo>
+    <record id="paperformat_report_visit_details" model="report.paperformat">
+        <field name="name">Visit Details Paperformat</field>
+        <field name="default" eval="False"/>
+        <field name="disable_shrinking" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">32</field>
+        <field name="margin_left">8</field>
+        <field name="margin_right">8</field>
+        <field name="dpi">96</field>
+    </record>
+
     <record id="action_report_visit_details" model="ir.actions.report">
         <field name="name">Visit Details Report</field>
         <field name="model">medical.record</field>
         <field name="report_type">qweb-pdf</field>
         <field name="attachment">('Visit Details - %s' % (object.name))</field>
+        <field name="paperformat_id" ref="paperformat_report_visit_details"/>
         <field name="report_name">cr_medical_document.report_medical_record_document</field>
         <field name="report_file">cr_medical_document.report_medical_record_document</field>
         <field name="binding_model_id" ref="cr_medical_document.model_medical_record"/>
@@ -14,6 +30,7 @@
         <field name="model">medical.record</field>
         <field name="report_type">qweb-pdf</field>
         <field name="attachment">('Visit Details - %s' % (object.name))</field>
+        <field name="paperformat_id" ref="paperformat_report_visit_details"/>
         <field name="report_name">cr_medical_document.report_prescription</field>
         <field name="report_file">cr_medical_document.report_prescription</field>
         <field name="binding_model_id" ref="cr_medical_document.model_medical_record"/>

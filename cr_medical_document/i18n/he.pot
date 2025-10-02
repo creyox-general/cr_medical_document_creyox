@@ -1,0 +1,1573 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* cr_medical_document
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-02 10:51+0000\n"
+"PO-Revision-Date: 2025-10-02 10:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: Hebrew\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_record__history_of_visit__1/1/2025
+msgid "1/1/2025"
+msgstr "1/1/2025"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_record__history_of_visit__2/1/2025
+msgid "2/1/2025"
+msgstr "2/1/2025"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_record__history_of_visit__3/1/2025
+msgid "3/1/2025"
+msgstr "3/1/2025"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid ""
+"<b>\n"
+"                                        <span>Prescription:</span>\n"
+"                                    </b>\n"
+"                                    <br/>\n"
+"                                    <br/>"
+msgstr ""
+"<b>\n"
+"                                        <span>מרשם:</span>\n"
+"                                    </b>\n"
+"                                    <br/>\n"
+"                                    <br/>"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid ""
+"<b>\n"
+"                                        <span>The Doctor Name:</span>\n"
+"                                    </b>\n"
+"                                    <br/>"
+msgstr ""
+"<b>\n"
+"                                        <span>שם הרופא:</span>\n"
+"                                    </b>\n"
+"                                    <br/>"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid ""
+"<b>\n"
+"                                        <span>Visit Date:</span>\n"
+"                                    </b>"
+msgstr ""
+"<b>\n"
+"                                        <span>תאריך הביקור:</span>\n"
+"                                    </b>"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid ""
+"<b>\n"
+"                                        <span>Visit Type:</span>\n"
+"                                    </b>\n"
+"                                    <br/>"
+msgstr ""
+"<b>\n"
+"                                        <span>סוג הביקור:</span>\n"
+"                                    </b>\n"
+"                                    <br/>"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid ""
+"<b>\n"
+"                                    <span>Professor Benjamin Fox</span>\n"
+"                                </b>\n"
+"                                <br/>\n"
+"                                <span>Prof. Benjamin Fox</span>"
+msgstr ""
+"<b>\n"
+"                                    <span>פרופסור בנימין פוקס</span>\n"
+"                                </b>\n"
+"                                <br/>\n"
+"                                <span>פרופ' בנימין פוקס</span>"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid ""
+"<b>\n"
+"                                    <span>Sincerely,</span>\n"
+"                                </b>\n"
+"                                <br/>"
+msgstr ""
+"<b>\n"
+"                                    <span>בברכה,</span>\n"
+"                                </b>\n"
+"                                <br/>"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid ""
+"<br/>\n"
+"                                                    Mobile:"
+msgstr ""
+"<br/>\n"
+"                                                    נייד:"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid ""
+"<br/>\n"
+"                                                    P.O. Box"
+msgstr ""
+"<br/>\n"
+"                                                    ת.ד."
+
+#. module: cr_medical_document
+#: model:mail.template,body_html:cr_medical_document.email_template_certificate_reminder
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p>\n"
+"                        Dear <t t-out=\"object.name\"/>,\n"
+"                    </p>\n"
+"                    <div>\n"
+"                        <p>\n"
+"                            This is a reminder that your Medical Certificate\n"
+"                            <b>\n"
+"                                <t t-out=\"ctx.get('certificate').name\"/>\n"
+"                            </b>\n"
+"                            is expiring on\n"
+"                            <b>\n"
+"                                <t t-out=\"ctx.get('certificate').expiration_date\"/>\n"
+"                            </b>.\n"
+"                            Please don’t miss renewing it.\n"
+"                        </p>\n"
+"                    </div>\n"
+"                    <p>\n"
+"                        If you have any questions, please Contact Us.\n"
+"                    </p>\n"
+"                    Regards,\n"
+"                    <br/>\n"
+"                    <t t-out=\"user.name or ''\"/>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p>\n"
+"                        <t t-out=\"object.name\"/> היקר/ה,\n"
+"                    </p>\n"
+"                    <div>\n"
+"                        <p>\n"
+"                            זו תזכורת כי תעודת הבריאות שלך\n"
+"                            <b>\n"
+"                                <t t-out=\"ctx.get('certificate').name\"/>\n"
+"                            </b>\n"
+"                            פגה בתאריך\n"
+"                            <b>\n"
+"                                <t t-out=\"ctx.get('certificate').expiration_date\"/>\n"
+"                            </b>.\n"
+"                            אנא אל תפספס/י את החידוש שלה.\n"
+"                        </p>\n"
+"                    </div>\n"
+"                    <p>\n"
+"                        אם יש לך שאלות, אנא צור/י קשר.\n"
+"                    </p>\n"
+"                    בברכה,\n"
+"                    <br/>\n"
+"                    <t t-out=\"user.name or ''\"/>\n"
+"                </div>\n"
+"            "
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid ""
+"<span>Address</span>\n"
+"                                            <br/>"
+msgstr ""
+"<span>כתובת</span>\n"
+"                                            <br/>"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid ""
+"<span>Date of Birth</span>\n"
+"                                            <br/>"
+msgstr ""
+"<span>תאריך לידה</span>\n"
+"                                            <br/>"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid ""
+"<span>Email</span>\n"
+"                                            <br/>"
+msgstr ""
+"<span>דוא\"ל</span>\n"
+"                                            <br/>"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid ""
+"<span>Phone</span>\n"
+"                                            <br/>"
+msgstr ""
+"<span>טלפון</span>\n"
+"                                            <br/>"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid ""
+"<span>name</span>\n"
+"                                            <br/>"
+msgstr ""
+"<span>שם</span>\n"
+"                                            <br/>"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__frequency_unit__alt
+msgid "ALT"
+msgstr "ALT"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__medication_name__acamol
+msgid "Acamol"
+msgstr "אקמול"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__message_needaction
+msgid "Action Needed"
+msgstr "פעולה נדרשת"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__action_status_code
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__action_status_code
+msgid "Action Status Code"
+msgstr "קוד סטטוס פעולה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__activity_ids
+msgid "Activities"
+msgstr "פעילויות"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "קישוט חריג לפעילות"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__activity_state
+msgid "Activity State"
+msgstr "מצב פעילות"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "סמל סוג פעילות"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "Address"
+msgstr "כתובת"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_record__visit_type__administration
+msgid "Administration"
+msgstr "מנהלה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__medication_name__advil
+msgid "Advil"
+msgstr "אדוויל"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_services__name
+msgid "All Medical Service Provided"
+msgstr "כל השירותים הרפואיים שניתנו"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__message_attachment_count
+msgid "Attachment Count"
+msgstr "ספירת קבצים מצורפים"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__medication_name__breo_ellipta
+msgid "BREO ELLIPTA"
+msgstr "בריאו אליפטה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__patient_dob
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__patient_dob_display
+msgid "Birth Date"
+msgstr "תאריך לידה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__campaign_id
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__campaign_id
+msgid "Campaign ID"
+msgstr "מזהה קמפיין"
+
+#. module: cr_medical_document
+#: model:ir.actions.server,name:cr_medical_document.ir_cron_certificate_reminder_ir_actions_server
+#: model:mail.template,name:cr_medical_document.email_template_certificate_reminder
+#: model:mail.template,subject:cr_medical_document.email_template_certificate_reminder
+msgid "Certificate Expiration Reminder"
+msgstr "תזכורת פקיעת תעודה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_hr_employee__medical_id
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_certificate__name
+msgid "Certificates"
+msgstr "תעודות"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_record__kupat_holim__clalit
+msgid "Clalit"
+msgstr "כללית"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "Clinic Visit Summary"
+msgstr "סיכום ביקור במרפאה"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.medical_record_view_form
+msgid "Clinical History"
+msgstr "היסטוריה קלינית"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__clinical_history_count
+msgid "Clinical History Count"
+msgstr "ספירת היסטוריה קלינית"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.view_search_details_wizard_form
+msgid "Close"
+msgstr "סגור"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record_tag__color
+#: model:ir.model.fields,field_description:cr_medical_document.field_private_insurance_tag__color
+msgid "Color"
+msgstr "צבע"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_prescription__comment
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid "Comment"
+msgstr "הערה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__company_id
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__user_id
+msgid "Company"
+msgstr "חברה"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid "Company Logo"
+msgstr "לוגו החברה"
+
+#. module: cr_medical_document
+#: model:ir.ui.menu,name:cr_medical_document.medical_menu_config
+msgid "Configuration"
+msgstr "הגדרות"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_record__visit_type__consultation
+msgid "Consultation"
+msgstr "ייעוץ"
+
+#. module: cr_medical_document
+#: model:ir.model,name:cr_medical_document.model_res_partner
+msgid "Contact"
+msgstr "איש קשר"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__convert_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__convert_date
+msgid "Convert date"
+msgstr "המרת תאריך"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.view_search_details_wizard_form
+msgid "Copy Details"
+msgstr "העתק פרטים"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_certificate__create_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_prescription__create_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_product_service__create_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__create_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record_tag__create_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_services__create_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals__create_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals_items__create_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals_unit__create_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_private_insurance__create_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_private_insurance_tag__create_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_search_details_wizard__create_uid
+msgid "Created by"
+msgstr "נוצר על ידי"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_certificate__create_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_prescription__create_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_product_service__create_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__create_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record_tag__create_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_services__create_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals__create_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals_items__create_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals_unit__create_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_private_insurance__create_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_private_insurance_tag__create_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_search_details_wizard__create_date
+msgid "Created on"
+msgstr "נוצר בתאריך"
+
+#. module: cr_medical_document
+#: model:ir.ui.menu,name:cr_medical_document.custom_config_menu
+msgid "Custom Configuration"
+msgstr "הגדרות מותאמות אישית"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.view_search_details_wizard_form
+msgid "Date"
+msgstr "תאריך"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__birth_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__birth_date
+msgid "Date Of Birth"
+msgstr "תאריך לידה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__date_time
+msgid "Date Time"
+msgstr "תאריך ושעה"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "Date of Birth"
+msgstr "תאריך לידה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__duration_unit__day
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__frequency_unit__day
+msgid "Day"
+msgstr "יום"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__frequency_unit__days
+msgid "Days"
+msgstr "ימים"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals_items__unit_id
+msgid "Default Unit"
+msgstr "יחידת ברירת מחדל"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__name
+msgid "Description"
+msgstr "תיאור"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_certificate__display_name
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_prescription__display_name
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_product_service__display_name
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__display_name
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record_tag__display_name
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_services__display_name
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals__display_name
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals_items__display_name
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals_unit__display_name
+#: model:ir.model.fields,field_description:cr_medical_document.field_private_insurance__display_name
+#: model:ir.model.fields,field_description:cr_medical_document.field_private_insurance_tag__display_name
+#: model:ir.model.fields,field_description:cr_medical_document.field_search_details_wizard__display_name
+msgid "Display Name"
+msgstr "שם תצוגה"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.view_search_details_wizard_form
+msgid "Doctor"
+msgstr "רופא"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_prescription__medicine_does
+msgid "Does"
+msgstr "מינון"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_prescription__medicine_does_unit
+msgid "Does Unit"
+msgstr "יחידת מינון"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__therapist_id
+msgid "Dr/ Therapist"
+msgstr "ד\"ר/מטפל"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__medicine_does_unit__drop
+msgid "Drop"
+msgstr "טיפה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_prescription__duration
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid "Duration"
+msgstr "משך זמן"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_prescription__duration_unit
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid "Duration Unit"
+msgstr "יחידת משך זמן"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "Email"
+msgstr "דוא\"ל"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "Email:"
+msgstr "דוא\"ל:"
+
+#. module: cr_medical_document
+#: model:ir.model,name:cr_medical_document.model_hr_employee
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_certificate__employee_id
+msgid "Employee"
+msgstr "עובד"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_record__visit_type__esthetics
+msgid "Esthetics"
+msgstr "אסתטיקה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_certificate__expiration_date
+msgid "Expiration Date"
+msgstr "תאריך תפוגה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__phone_number_search
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__phone_number_search
+msgid "Fax"
+msgstr "פקס"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "Fax:"
+msgstr "פקס:"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__sex__female
+msgid "Female"
+msgstr "נקבה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_certificate__certificate_file
+msgid "File"
+msgstr "קובץ"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.res_partner_view_form_inherit
+msgid "Fireberry"
+msgstr "פיירברי"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__message_follower_ids
+msgid "Followers"
+msgstr "עוקבים"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "עוקבים (שותפים)"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,help:cr_medical_document.field_medical_record__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "סמל Font Awesome, לדוגמה fa-tasks"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_prescription__frequency
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid "Frequency"
+msgstr "תדירות"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_prescription__frequency_unit
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid "Frequency Unit"
+msgstr "יחידת תדירות"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__gender
+msgid "Gender"
+msgstr "מין"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.medical_record_view_form
+msgid "Generate PDF"
+msgstr "צור PDF"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__has_message
+msgid "Has Message"
+msgstr "יש הודעה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__history_of_visit
+msgid "History Of Visit"
+msgstr "היסטוריית ביקורים"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_certificate__id
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_prescription__id
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_product_service__id
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__id
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record_tag__id
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_services__id
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals__id
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals_items__id
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals_unit__id
+#: model:ir.model.fields,field_description:cr_medical_document.field_private_insurance__id
+#: model:ir.model.fields,field_description:cr_medical_document.field_private_insurance_tag__id
+#: model:ir.model.fields,field_description:cr_medical_document.field_search_details_wizard__id
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "ID"
+msgstr "מזהה"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid ""
+"ID\n"
+"                                                <br/>"
+msgstr ""
+"מזהה\n"
+"                                                <br/>"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__route__im
+msgid "IM"
+msgstr "תוך שרירי"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__route__inh
+msgid "INH"
+msgstr "שאיפה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__route__io
+msgid "IO"
+msgstr "תוך עצמי"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__route__iv
+msgid "IV"
+msgstr "תוך ורידי"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__activity_exception_icon
+msgid "Icon"
+msgstr "סמל"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,help:cr_medical_document.field_medical_record__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "סמל לציון פעילות חריגה."
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__id_number
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__id_number
+msgid "Id Number"
+msgstr "מספר תעודת זהות"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,help:cr_medical_document.field_medical_record__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "אם מסומן, הודעות חדשות דורשות את תשומת לבך."
+
+#. module: cr_medical_document
+#: model:ir.model.fields,help:cr_medical_document.field_medical_record__message_has_error
+#: model:ir.model.fields,help:cr_medical_document.field_medical_record__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "אם מסומן, בחלק מההודעות יש שגיאת משלוח."
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__partner_image
+msgid "Image"
+msgstr "תמונה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__income_fireberry
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__income_fireberry
+msgid "Income Fireberry"
+msgstr "הכנסה פיירברי"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__message_is_follower
+msgid "Is Follower"
+msgstr "האם עוקב"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals__item
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals_items__name
+msgid "Item"
+msgstr "פריט"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__kupa
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__kupa
+msgid "Kupa"
+msgstr "קופה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__kupat_holim
+msgid "Kupat Holim"
+msgstr "קופת חולים"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__medicine_does_unit__iu
+msgid "LU"
+msgstr "יחידות בינלאומיות"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_certificate__write_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_prescription__write_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_product_service__write_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__write_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record_tag__write_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_services__write_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals__write_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals_items__write_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals_unit__write_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_private_insurance__write_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_private_insurance_tag__write_uid
+#: model:ir.model.fields,field_description:cr_medical_document.field_search_details_wizard__write_uid
+msgid "Last Updated by"
+msgstr "עודכן לאחרונה על ידי"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_certificate__write_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_prescription__write_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_product_service__write_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__write_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record_tag__write_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_services__write_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals__write_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals_items__write_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals_unit__write_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_private_insurance__write_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_private_insurance_tag__write_date
+#: model:ir.model.fields,field_description:cr_medical_document.field_search_details_wizard__write_date
+msgid "Last Updated on"
+msgstr "עודכן לאחרונה בתאריך"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__last_visit
+msgid "Last Visit"
+msgstr "ביקור אחרון"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_record__kupat_holim__leumit
+msgid "Leumit"
+msgstr "לאומית"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid "Logo"
+msgstr "לוגו"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__medicine_does_unit__mcg
+msgid "MCG"
+msgstr "מיקרוגרם"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__medicine_does_unit__mg
+msgid "MG"
+msgstr "מיליגרם"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__medicine_does_unit__ml
+msgid "ML"
+msgstr "מיליליטר"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_record__kupat_holim__maccabi
+msgid "Maccabi"
+msgstr "מכבי"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__sex__male
+msgid "Male"
+msgstr "זכר"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals__max_range
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals_items__max_range
+msgid "Maximum Range"
+msgstr "טווח מרבי"
+
+#. module: cr_medical_document
+#: model:ir.model,name:cr_medical_document.model_medical_certificate
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.hr_employee_view_form_inherit
+msgid "Medical Certificate"
+msgstr "תעודה רפואית"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__medical_disease_ids
+msgid "Medical Disease"
+msgstr "מחלה רפואית"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_prescription__medical_document_id
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_product_service__medical_document_id
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals__medical_document_id
+msgid "Medical Document"
+msgstr "מסמך רפואי"
+
+#. module: cr_medical_document
+#: model:ir.ui.menu,name:cr_medical_document.medical_menu_root
+msgid "Medical Documentation"
+msgstr "תיעוד רפואי"
+
+#. module: cr_medical_document
+#: model:ir.model,name:cr_medical_document.model_medical_prescription
+#: model:ir.model,name:cr_medical_document.model_medical_product_service
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__medical_prescription_ids
+msgid "Medical Prescription"
+msgstr "מרשם רפואי"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__medical_product_service_ids
+msgid "Medical Product Service"
+msgstr "שירות מוצר רפואי"
+
+#. module: cr_medical_document
+#: model:ir.model,name:cr_medical_document.model_medical_record
+msgid "Medical Record"
+msgstr "רשומה רפואית"
+
+#. module: cr_medical_document
+#: model:ir.model,name:cr_medical_document.model_medical_record_tag
+msgid "Medical Record Tag"
+msgstr "תגית רשומה רפואית"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_search_details_wizard__record_ids
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.view_search_details_wizard_form
+msgid "Medical Records"
+msgstr "רשומות רפואיות"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__medical_service
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__medical_service
+msgid "Medical Service"
+msgstr "שירות רפואי"
+
+#. module: cr_medical_document
+#: model:ir.actions.act_window,name:cr_medical_document.action_medical_services
+#: model:ir.model,name:cr_medical_document.model_medical_services
+#: model:ir.ui.menu,name:cr_medical_document.medical_service_menu
+msgid "Medical Services"
+msgstr "שירותים רפואיים"
+
+#. module: cr_medical_document
+#: model:ir.model,name:cr_medical_document.model_medical_vitals
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__medical_vital_ids
+msgid "Medical Vitals"
+msgstr "סימנים חיוניים רפואיים"
+
+#. module: cr_medical_document
+#: model:ir.model,name:cr_medical_document.model_medical_vitals_items
+msgid "Medical Vitals Items"
+msgstr "פריטי סימנים חיוניים רפואיים"
+
+#. module: cr_medical_document
+#: model:ir.model,name:cr_medical_document.model_medical_vitals_unit
+msgid "Medical Vitals Unit"
+msgstr "יחידת סימנים חיוניים רפואיים"
+
+#. module: cr_medical_document
+#: model:ir.model,name:cr_medical_document.model_medical_disease
+msgid "Medical disease"
+msgstr "מחלה רפואית"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_prescription__medication_name
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid "Medication Name"
+msgstr "שם התרופה"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid "Medicine Does"
+msgstr "מינון התרופה"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid "Medicine Does Unit"
+msgstr "יחידת מינון התרופה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__message_has_error
+msgid "Message Delivery error"
+msgstr "שגיאת משלוח הודעה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__message_ids
+msgid "Messages"
+msgstr "הודעות"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_record__kupat_holim__meuhedet
+msgid "Meuhedet"
+msgstr "מאוחדת"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals__min_range
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals_items__min_range
+msgid "Minimum Range"
+msgstr "טווח מינימלי"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "Mobile:"
+msgstr "נייד:"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__duration_unit__month
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__frequency_unit__month
+msgid "Month"
+msgstr "חודש"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "מועד אחרון לפעילות שלי"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record_tag__name
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals_unit__name
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "Name"
+msgstr "שם"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.medical_record_view_form
+msgid "Name..."
+msgstr "שם..."
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__needs
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__needs
+msgid "Needs"
+msgstr "צרכים"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "אירוע לוח שנה של הפעילות הבאה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "מועד אחרון לפעילות הבאה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__activity_summary
+msgid "Next Activity Summary"
+msgstr "סיכום הפעילות הבאה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__activity_type_id
+msgid "Next Activity Type"
+msgstr "סוג הפעילות הבאה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_disease__nomed_code
+msgid "Nomed Code"
+msgstr "קוד נומד"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__note
+msgid "Note"
+msgstr "הערה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__message_needaction_counter
+msgid "Number of Actions"
+msgstr "מספר הפעולות"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__message_has_error_counter
+msgid "Number of errors"
+msgstr "מספר השגיאות"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,help:cr_medical_document.field_medical_record__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "מספר ההודעות הדורשות פעולה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,help:cr_medical_document.field_medical_record__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "מספר ההודעות עם שגיאת משלוח"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__activity_user_id
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__activity_user_id
+msgid "Owner"
+msgstr "בעלים"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "P.O. Box"
+msgstr "ת.ד."
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__pdf_count
+msgid "PDF Count"
+msgstr "ספירת PDF"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__route__po
+msgid "PO"
+msgstr "דרך הפה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__route__pr
+msgid "PR"
+msgstr "רקטלי"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__frequency_unit__prn
+msgid "PRN"
+msgstr "לפי הצורך"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__route__pv
+msgid "PV"
+msgstr "נרתיקי"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__partner_id
+#: model:ir.model.fields,field_description:cr_medical_document.field_search_details_wizard__partner_id
+msgid "Patient"
+msgstr "מטופל"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid "Patient Contact Details:"
+msgstr "פרטי יצירת קשר של המטופל:"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__patient_phone
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "Phone"
+msgstr "טלפון"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__phone_number
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__phone_number
+msgid "Phone #2"
+msgstr "טלפון מס' 2"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_record__visit_type__phone_call
+msgid "Phone Call"
+msgstr "שיחת טלפון"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.medical_record_view_form
+msgid "Prescription"
+msgstr "מרשם"
+
+#. module: cr_medical_document
+#: model:ir.actions.report,name:cr_medical_document.action_report_prescription
+msgid "Prescription Report"
+msgstr "דוח מרשם"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid "Prescription Summary"
+msgstr "סיכום מרשם"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_product_service__product_price
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__product_price
+msgid "Price"
+msgstr "מחיר"
+
+#. module: cr_medical_document
+#: model:ir.actions.act_window,name:cr_medical_document.action_private_insurance
+#: model:ir.model,name:cr_medical_document.model_private_insurance
+#: model:ir.model,name:cr_medical_document.model_private_insurance_tag
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__privat_insurence
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__private_insurance
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__private_insurance
+#: model:ir.ui.menu,name:cr_medical_document.private_insurance_menu
+msgid "Private Insurance"
+msgstr "ביטוח פרטי"
+
+#. module: cr_medical_document
+#: model:ir.actions.act_window,name:cr_medical_document.action_private_insurance_tag
+#: model:ir.model.fields,field_description:cr_medical_document.field_private_insurance_tag__name
+#: model:ir.ui.menu,name:cr_medical_document.private_insurance_tag_menu
+msgid "Private Insurance Tags"
+msgstr "תגיות ביטוח פרטי"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_private_insurance__name
+msgid "Private Insurance Type"
+msgstr "סוג ביטוח פרטי"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_record__visit_type__procedure
+msgid "Procedure"
+msgstr "פרוצדורה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_disease__procedure_name
+msgid "Procedure Name"
+msgstr "שם הפרוצדורה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_product_service__product_id
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__product_id
+msgid "Product Name"
+msgstr "שם המוצר"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.medical_record_view_form
+msgid "Products & Services"
+msgstr "מוצרים ושירותים"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "Prof. Benjamin Fox"
+msgstr "פרופ' בנימין פוקס"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "Professor Benjamin Fox"
+msgstr "פרופסור בנימין פוקס"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid ""
+"Professor Benjamin Fox\n"
+"                                                    <br/>\n"
+"                                                    Pulmonologist, Director of the Pulmonary Institute, Shamir Medical\n"
+"                                                    Center"
+msgstr ""
+"פרופסור בנימין פוקס\n"
+"                                                    <br/>\n"
+"                                                    רופא ריאות, מנהל המכון לרפואת ריאות, המרכז הרפואי שמיר"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid ""
+"Pulmonologist, Director of the Pulmonary Institute, Shamir Medical Center"
+msgstr "רופא ריאות, מנהל המכון לרפואת ריאות, המרכז הרפואי שמיר"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_product_service__product_qty
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_product_service__total
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__product_quantity
+msgid "Quantity"
+msgstr "כמות"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__originating_lead_code
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__rating
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__originating_lead_code
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__rating
+msgid "Rating"
+msgstr "דירוג"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__rating_ids
+msgid "Ratings"
+msgstr "דירוגים"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__recommendations
+msgid "Recommendations"
+msgstr "המלצות"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "Recommendations:"
+msgstr "המלצות:"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__activity_user_id
+msgid "Responsible User"
+msgstr "משתמש אחראי"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_prescription__route
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid "Route"
+msgstr "דרך מתן"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__route__sc
+msgid "SC"
+msgstr "תת עורי"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "שגיאת משלוח SMS"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.medical_record_view_form
+msgid "Schedule Follow-up"
+msgstr "תזמן מעקב"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__schedule_followup_count
+msgid "Schedule Follow-up Count"
+msgstr "ספירת תזמוני מעקב"
+
+#. module: cr_medical_document
+#: model:ir.actions.act_window,name:cr_medical_document.action_search_details_wizard
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.medical_record_view_form
+msgid "Search Details"
+msgstr "חפש פרטים"
+
+#. module: cr_medical_document
+#: model:ir.model,name:cr_medical_document.model_search_details_wizard
+msgid "Search Medical Records Details"
+msgstr "חפש פרטי רשומות רפואיות"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__is_selected_record
+msgid "Select Record to Copy"
+msgstr "בחר רשומה להעתקה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_certificate__sequence
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__sequence
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals__sequence
+msgid "Sequence"
+msgstr "רצף"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__sex
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__sex
+msgid "Sex"
+msgstr "מין"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "Sincerely,"
+msgstr "בברכה,"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,help:cr_medical_document.field_medical_record__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"סטטוס מבוסס על פעילויות\n"
+"באיחור: תאריך היעד כבר חלף\n"
+"היום: תאריך הפעילות הוא היום\n"
+"מתוכנן: פעילויות עתידיות."
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__system_field_10
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__system_field_10
+msgid "System Field 10"
+msgstr "שדה מערכת 10"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,help:cr_medical_document.field_res_partner__taz
+#: model:ir.model.fields,help:cr_medical_document.field_res_users__taz
+msgid "TAZ field - should be 9 digits long (numbers only)"
+msgstr "שדה ת.ז. - צריך להיות באורך 9 ספרות (מספרים בלבד)"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__route__top
+msgid "TOP"
+msgstr "חיצוני"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__medicine_does_unit__tab
+msgid "Tab"
+msgstr "טבליה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_private_insurance__tag
+msgid "Tags"
+msgstr "תגיות"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__taz
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__taz
+msgid "Taz"
+msgstr "ת.ז."
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid "Tel:"
+msgstr "טלפון:"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "The Doctor Name:"
+msgstr "שם הרופא:"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__total
+msgid "Total"
+msgstr "סך הכל"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.medical_record_view_form
+msgid "Type down your notes here..."
+msgstr "הקלד את ההערות שלך כאן..."
+
+#. module: cr_medical_document
+#: model:ir.model.fields,help:cr_medical_document.field_medical_record__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "סוג הפעילות החריגה ברשומה."
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals__unit
+msgid "Units"
+msgstr "יחידות"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_partner__valid_taz
+#: model:ir.model.fields,field_description:cr_medical_document.field_res_users__valid_taz
+msgid "Valid Taz"
+msgstr "ת.ז. תקף"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_vitals__value
+msgid "Value"
+msgstr "ערך"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__medication_name__ventolin
+msgid "Ventolin"
+msgstr "ונטולין"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.medical_record_view_form
+msgid "View Details"
+msgstr "צפה בפרטים"
+
+#. module: cr_medical_document
+#: model:ir.actions.act_window,name:cr_medical_document.action_medical_record
+#: model:ir.ui.menu,name:cr_medical_document.medical_menu_view_record
+msgid "View Record"
+msgstr "צפה ברשומה"
+
+#. module: cr_medical_document
+#: model:ir.actions.act_window,name:cr_medical_document.action_medical_vitals
+msgid "View Record Items"
+msgstr "צפה בפריטי הרשומה"
+
+#. module: cr_medical_document
+#: model:ir.actions.act_window,name:cr_medical_document.action_medical_record_tag
+#: model:ir.ui.menu,name:cr_medical_document.medical_record_tag_menu_root
+msgid "View Record Tag"
+msgstr "צפה בתגית הרשומה"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "Visit Date:"
+msgstr "תאריך הביקור:"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__visit_detail
+msgid "Visit Details"
+msgstr "פרטי הביקור"
+
+#. module: cr_medical_document
+#: model:ir.actions.report,name:cr_medical_document.action_report_visit_details
+msgid "Visit Details Report"
+msgstr "דוח פרטי ביקור"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "Visit Details:"
+msgstr "פרטי הביקור:"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__visit_type
+msgid "Visit Type"
+msgstr "סוג הביקור"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_medical_record_document
+msgid "Visit Type:"
+msgstr "סוג הביקור:"
+
+#. module: cr_medical_document
+#: model:ir.ui.menu,name:cr_medical_document.medical_vitals_menu_root
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.medical_record_view_form
+msgid "Vitals"
+msgstr "סימנים חיוניים"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,field_description:cr_medical_document.field_medical_record__website_message_ids
+msgid "Website Messages"
+msgstr "הודעות אתר"
+
+#. module: cr_medical_document
+#: model:ir.model.fields,help:cr_medical_document.field_medical_record__website_message_ids
+msgid "Website communication history"
+msgstr "היסטוריית תקשורת באתר"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__duration_unit__week
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__frequency_unit__week
+msgid "Week"
+msgstr "שבוע"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__medical_prescription__duration_unit__year
+msgid "Year"
+msgstr "שנה"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid "| Email:"
+msgstr "| דוא\"ל:"
+
+#. module: cr_medical_document
+#: model_terms:ir.ui.view,arch_db:cr_medical_document.report_prescription
+msgid "| Fax:"
+msgstr "| פקס:"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__originating_lead_code__אחר
+msgid "אחר"
+msgstr "אחר"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__action_status_code__אין_מענה
+msgid "אין מענה"
+msgstr "אין מענה"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__originating_lead_code__דף_פייסבוק/_אתר_אישי
+msgid "דף פייסבוק/ אתר אישי"
+msgstr "דף פייסבוק/אתר אישי"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__action_status_code__הומר_ללקוח
+msgid "הומר ללקוח"
+msgstr "הומר ללקוח"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__originating_lead_code__המלצת_איש_צוות
+msgid "המלצת איש צוות"
+msgstr "המלצת איש צוות"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__originating_lead_code__המלצת_לקוח
+msgid "המלצת לקוח"
+msgstr "המלצת לקוח"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__originating_lead_code__המלצת_עסק
+msgid "המלצת עסק"
+msgstr "המלצת עסק"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__originating_lead_code__המלצת_רב
+msgid "המלצת רב"
+msgstr "המלצת רב"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__originating_lead_code__המלצת_רופא
+msgid "המלצת רופא"
+msgstr "המלצת רופא"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__originating_lead_code__חברת_ביטוח
+msgid "חברת ביטוח"
+msgstr "חברת ביטוח"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__action_status_code__חדש_פלוני
+msgid "חדש פלוני"
+msgstr "חדש פלוני"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__kupa__כללית
+msgid "כללית"
+msgstr "כללית"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__originating_lead_code__כללית_מושלם
+msgid "כללית מושלם"
+msgstr "כללית מושלם"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__action_status_code__לא_מעוניין
+msgid "לא מעוניין"
+msgstr "לא מעוניין"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__kupa__לאומית
+msgid "לאומית"
+msgstr "לאומית"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__kupa__מאוחדת
+msgid "מאוחדת"
+msgstr "מאוחדת"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__kupa__מכבי
+msgid "מכבי"
+msgstr "מכבי"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__originating_lead_code__מכבי_שבן
+msgid "מכבי שבן"
+msgstr "מכבי שבן"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__originating_lead_code__מנוע_חיפוש
+msgid "מנוע חיפוש"
+msgstr "מנוע חיפוש"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__kupa__משרד_ביטחון
+msgid "משרד ביטחון"
+msgstr "משרד הביטחון"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__action_status_code__קשר_ראשוני
+msgid "קשר ראשוני"
+msgstr "קשר ראשוני"
+
+#. module: cr_medical_document
+#: model:ir.model.fields.selection,name:cr_medical_document.selection__res_partner__kupa__תייר
+msgid "תייר"
+msgstr "תייר"

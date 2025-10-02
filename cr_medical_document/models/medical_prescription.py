@@ -15,7 +15,7 @@ class MedicalPrescription(models.Model):
     medicine_does = fields.Float(string="Does")
     medicine_does_unit = fields.Selection(
         [("mg", "MG"), ("mcg", "MCG"), ("g", "G"), ("drop", "Drop"), ("iu", "LU"), ("tab", "Tab"), ("ml", "ML")],
-        string="Does")
+        string="Does Unit")
     route = fields.Selection(
         [("po", "PO"), ("inh", "INH"), ("top", "TOP"), ("io", "IO"), ("sc", "SC"), ("im", "IM"), ("iv", "IV"),
          ("pv", "PV"),
@@ -27,5 +27,5 @@ class MedicalPrescription(models.Model):
     duration = fields.Integer(string="Duration")
     duration_unit = fields.Selection(
         [("day", "Day"), ("week", "Week"), ("month", "Month"), ("year", "Year")],
-        string="Frequency Unit")
+        string="Duration Unit")
     comment = fields.Char(string="Comment")

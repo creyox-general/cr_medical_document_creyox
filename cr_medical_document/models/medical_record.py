@@ -2,7 +2,7 @@
 # Part of Creyox Technologies
 
 from odoo import fields, models, api, _
-from datetime import datetime, timedelta
+from datetime import datetime
 from odoo.exceptions import UserError, ValidationError
 
 
@@ -60,6 +60,12 @@ class MedicalRecord(models.Model):
     product_price = fields.Float(string="Price", tracking=True)
     total = fields.Float(string="Total", tracking=True)
     is_selected_record = fields.Boolean(string="Select Record to Copy", default=False)
+    company_id = fields.Many2one(
+        "res.company", string="Company", default=lambda self: self.env.company
+    )
+    user_id = fields.Many2one(
+        "res.users", string="Company", default=lambda self: self.env.user
+    )
 
     @api.depends('patient_dob')
     def _compute_patient_dob_display(self):

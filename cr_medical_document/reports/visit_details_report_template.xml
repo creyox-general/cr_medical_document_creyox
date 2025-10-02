@@ -2,41 +2,165 @@
 <odoo>
     <template id="report_medical_record_document">
         <t t-call="web.html_container">
-            <t t-call="web.external_layout">
+            <t t-call="web.basic_layout">
                 <t t-foreach="docs" t-as="doc">
-                    <div style="margin: 0px; padding: 0px; font-size: 18px;">
+
+                    <!-- Detect partner or user language -->
+                    <t t-set="lang" t-value="doc.partner_id.lang or doc.user_id.lang"/>
+
+                    <div t-attf-style="margin:0; padding:0; font-size:20px; font-family:DejaVu Sans, Arial, sans-serif;
+                                       direction: #{'rtl' if lang and lang.startswith('he') else 'ltr'};
+                                       text-align: #{'right' if lang and lang.startswith('he') else 'left'};">
+
+                        <!-- Custom Header -->
+                        <div class="page-header" style="margin-bottom: 20px; padding-bottom: 10px;">
+                            <table width="100%" style="font-size: 20px;">
+                                <tr>
+                                    <td style="vertical-align: top; font-size: 20px;">
+                                        <center>
+                                            <img t-if="doc.company_id.logo"
+                                                 t-att-src="'data:image/png;base64,%s' % doc.company_id.logo.decode('utf-8')"
+                                                 style="max-width: 300px; max-height: 300px; object-fit: contain;"
+                                                 alt="Company Logo"/>
+                                            <t t-else="">
+                                                <div style="width: 100px; height: 60px; background-color: #f0f0f0; text-align: center; line-height: 60px;">
+                                                    <span t-translation="on">Logo</span>
+                                                </div>
+                                            </t>
+                                        </center>
+                                        <div style="text-align: center;">
+                                            <!-- Company Name -->
+                                            <h2 t-field="doc.company_id.name" style="margin: 0; font-size: 15px;"/>
+
+                                            <!-- Example static description -->
+                                            <p style="margin: 5px 0; font-size: 18px;">
+                                                <span t-translation="on">Professor Benjamin Fox</span><br/>
+                                                <span t-translation="on">Pulmonologist, Director of the Pulmonary Institute, Shamir Medical Center</span>
+                                            </p>
+
+                                            <!-- Address -->
+                                            <p t-if="doc.company_id.street" style="margin: 5px 0; font-size: 15px;">
+                                                <t t-esc="doc.company_id.street"/>
+                                                <t t-if="doc.company_id.street2">,
+                                                    <t t-esc="doc.company_id.street2"/>
+                                                </t>
+                                                <br/>
+                                                <span t-translation="on">P.O. Box</span>
+                                                <t t-esc="doc.company_id.zip"/>
+                                                <t t-esc="doc.company_id.city"/>,
+                                                <t t-esc="doc.company_id.country_id.name"/>
+                                            </p>
+
+                                            <!-- Contact Info -->
+                                            <p style="margin: 5px 0; font-size: 15px;">
+                                                <span t-translation="on">Tel:</span>
+                                                <t t-esc="doc.company_id.phone"/>
+                                                | <span t-translation="on">Fax:</span>
+                                                <br/>
+                                                <span t-translation="on">Mobile:</span>
+                                                <t t-esc="doc.company_id.mobile"/>
+                                                | <span t-translation="on">Email:</span>
+                                                <t t-esc="doc.company_id.email"/>
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- Patient Contact -->
+                        <div style="text-align: right;">
+                            <span t-translation="on">Patient Contact Details:</span>
+                        </div>
+                        <div style="border-bottom: 2px solid #000;margin-top:5px;margin-bottom:5px;"/>
+
+                        <table style="width:100%; font-size:18px;">
+                            <tr>
+                                <!-- Left Column -->
+                                <td style="width:33%; text-align:right;">
+                                    <div>
+                                        <span t-translation="on">Date of Birth</span><br/>
+                                        <span><t t-esc="doc.patient_dob"/></span>
+                                    </div>
+                                    <div style="margin-top:5px;">
+                                        <span t-translation="on">Email</span><br/>
+                                        <span><t t-esc="doc.partner_id.email"/></span>
+                                    </div>
+                                </td>
+                                <!-- Middle Column -->
+                                <td style="width:33%; text-align:right;">
+                                    <div>
+                                        <span t-translation="on">ID</span><br/>
+                                        <t t-esc="doc.partner_id.id_number"/>
+                                    </div>
+                                    <div style="margin-top:5px;">
+                                        <span t-translation="on">Phone</span><br/>
+                                        <span><t t-esc="doc.patient_phone"/></span>
+                                    </div>
+                                </td>
+                                <!-- Right Column -->
+                                <td style="width:33%; text-align:right;">
+                                    <div>
+                                        <span t-translation="on">Name</span><br/>
+                                        <span><t t-esc="doc.name"/></span>
+                                    </div>
+                                    <div style="margin-top:5px;">
+                                        <span t-translation="on">Address</span><br/>
+                                        <span>
+                                            <t t-esc="doc.partner_id.street"/>
+                                            <t t-esc="doc.partner_id.city"/>
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div style="border-bottom: 2px solid #000;margin-top:5px;margin-bottom:5px;"/>
+                        <br/>
+
                         <center>
-                            <h4>Clinic Visit Summary</h4>
+                            <b>
+                                <h4 style="text-decoration: underline;" t-translation="on">Clinic Visit Summary</h4>
+                            </b>
                         </center>
-                        <br/>
-                        <br/>
+
+                        <br/><br/>
                         <div>
                             <p>
-                                <span>Visit Date:</span>
-                                <t t-esc="doc.date_time.strftime('%m/%d/%y') if doc.date_time else ''"/>
+                                <b><span t-translation="on">Visit Date:</span></b>
+                                <t t-esc="doc.date_time.strftime('%d/%m/%Y') if doc.date_time else ''"/>
                             </p>
                             <br/>
                             <p>
-                                <span>The Doctor Name:</span>
+                                <b><span t-translation="on">The Doctor Name:</span></b><br/>
                                 <t t-out="doc.therapist_id.name"/>
                             </p>
                             <br/>
                             <p>
-                                <span>Diagnoses:</span>
+                                <b><span t-translation="on">Visit Type:</span></b><br/>
+                                <t t-esc="doc._fields['visit_type'].convert_to_export(doc.visit_type, doc)"/>
                             </p>
                             <br/>
                             <p>
-                                <span>Complaint &amp; Findings:</span>
+                                <b><span t-translation="on">Visit Details:</span></b><br/>
+                                <t t-out="doc.visit_detail"/>
                             </p>
                             <br/>
                             <p>
-                                <span>Summary &amp; Recommendations:</span>
+                                <b><span t-translation="on">Recommendations:</span></b><br/>
+                                <t t-out="doc.recommendations"/>
                             </p>
                             <br/>
                         </div>
+
                         <div>
-                            <span>Sincerely,</span> <br/>
+                            <b><span t-translation="on">Sincerely,</span></b><br/>
                             <t t-out="doc.therapist_id.name"/>
+                        </div>
+                        <br/>
+                        <div>
+                            <b><span t-translation="on">Professor Benjamin Fox</span></b><br/>
+                            <span t-translation="on">Prof. Benjamin Fox</span>
                         </div>
                     </div>
                 </t>
