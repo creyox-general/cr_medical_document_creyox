@@ -15,10 +15,10 @@
                                 <field name="sequence" widget="handle"/>
                                 <field name="name"/>
                                 <field name="expiration_date"/>
+                                <!-- For viewing PDF with zoom capability -->
                                 <field name="certificate_file"
                                        filename="certificate_filename"
-                                       widget="image"
-                                       options="{'zoom': true,'size': [200, 200]}"/>
+                                       widget="pdf_viewer"/>
                                 <field name="certificate_file"
                                        filename="certificate_filename"
                                        widget="binary"
