@@ -15,7 +15,14 @@
                                 <field name="sequence" widget="handle"/>
                                 <field name="name"/>
                                 <field name="expiration_date"/>
-                                <field name="certificate_file"/>
+                                <field name="certificate_file"
+                                       filename="certificate_filename"
+                                       widget="image"
+                                       options="{'zoom': true,'size': [200, 200]}"/>
+                                <field name="certificate_file"
+                                       filename="certificate_filename"
+                                       widget="binary"
+                                       string="Download Certificate"/>
                             </list>
                         </field>
                     </page>

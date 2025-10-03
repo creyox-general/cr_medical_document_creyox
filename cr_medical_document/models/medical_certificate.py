@@ -11,5 +11,6 @@ class MedicalCertificate(models.Model):
     name = fields.Char(string="Certificates")
     sequence = fields.Integer("Sequence", default=1)
     expiration_date = fields.Datetime(string="Expiration Date")
-    certificate_file = fields.Binary(string="File")
+    certificate_file = fields.Binary("Certificate File")
+    certificate_filename = fields.Char("Certificate Filename")
     employee_id = fields.Many2one('hr.employee', string="Employee")
